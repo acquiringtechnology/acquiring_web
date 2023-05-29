@@ -1,0 +1,10 @@
+@import "@/styles/scss/abstracts/abstracts-dir.scss";
+
+.courseDetailContiner{
+    padding-top: 100px;
+    padding-bottom: 130px;
+    background-color: var(--primary-bg-light);
+    .couseTitle{
+        font-size: 2.5rem;
+    }
+}

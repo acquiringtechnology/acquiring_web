@@ -5,6 +5,7 @@ import styles from './OurCoursesCard.module.scss';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { NormalButton } from '../../../common'
+import { CourseCard } from '../../../pages'
 
 const OurCoursesCard = (props) => {
 
@@ -12,6 +13,8 @@ const OurCoursesCard = (props) => {
     let {
         isSwiper = true
     } = props;
+
+
 
 
     return (
@@ -32,17 +35,7 @@ const OurCoursesCard = (props) => {
                 >
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((data, i) =>
                         <SwiperSlide key={i}>
-
-                            <div className="card shadow border-0 mb-3">
-
-                                <div className={`card-body ${styles.servicesCardBody}`}>
-                                    <img className='mb-3' src='https://certontech.com/assets/images/element/online.svg' />
-                                    <h4 className={styles.OurCoursesCardTitle}>UI/UX & DESIGN THINKING</h4>
-                                    <p className={styles.OurCoursesCardSubText}>Our unparalleled group of professionals provide adept UI/UX services that {`aren't`} about designs alone. We make design a scientific process. We combine deeper methods of heuristic evaluation to build predictability in design decisions made for digital experiences.</p>
-                                </div>
-                            </div>
-                            {/* </div> */}
-
+                            <CourseCard />
                         </SwiperSlide>
 
                     )}
@@ -50,28 +43,15 @@ const OurCoursesCard = (props) => {
                     <div className='row'>
                         {[1, 2, 3, 4, 5].map((data, i) =>
                             <div className="col-md-4 mb-3" key={i}>
-
-                                <div className={`card shadow border-0 ${styles.servicesCard}`} key={i}>
-                                    <img class={`card-img-top ${styles.servicesCardImage}`} src="/img/coading.avif" alt="Card image cap" />
-                                    <div className={`card-body ${styles.servicesCardBody}`}>
-                                        {/* <img className='mb-3' src='https://certontech.com/assets/images/element/online.svg' /> */}
-                                        <h4 className={styles.OurCoursesCardTitle}>UI/UX & DESIGN THINKING</h4>
-                                        <p className={styles.OurCoursesCardSubText}>Our unparalleled group of professionals </p>
-                                        <button type="button" className={`btn btn-primary btn-lg btn-block w-100 ${styles.servicesCardButton}`}>View Detail</button>
-                                    </div>
-                                </div>
+                                <CourseCard />
                             </div>
-
-
                         )}
-
                     </div>
                 }
 
                 {<div className='row'>
                     <div className='col-md-12 text-center mb-4'>
                         <NormalButton className={`btn-primary ${styles.viewMoreBtn}`} title={<span>View All Courses <i className="fa-solid fa-arrow-up-right-from-square"></i></span>} />
-
                     </div>
                 </div>}
 

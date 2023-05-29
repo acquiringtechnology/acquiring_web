@@ -1,0 +1,1 @@
+export {CourseDetailBanner} from './courseDetailBanner'

@@ -8,45 +8,5 @@
         color: var(--text-grey);
         font-size: fontSize(15px);
     }
-    .servicesCard {
-        border: 1px solid #d8d8d8;
-        border-radius: 1.5rem;
-        position: relative;
-        margin-bottom: 1.75rem;
-        min-height: 400px;
-    }
-
-    .servicesCardImage {
-        max-height: 18.75rem;
-        width: 100%;
-        border-radius: 1.5rem;
-    }
-
-    .servicesCardBody {
-        position: absolute;
-        padding: 2rem 2rem 4.25rem;
-        bottom: 0;
-        background: #fff;
-        width: 100%;
-        border-radius: 1.5rem;
-        min-height: 10rem;
-        padding: 1.5rem;
-        .OurCoursesCardTitle {
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        .OurCoursesCardSubText {
-            color: var(--text-grey);
-            font-size: fontSize(15px);
-        }
-    }
-    .servicesCardButton,.viewMoreBtn{
-        // position: absolute;
-        // bottom: 0;
-        // width: 100%;
-        // z-index: 1;
-      
-            border-radius: 30px;
-        
-    }
+   
 }
