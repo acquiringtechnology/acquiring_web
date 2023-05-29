@@ -1,0 +1,12 @@
+@import "@/styles/scss/abstracts/abstracts-dir.scss";
+.bannerContiner {
+    height:400px;
+    .bannerTitleContiner {
+        .bannerTitle {
+            font-size: fontSize(45px) !important;
+        }
+    }
+    .bannerImage{
+        height: 100%;
+    }
+}

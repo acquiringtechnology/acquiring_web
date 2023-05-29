@@ -1,0 +1,23 @@
+@import "@/styles/scss/abstracts/abstracts-dir.scss";
+.customNavbar {
+    height: fontSize(85px);
+    transition: .4s;
+    .brandImage {
+        width: 175px;
+    }
+
+    .navMenu {
+        li {
+            a {
+                color: var(--black-bg) !important;
+                padding-right: fontSize(13px) !important;
+                padding-left: fontSize(13px) !important;
+                font-size: fontSize(16px) !important;
+                font-weight: 500;
+                &:hover {
+                    color: var(--primary-bg) !important;
+                }
+            }
+        }
+    }
+}

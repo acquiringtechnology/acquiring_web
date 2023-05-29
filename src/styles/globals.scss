@@ -1,0 +1,60 @@
+@import "bootstrap/scss/bootstrap";
+
+@import 'swiper/css';
+@import './scss/index.scss';
+:root {
+ 
+
+  --black-bg:#2D2F4E;
+  --primary-bg:#BF1922;
+  --primary-text:var(--primary-bg);
+  --text-primary:var(--primary-bg);
+  --primary-border-bg:#BF1922;
+  --white-bg:#ffffff;
+  --text-grey:#747579
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+   
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.transition4{
+  transition: .4;
+}
+
+
+footer {
+
+
+  
+.text-small {
+  font-size: 0.9rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+
+}
+
