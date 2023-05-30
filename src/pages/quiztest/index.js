@@ -1,10 +1,8 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { CourseDetailBanner,CourseDetailContent,N } from '@/components/pages'
-
-
 const inter = Inter({ subsets: ['latin'] })
-export default function CourseDetail() {
+import { QuizeTestCard,QuizeComplite ,GetStartQuize} from '@/components/pages'
+export default function Quiztest() {
 
 
     return (
@@ -15,13 +13,14 @@ export default function CourseDetail() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className={`vh-100 ${inter.className}`}>
+            <main className={` ${inter.className}`}>
 
 
                 <div className='row'>
                     <div className='col-12'>
-                        <CourseDetailBanner />
-                        <CourseDetailContent/>
+                        <GetStartQuize/>
+                        {/* <QuizeTestCard /> */}
+                        {/* <QuizeComplite/> */}
                     </div>
                 </div>
 

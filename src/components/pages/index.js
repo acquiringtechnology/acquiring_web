@@ -2,3 +2,4 @@ export {Banner,AboutCompany,OurCoursesCard,HaveQue,OurCustomer,WhatOfferYou} fro
 export {OurPromis} from './aboutUs'
 export {ContactUsForm} from './contactUs'
 export {CourseDetailBanner,CourseCard,CourseDetailContent} from './courses'
+export {QuizeTestCard,QuizeComplite,GetStartQuize} from './quiztest'
