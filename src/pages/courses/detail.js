@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { CourseDetailBanner } from '../../components/pages'
+import { CourseDetailBanner,CourseDetailContent,N } from '../../components/pages'
+
 
 const inter = Inter({ subsets: ['latin'] })
 import { Banner, OurPromis, ContactUsForm } from '@/components/pages'
@@ -21,6 +22,7 @@ export default function CourseDetail() {
                 <div className='row'>
                     <div className='col-12'>
                         <CourseDetailBanner />
+                        <CourseDetailContent/>
                     </div>
                 </div>
 

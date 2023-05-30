@@ -6,7 +6,7 @@ export const CourseDetailBanner = () => {
 
 
     return (
-        <div className={styles.courseDetailContiner}>
+        <div className={` mb-5  ${styles.courseDetailContiner}`}>
             <div className='container'>
                 <div className='row'>
                     <div className='col-lg-8 col-md-6 col-12'>
