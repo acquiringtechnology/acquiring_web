@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
-import { QuizeTestCard,QuizeComplite ,GetStartQuize} from '@/components/pages'
+import { QuizeTestCard, QuizeComplite, GetStartQuize } from '@/components/pages'
+import { useState } from 'react'
 export default function Quiztest() {
+    const [quizeStatus, setQuizeStatus] = useState(0)
+
 
 
     return (
@@ -18,7 +21,8 @@ export default function Quiztest() {
 
                 <div className='row'>
                     <div className='col-12'>
-                        <GetStartQuize/>
+                        {quizeStatus === 0 ? <GetStartQuize onQuizeStatusChange={setQuizeStatus} /> : quizeStatus === 1 ? <QuizeTestCard onQuizeStatusChange={setQuizeStatus} /> : quizeStatus === 2 && <QuizeComplite />}
+
                         {/* <QuizeTestCard /> */}
                         {/* <QuizeComplite/> */}
                     </div>

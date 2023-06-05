@@ -1,17 +1,26 @@
 
-import styles from './header.module.scss'
+import styles from './header.module.scss';
+import React, { useState } from 'react';
 import { NavLink } from '@/components/common';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import {
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+} from 'reactstrap';
 export const Header = () => {
 
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggle = () => setDropdownOpen((prevState) => !prevState);
 
 
-
-    useEffect(()=>{
+    useEffect(() => {
         window.addEventListener('scroll', handleverticalScroll)
 
-    },[])
+    }, [])
 
 
     const handleverticalScroll = () => {
@@ -31,16 +40,16 @@ export const Header = () => {
 
         // If scroll value is more than 0 - means the page is scrolled, add or remove class based on that
         if (scroll > 85) {
-            navbar.classList.add('fixed-top', 'shadow','transition4');
+            navbar.classList.add('fixed-top', 'shadow', 'transition4');
         } else {
-            navbar.classList.remove('fixed-top', 'shadow','transition4')
+            navbar.classList.remove('fixed-top', 'shadow', 'transition4')
         }
     }
 
 
     return (
 
-        <nav id='navbar' className={`navbar navbar-expand-lg bg-body-tertiary ${styles.customNavbar}`}>
+        <nav id='navbar' className={`navbar navbar-expand-lg pe-4 bg-body-tertiary ${styles.customNavbar}`}>
             <div className="container">
                 <a className="navbar-brand" href="#"><Image width={50} height={50} className={styles.brandImage} src={'/logo.svg'} /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,9 +69,36 @@ export const Header = () => {
 
 
                     </ul>
-
                 </div>
             </div>
+            <Dropdown isOpen={dropdownOpen} toggle={toggle} >
+                <DropdownToggle color='transparent' care={false}>
+                    <img className={styles.userProfile} src='/img/user-icon.svg' />
+
+                </DropdownToggle>
+                <DropdownMenu >
+                    <DropdownItem header>
+
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <img className={styles.userProfile} src='/img/user-icon.svg' alt="..." />
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h4 className={`mb-1 ${styles.userName}`}>Anvesh</h4>
+                                <small>kb.anvesh1996@gmail.com</small>
+                            </div>
+                        </div>
+
+                    </DropdownItem>
+
+
+
+                    <DropdownItem divider />
+                    <DropdownItem>My Profile</DropdownItem>
+                    <DropdownItem>Change Password</DropdownItem>
+                    <DropdownItem>Sign out</DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
         </nav>
     )
 

@@ -2,7 +2,13 @@
 import { NormalButton } from '../../../common'
 import styles from './getStartQuize.module.scss'
 
-export const GetStartQuize = () => {
+export const GetStartQuize = (props) => {
+
+let {
+
+onQuizeStatusChange=()=>{}
+
+} =props;
 
 
     return (
@@ -15,7 +21,7 @@ export const GetStartQuize = () => {
 
                     <p className='mb-5'>Make sure you have a good and stable internet connection. <br/> Do not refresh, reload or press back button while taking test Dont switch the tab while taking test</p>
 
-                    <NormalButton className='btn-lg btn-primary' title='Get Start' />
+                    <NormalButton className='btn-lg btn-primary' title='Get Start' onClick={()=>onQuizeStatusChange(1)} />
                 </div>
            
             </div>
