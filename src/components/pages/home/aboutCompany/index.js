@@ -10,7 +10,7 @@ const AboutCompany = () => {
 
 
 
-                <div className="row h-100 ">
+                <div className="row h-100 align-items-center gx-5">
                     <div className='col-md-6'>
                         <img alt='' className={`img-fluid ${styles.aboutImage}`} src='/img/why-acquiring.png' />
 
@@ -19,24 +19,27 @@ const AboutCompany = () => {
 
                         <h4 className={`${styles.aboutTitle}`}>Why Acquiring ?</h4>
 
-                        <p className={`${styles.aboutDescription}`}>We operate with high standards of refinement and urbanity to serve our clients. Our client servicing constitutes devising and execution of a project however, we do not limit ourselves when it comes to offering a flexible solution. We also try to understand the problems faced by our clients and only after we have provided the absolute best possible solution to the problem do we consider it a successful venture.</p>
+                        <p className={`${styles.aboutDescription}`}>Acquiring technology helps you build and advance your software engineering career. Our comprehensive program covers an unconventional course syllabus that includes hackathons, debates, pair programming, workshops, and lots of first-principles thinking! This is unique accelerated learning that gets you trained and ready for a career in the most happening industry.</p>
 
                         <ul className="nav flex-column mb-2">
+                            {/* <li className={`nav-item ${styles.aboutDescriptionList}`}>
+                            <i className="fa-regular fa-hand-point-right me-2"/>  Holistic training approach that covers technical, social skills, behavioural skills and other skills needed to excel in the industry
+                            </li> */}
                             <li className={`nav-item ${styles.aboutDescriptionList}`}>
-                                We are committed to providing world-class products and Services.
+                            <i className="fa-solid fa-arrow-right-long me-2"/>   Work on practical & real-time use cases
                             </li>
                             <li className={`nav-item ${styles.aboutDescriptionList}`}>
-                                The sole mission is to provide pragmatic and cost-effective Business Consulting
+                            <i className="fa-solid fa-arrow-right-long me-2 "/>  Learn from seasoned senior software engineers in the industry.
                             </li>
                             <li className={`nav-item ${styles.aboutDescriptionList}`}>
-                                From IT strategy and transformation to enterprise-wide software applications.
+                            <i className="fa-solid fa-arrow-right-long me-2 "/>  Work with a dedicated career counsellor
                             </li>
                             <li className={`nav-item ${styles.aboutDescriptionList}`}>
-                                we optimize technology and business processes.
+                            <i className="fa-solid fa-arrow-right-long me-2"/>  Placement Assistance and assurance
                             </li>
                         </ul>
 
-                        <NormalButton title='More about us' />
+                        {/* <NormalButton title='More about us' /> */}
                     </div>
 
 

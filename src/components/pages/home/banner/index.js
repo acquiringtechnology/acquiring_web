@@ -1,7 +1,7 @@
 
 import styles from './banner.module.scss';
 import PropTypes from 'prop-types';
-
+import { NormalButton } from '@/components/common'
 const Banner = (props) => {
    
 
@@ -16,13 +16,14 @@ const Banner = (props) => {
 
                         <div className={styles.bannerTitleContiner}>
                             <h4 className={styles.bannerTitle}>{props?.title}</h4>
-
                             <p>{props?.description}</p>
+                            <NormalButton className={`btn-primary me-3 ${styles.joinCourseBtn}`} title='Join our Courses' />
+                            <NormalButton className={`btn-outline-primary ${styles.joinCourseBtn}`} title='View All Courses' />
                         </div>
                     </div>
                     <div className='col-md-6'>
                         <img className={`img-fluid ${styles.bannerImage}`} src={props?.bannerImage}  />
-
+                        
                     </div>
                 </div>
             </div>

@@ -69,6 +69,9 @@ export const Header = () => {
 
 
                     </ul>
+                    <div class="d-flex">
+                        <button class="btn btn-primary px-4" type="submit">Contact Us</button>
+                    </div>
                 </div>
             </div>
             <Dropdown isOpen={dropdownOpen} toggle={toggle} >

@@ -1,18 +1,19 @@
-.haveQueContiner{
 
+@import "@/styles/scss/abstracts/abstracts-dir.scss";
+.haveQueContiner {
     background-attachment: fixed;
-    background: linear-gradient(rgba(14, 29, 52, 0.6), rgba(14, 29, 52, 0.8)), url(https://bootstrapmade.com/demo/templates/Logis/assets/img/cta-bg.jpg) center center;
     background-size: cover;
-    padding: 100px 0;
+    padding: 20px 0;
+    background-color: #df8c90;
 
-    .haveQueTitle{
-        font-size: 2.34375rem;
-        font-weight: 700;
+    .haveQueTitle {
+        font-size: fontSize(28px);
+        font-weight: 500;
     }
 
-    .join-team-btn{
-        padding: 20px;
-        width: 200px;
+    .join-team-btn {
+        // padding: 20px;
+        // width: 200px;
+        padding: 10px 25px;
     }
-    
 }
