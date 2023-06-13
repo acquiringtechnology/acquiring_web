@@ -17,7 +17,7 @@ const Banner = (props) => {
                         <div className={styles.bannerTitleContiner}>
                             <h4 className={styles.bannerTitle}>{props?.title}</h4>
                             <p>{props?.description}</p>
-                            <NormalButton className={`btn-primary me-3 ${styles.joinCourseBtn}`} title='Join our Courses' />
+                            <NormalButton className={`btn-primary me-3 ${styles.joinCourseBtn}`} title='Join LIVE Classes' />
                             <NormalButton className={`btn-outline-primary ${styles.joinCourseBtn}`} title='View All Courses' />
                         </div>
                     </div>

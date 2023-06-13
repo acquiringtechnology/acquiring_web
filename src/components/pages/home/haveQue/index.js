@@ -15,7 +15,7 @@ const HaveQue = () => {
                     */}
                                           </div>
                     <div className="col-lg-6 text-center">
-                        <NormalButton className={`btn-outline-primary ${styles['join-team-btn']}`} title='Join our Courses' />
+                        <NormalButton className={`btn-outline-primary ${styles['join-team-btn']}`} title='Join LIVE Classes' />
                     </div>
 
                 </div>

@@ -1,0 +1,18 @@
+@import "@/styles/scss/abstracts/abstracts-dir.scss";
+.bannerContiner {
+    height:400px;
+    .bannerTitleContiner {
+        .bannerTitle {
+            font-size: fontSize(45px) !important;
+        }
+    }
+    .joinCourseBtn{
+        border-radius: 4px;
+        font-weight: 600;
+        min-height: 48px;
+        font-size: 1rem;
+    }
+    .bannerImage{
+        height: 100%;
+    }
+}
