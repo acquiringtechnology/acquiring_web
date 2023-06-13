@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-
+import { NormalButton } from '@/components/pages'
 const inter = Inter({ subsets: ['latin'] })
 import { Banner, AboutCompany, OurCoursesCard, HaveQue,OurCustomer,WhatOfferYou } from '@/components/pages'
 export default function Home() {

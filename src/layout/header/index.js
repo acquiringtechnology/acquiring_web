@@ -1,7 +1,8 @@
 
 import styles from './header.module.scss';
 import React, { useState } from 'react';
-import { NavLink } from '@/components/common';
+import { useRouter } from 'next/router'
+import { NavLink ,NormalButton} from '@/components/common';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import {
@@ -11,7 +12,7 @@ import {
     DropdownItem,
 } from 'reactstrap';
 export const Header = () => {
-
+    const router = useRouter()
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggle = () => setDropdownOpen((prevState) => !prevState);
@@ -46,6 +47,8 @@ export const Header = () => {
         }
     }
 
+    
+
 
     return (
 
@@ -70,7 +73,7 @@ export const Header = () => {
 
                     </ul>
                     <div class="d-flex">
-                        <button class="btn btn-primary px-4" type="submit">Contact Us</button>
+                        <NormalButton className="btn btn-primary px-4" type="submit" onClick={()=>router.push('/contactUs')}  title='Contact Us'   />
                     </div>
                 </div>
             </div>

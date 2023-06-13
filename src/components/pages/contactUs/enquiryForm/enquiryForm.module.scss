@@ -1,0 +1,14 @@
+@import "@/styles/scss/abstracts/abstracts-dir.scss";
+.enquiryFormontainer {
+    .title {
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 2.5625rem;
+        color: #000;
+    }
+    .subTitle {
+        font-size: 15px;
+        line-height: 1.46666667;
+        color: #777777;
+    }
+}

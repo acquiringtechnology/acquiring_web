@@ -1,0 +1,1 @@
+export {COURSE_LIST} from './options'

@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
-import { Banner, OurPromis, ContactUsForm } from '@/components/pages'
+import { Banner, ContactUsHeader, EnquiryForm } from '@/components/pages'
 export default function Home() {
 
 
@@ -20,9 +20,9 @@ export default function Home() {
 
                 <div className='row'>
                     <div className='col-12'>
-                        <Banner title={<span>About RVSB Technologies</span>} description="We operate with high standards of refinement and urbanity to serve our clients. Our client servicing constitutes devising and execution of a project however, we do not limit ourselves when it comes to offering a flexible solution. We also try to understand the problems faced by our clients and only after we have provided the absolute best possible solution to the problem do we consider it a successful venture." bannerImage='/why-us.png' />
+                        <ContactUsHeader />
 
-                        <ContactUsForm />
+                        <EnquiryForm />
 
                     </div>
                 </div>
