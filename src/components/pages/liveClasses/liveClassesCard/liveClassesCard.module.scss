@@ -1,2 +1,19 @@
 @import "@/styles/scss/abstracts/abstracts-dir.scss";
-@import '../../home/banner/banner.module.scss';
+@import "../../home/banner/banner.module.scss";
+
+.liveClassesCardContiner {
+    .liveClassTitle {
+      
+    }
+    .liveClassCard{
+        .liveClassCardTitle{
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .liveClassCardDisc {
+            color: var(--text-grey);
+            font-size: 0.9375rem;
+        }
+    }
+   
+}

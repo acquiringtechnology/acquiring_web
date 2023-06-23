@@ -1,39 +1,41 @@
-
-
-
-import styles from './liveClass.module.scss';
-import { NormalButton } from '@/components/common'
+import styles from "./liveClassesCard.module.scss";
+import { NormalButton } from "@/components/common";
 export const LiveClassesCard = (props) => {
+  return (
+    <section>
+      <div class="container mb-5">
+        <div className={styles.liveClassesCardContiner}>
+          <h4 className={`text-center ${styles.liveClassTitle}`}>
+            We offer live classes with placement support as part of our program
+            list
+          </h4>
 
-    return (
-        <section>
-            <div class="container mb-5">
-                <div className={styles.bannerContiner}>
-
-
-                    <div className="row h-100 ">
-                        <div className="col-md-6 h-100 d-flex align-items-center justify-content-center">
-
-                            <div className={styles.bannerTitleContiner}>
-                                <h4 className={`mb-5 ${styles.bannerTitle}`}>{props?.title}</h4>
-                                <ul>
-                                    <li>100% Job Placement Support.</li>
-                                    <li> Mentors from Top Global Product companies.</li>
-                                    <li>A Portfolio of Real-world Projects.</li>
-                                    <li>Globally Recognized Certification.</li>
-                                </ul>
-                                <p>Live Classes available in <strong>English, தமிழ், ಕನ್ನಡ</strong> </p>
-                                {/* <NormalButton className={`btn-primary me-3 ${styles.joinCourseBtn}`} title='Join LIVE Classes' />
-                                <NormalButton className={`btn-outline-primary ${styles.joinCourseBtn}`} title='View All Courses' /> */}
-                            </div>
-                        </div>
-                        <div className='col-md-6'>
-                            <img className={`img-fluid ${styles.bannerImage}`} src={props?.bannerImage} />
-
-                        </div>
-                    </div>
+          {/*  */}
+          <div className="row mt-5">
+            <div className="col-md-3 col-sm-6">
+              <div class={`card ${styles.liveClassCard}`}>
+                <img
+                  src="https://media.swipepages.com/2021/11/5fcde7acf64f9100108c719e/instagram-post---1-300.webp"
+                  class="card-img-top"
+                  alt="courseName"
+                />
+                <div class="card-body">
+                  <h5 class={`card-title ${styles.liveClassCardTitle}`}>
+                    Full Stack
+                  </h5>
+                  <p class={`card-text ${styles.liveClassCardDisc}`}>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <div class="d-grid gap-2">
+                    <NormalButton title="KNOW MORE" />
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
-    )
-}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
