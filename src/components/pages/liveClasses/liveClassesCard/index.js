@@ -1,6 +1,8 @@
 import styles from "./liveClassesCard.module.scss";
 import { NormalButton } from "@/components/common";
+import { useRouter } from "next/router";
 export const LiveClassesCard = (props) => {
+  const router = useRouter();
   return (
     <section>
       <div class="container mb-5">
@@ -25,10 +27,13 @@ export const LiveClassesCard = (props) => {
                   </h5>
                   <p class={`card-text ${styles.liveClassCardDisc}`}>
                     Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    up the bulk of the {`card's`} content.
                   </p>
                   <div class="d-grid gap-2">
-                    <NormalButton title="KNOW MORE" />
+                    <NormalButton
+                      title="KNOW MORE"
+                      onClick={() => router.push("/liveClasses/detail")}
+                    />
                   </div>
                 </div>
               </div>

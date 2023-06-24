@@ -1,0 +1,20 @@
+.tabContainer {
+    .tabNav {
+        .tabNavLink {
+            color: var(--black-bg);
+            font-size: 1rem !important;
+            font-weight: 500;
+            cursor: pointer;
+            &.tabNavLinkActive {
+                color: var(--primary-bg);
+                cursor: default;
+            }
+            &:not(.tabNavLinkActive) {
+                &:hover {
+                    color: var(--primary-bg);
+                    border: 0;
+                }
+            }
+        }
+    }
+}
