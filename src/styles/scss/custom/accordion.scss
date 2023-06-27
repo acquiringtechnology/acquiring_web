@@ -8,3 +8,13 @@
     background-color: var( --primary-bg-light);
     box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
 }
+.accordion-button {
+    display: unset;
+}
+
+.accordion-button::after{
+    float: right;
+    position: absolute;
+    right: 10px;
+    top: 36%;
+}

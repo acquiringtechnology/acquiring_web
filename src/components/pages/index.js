@@ -1,6 +1,19 @@
-export {Banner,AboutCompany,OurCoursesCard,HaveQue,OurCustomer,WhatOfferYou} from './home'
-export {OurPromis} from './aboutUs'
-export {EnquiryForm,ContactUsHeader} from './contactUs'
-export {CourseDetailBanner,CourseCard,CourseDetailContent} from './courses'
-export {QuizeTestCard,QuizeComplite,GetStartQuize} from './quiztest'
-export {LiveClassBanner,Description,LiveClassesCard} from './liveClasses'
+export {
+  Banner,
+  AboutCompany,
+  OurCoursesCard,
+  HaveQue,
+  OurCustomer,
+  WhatOfferYou,
+} from "./home";
+export { OurPromis } from "./aboutUs";
+export { EnquiryForm, ContactUsHeader } from "./contactUs";
+export { CourseDetailBanner, CourseCard, CourseDetailContent } from "./courses";
+export { QuizeTestCard, QuizeComplite, GetStartQuize } from "./quiztest";
+export {
+  LiveClassBanner,
+  Description,
+  LiveClassesCard,
+  LiveClassCourseContent,
+  TechnologiesCovered
+} from "./liveClasses";

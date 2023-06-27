@@ -7,8 +7,8 @@ import {
   Banner,
   Description,
   OurCoursesCard,
-  HaveQue,
-  LiveClassesCard,
+  TechnologiesCovered,
+  LiveClassCourseContent,
   CourseDetailBanner,
 } from "@/components/pages";
 export default function LiveClassDetail() {
@@ -23,14 +23,9 @@ export default function LiveClassDetail() {
       <main className={`${inter.className}`}>
         <div className="row">
           <div className="col-12">
-            <CourseDetailBanner />
-            <Description title={"Description"} />
-            <LiveClassesCard />
-            {/* <WhatOfferYou/>
-            <OurCoursesCard isSwiper={false} />
-           
-            <HaveQue />
-            <OurCustomer/> */}
+            <CourseDetailBanner  fromPage={'liveClass'} />
+            <LiveClassCourseContent/>
+            <TechnologiesCovered/>
           </div>
         </div>
       </main>
