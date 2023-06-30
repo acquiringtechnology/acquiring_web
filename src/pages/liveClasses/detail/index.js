@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 import {
   Banner,
   Description,
-  OurCoursesCard,
+  LiveClassPricing,
   TechnologiesCovered,
   LiveClassCourseContent,
   CourseDetailBanner,
@@ -26,6 +26,7 @@ export default function LiveClassDetail() {
             <CourseDetailBanner  fromPage={'liveClass'} />
             <LiveClassCourseContent/>
             <TechnologiesCovered/>
+            <LiveClassPricing/>
           </div>
         </div>
       </main>

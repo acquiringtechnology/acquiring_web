@@ -6,12 +6,14 @@ import styles from './OurCoursesCard.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { NormalButton } from '../../../common'
 import { CourseCard } from '../../../pages'
+import { useRouter } from "next/router";
 
 const OurCoursesCard = (props) => {
-
+    const router = useRouter();
 
     let {
-        isSwiper = true
+        isSwiper = true,
+        isViewAllBtn=true
     } = props;
 
 
@@ -22,7 +24,7 @@ const OurCoursesCard = (props) => {
             <div className={styles.OurCoursesCardContiner}>
                 {<div className='row'>
                     <div className='col-md-12 text-center mb-4'>
-                        <h4 className={styles.ourServicesTitle}>Our Courses</h4>
+                        <h4 className={styles.ourServicesTitle}>Our Online Courses</h4>
                         <p className={styles.ourServicesSubTitle}>We are focused on understanding client’s business first, and dedicated to solve their business problems.</p>
 
                     </div>
@@ -49,9 +51,9 @@ const OurCoursesCard = (props) => {
                     </div>
                 }
 
-                {<div className='row'>
+                {isViewAllBtn && <div className='row'>
                     <div className='col-md-12 text-center mb-4'>
-                        <NormalButton className={`btn-primary ${styles.viewMoreBtn}`} title={<span>View All Courses <i className="fa-solid fa-arrow-up-right-from-square"></i></span>} />
+                        <NormalButton  onClick={() => router.push("/courses")} className={`btn-primary ${styles.viewMoreBtn}`} title={<span>View All Courses <i className="fa-solid fa-arrow-up-right-from-square"></i></span>} />
                     </div>
                 </div>}
 

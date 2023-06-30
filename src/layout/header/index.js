@@ -64,7 +64,7 @@ export const Header = () => {
                             <NavLink className="nav-link" href="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" href="/aboutUs">All Courses</NavLink>
+                            <NavLink className="nav-link" href="/courses">All Courses</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" href="/liveClasses">LIVE Classes</NavLink>

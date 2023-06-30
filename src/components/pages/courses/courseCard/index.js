@@ -38,7 +38,7 @@ export const CourseCard = (props) => {
         <p className={styles.OurCoursesCardSubText}>
           Our unparalleled group of professionals{" "}
         </p>
-        <Normaltabs data={tabDataList} className="nav-fill" />
+        {/* <Normaltabs data={tabDataList} className="nav-fill" /> */}
         <button
           onClick={handleRouteDetail}
           type="button"

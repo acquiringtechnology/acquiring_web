@@ -15,5 +15,6 @@ export {
   Description,
   LiveClassesCard,
   LiveClassCourseContent,
-  TechnologiesCovered
+  TechnologiesCovered,
+  LiveClassPricing
 } from "./liveClasses";

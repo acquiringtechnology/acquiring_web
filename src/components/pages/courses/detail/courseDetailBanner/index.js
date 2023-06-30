@@ -47,27 +47,30 @@ export const CourseDetailBanner = ({ fromPage = "" }) => {
               <NormalButton title="Start Quiz!" onClick={handleRedirectQuiz} />
             )}
 
-            <div className={`row mb-2 ${styles.programOverViewSection}`}>
-              <div className="col-md-12">
-                <div className={`row mb-2`}>
-                  <h4 className={`${styles.programOverViewTitle}`}>
-                    Program Overview
-                  </h4>
+            {fromPage === "liveClass" && (
+              <div className={`row mb-2 mt-4 ${styles.programOverViewSection}`}>
+                <div className="col-md-12">
+                  <div className={`row mb-2`}>
+                    <h4 className={`${styles.programOverViewTitle}`}>
+                      Program Overview
+                    </h4>
+                  </div>
                 </div>
-              </div>
-              <div className="col-md-4">
-                <h4 className={styles.programOverViewDetailTitle}>Duration</h4>
-                <label className={styles.programOverViewDetailValue}>
-                  3 Months / 5 Months (Weekday/Weekend)
-                </label>
-              </div>
-              <div className="col-md-4">
-                <h4 className={styles.programOverViewDetailTitle}>Format</h4>
-                <label className={styles.programOverViewDetailValue}>
-                  Online
-                </label>
-              </div>
-              {/* <div className="col-md-3">
+                <div className="col-md-4">
+                  <h4 className={styles.programOverViewDetailTitle}>
+                    Duration
+                  </h4>
+                  <label className={styles.programOverViewDetailValue}>
+                    3 Months / 5 Months (Weekday/Weekend)
+                  </label>
+                </div>
+                <div className="col-md-4">
+                  <h4 className={styles.programOverViewDetailTitle}>Format</h4>
+                  <label className={styles.programOverViewDetailValue}>
+                    Online
+                  </label>
+                </div>
+                {/* <div className="col-md-3">
                 <h4 className={styles.programOverViewDetailTitle}>
                   Hiring Partners
                 </h4>
@@ -75,15 +78,16 @@ export const CourseDetailBanner = ({ fromPage = "" }) => {
                   100+ companies
                 </label>
               </div> */}
-              <div className="col-md-4">
-                <h4 className={styles.programOverViewDetailTitle}>
-                  Max CTC upto
-                </h4>
-                <label className={styles.programOverViewDetailValue}>
-                  21L/annum
-                </label>
+                <div className="col-md-4">
+                  <h4 className={styles.programOverViewDetailTitle}>
+                    Max CTC upto
+                  </h4>
+                  <label className={styles.programOverViewDetailValue}>
+                    21L/annum
+                  </label>
+                </div>
               </div>
-            </div>
+            )}
           </div>
           <div class="col-lg-4 col-md-6 col-12 d-md-block d-none">
             {fromPage !== "liveClass" ? (

@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { NormalButton } from '@/components/pages'
 const inter = Inter({ subsets: ['latin'] })
-import { Banner, Description, OurCoursesCard, HaveQue, LiveClassesCard, LiveClassBanner } from '@/components/pages'
+import { Banner, Description, OurCoursesCard, LiveClassPricing, LiveClassesCard, LiveClassBanner } from '@/components/pages'
 export default function Home() {
     return (
         <>
@@ -21,6 +21,7 @@ export default function Home() {
                         <LiveClassBanner title={<span>Programmes for career advancement in technology</span>} description="Skills for your present (and your future). Get started with us." bannerImage='/img/banner-img.png' />
                         <Description title={'Description'} />
                         <LiveClassesCard/>
+                      
                         {/* <WhatOfferYou/>
             <OurCoursesCard isSwiper={false} />
            
