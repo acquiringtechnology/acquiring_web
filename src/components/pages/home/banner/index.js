@@ -2,7 +2,7 @@
 import styles from './banner.module.scss';
 import PropTypes from 'prop-types';
 import { NormalButton } from '@/components/common'
-const Banner = (props) => {
+const Banner = ({title,description,bannerImage,isBannerBtn=true}) => {
    
 
     return (
@@ -15,14 +15,19 @@ const Banner = (props) => {
                     <div className="col-md-6 h-100 d-flex align-items-center justify-content-center">
 
                         <div className={styles.bannerTitleContiner}>
-                            <h4 className={styles.bannerTitle}>{props?.title}</h4>
-                            <p>{props?.description}</p>
-                            <NormalButton className={`btn-primary me-3 ${styles.joinCourseBtn}`} title='Join LIVE Classes' />
+                            <h4 className={styles.bannerTitle}>{title}</h4>
+                            <p>{description}</p>
+                            {
+                              isBannerBtn &&  <>
+                                  <NormalButton className={`btn-primary me-3 ${styles.joinCourseBtn}`} title='Join LIVE Classes' />
                             <NormalButton className={`btn-outline-primary ${styles.joinCourseBtn}`} title='View All Courses' />
+                                </>
+                            }
+                          
                         </div>
                     </div>
                     <div className='col-md-6'>
-                        <img className={`img-fluid ${styles.bannerImage}`} src={props?.bannerImage}  />
+                        <img className={`img-fluid ${styles.bannerImage}`} src={bannerImage}  />
                         
                     </div>
                 </div>

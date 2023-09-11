@@ -34,10 +34,9 @@ const ourPromisList=[
       </Head>
       <main className={`${inter.className}`}>
 
-
         <div className='row'>
           <div className='col-12'>
-            <Banner title={<span>About RVSB Technologies</span>} description="We operate with high standards of refinement and urbanity to serve our clients. Our client servicing constitutes devising and execution of a project however, we do not limit ourselves when it comes to offering a flexible solution. We also try to understand the problems faced by our clients and only after we have provided the absolute best possible solution to the problem do we consider it a successful venture." bannerImage='/why-us.png' />
+            <Banner isBannerBtn={false} title={<span>Our mission is to empower the next generation of IT experts,</span>} description="As a software engineer, acquiring technologies is crucial to building and advancing your career. Hackathons, debates, pair programming, workshops, and lots of first principles thinking are all part of our comprehensive program! An accelerated learning program that prepares you for a career in the hottest industry." bannerImage='/why-us.png' />
 
             <OurCoursesCard isSwiper={false} />
           </div>

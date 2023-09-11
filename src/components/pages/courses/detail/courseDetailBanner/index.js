@@ -4,7 +4,7 @@ import styles from "./courseDetailBanner.module.scss";
 import { CourseCard, EnquiryForm } from "@/components/pages";
 import { NormalButton } from "@/components/common";
 
-export const CourseDetailBanner = ({ fromPage = "" }) => {
+export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
   const router = useRouter();
 
   const handleRedirectQuiz = () => {
@@ -17,12 +17,9 @@ export const CourseDetailBanner = ({ fromPage = "" }) => {
         <div className="row mb-4">
           <div className="col-lg-8 col-md-6 col-12">
             <h4 className={`mb-lg-2 mb-3 ${styles.couseTitle}`}>
-              Frontend (ReactJS)
+            {liveClassDetail?.name}
             </h4>
-            <p>
-              Learn web development by building fast, responsive, and scalable
-              web applications using React!
-            </p>
+            {liveClassDetail?.dis}
             <p>
               Live Classes available in <strong>English, தமிழ், ಕನ್ನಡ</strong>{" "}
             </p>
@@ -61,13 +58,13 @@ export const CourseDetailBanner = ({ fromPage = "" }) => {
                     Duration
                   </h4>
                   <label className={styles.programOverViewDetailValue}>
-                    3 Months / 5 Months (Weekday/Weekend)
+                  {liveClassDetail?.prgOverView?.dur}
                   </label>
                 </div>
                 <div className="col-md-4">
                   <h4 className={styles.programOverViewDetailTitle}>Format</h4>
                   <label className={styles.programOverViewDetailValue}>
-                    Online
+                  {liveClassDetail?.prgOverView?.classType}
                   </label>
                 </div>
                 {/* <div className="col-md-3">
@@ -83,7 +80,7 @@ export const CourseDetailBanner = ({ fromPage = "" }) => {
                     Max CTC upto
                   </h4>
                   <label className={styles.programOverViewDetailValue}>
-                    21L/annum
+                  {liveClassDetail?.prgOverView?.maxCtc}
                   </label>
                 </div>
               </div>

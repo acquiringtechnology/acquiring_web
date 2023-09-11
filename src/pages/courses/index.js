@@ -1,11 +1,21 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { CourseDetailBanner,CourseDetailContent,OurCoursesCard } from '@/components/pages'
-
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as courseAction from '@/redux/action/course';
+import * as syllabusAction from '@/redux/action/syllabus';
+import { useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
-export default function CourseDetail() {
+ function CourseDetail(props) {
 
+
+useEffect(()=>{
+
+    console.log('props-------------->',props)
+
+},[])
 
     return (
         <>
@@ -29,4 +39,35 @@ export default function CourseDetail() {
             </main>
         </>
     )
-}
+};
+
+const mapStatesToProps = ({
+    course: {
+      isCourseListLoader = false,
+      courseList = [],
+      isCourseCreateLoader = false,
+      isCourseDeleteLoader = false
+    },
+    syllabus: { isSyllabusListLoader = false, syllabusList = [] }
+  }) => {
+    return {
+      isCourseListLoader,
+      courseList,
+      isSyllabusListLoader,
+      syllabusList,
+      isCourseCreateLoader,
+      isCourseDeleteLoader
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators(
+      {
+        ...courseAction,
+        ...syllabusAction
+      },
+      dispatch
+    );
+  };
+  
+  export default connect(mapStatesToProps, mapDispatchToProps)(CourseDetail);

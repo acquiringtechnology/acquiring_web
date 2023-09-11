@@ -2,7 +2,7 @@ import { NormalAccordion } from "@/components/common";
 import { EnquiryForm } from "@/components/pages";
 import styles from "./liveClassCourseContent.module.scss";
 
-export const LiveClassCourseContent = () => {
+export const LiveClassCourseContent = ({liveClassDetail}) => {
   const couseContent = [
     {
       title: "Front-End Development",
@@ -56,22 +56,22 @@ export const LiveClassCourseContent = () => {
     <div className={`${styles.courseDetailContiner}`}>
       <div className="container">
         <div className="row">
-          <div className="col-lg-7 col-md-6 col-12">
+          <div className="col-lg-12 col-md-6 col-12">
             <h4 className={`mb-lg-2 mb-3 ${styles.couseTitle}`}>
               Course content
             </h4>
             <div className="row">
               <div className="col-md-12">
                 <NormalAccordion
-                  data={couseContent}
+                  data={liveClassDetail?.courseContent}
                   className={styles.liveClassAccordion}
                   titleClassName={styles.liveClassAccordionTitle}
                   subTitleClassName={styles.liveClassAccordionSubTitle}
                   renderItem={(item = []) => (
                     <ul className="list-group list-group-flush">
-                      {item?.data?.map((data, i) => (
+                      {item?.syllabus?.map((data, i) => (
                         <li key={i} className="list-group-item border-0">
-                          {data.name}
+                          {data}
                         </li>
                       ))}
                     </ul>
@@ -81,7 +81,7 @@ export const LiveClassCourseContent = () => {
             </div>
           </div>
           <div className="col-lg-5 col-md-6 col-12">
-          <EnquiryForm isDetailBanner={true} />
+          {/* <EnquiryForm isDetailBanner={true} /> */}
           </div>
         </div>
       </div>
