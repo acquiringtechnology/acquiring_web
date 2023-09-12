@@ -1,10 +1,10 @@
-import { apiCall } from 'services/api';
+import { apiCall } from  '@/services/api';
 import {
   SYLLABUS_CREATE_UPDATE_ACTIONS,
   SYLLABUS_LIST_ACTIONS,
   SYLLABUS_DELETE_ACTIONS
-} from '../../actionsType/syllabus';
-import { syllabus } from '../../../services/apiVariables';
+} from '@/redux/actionsType/course';
+import { syllabus } from '@/services/apiVariables';
 
 export const syllabusCreate = (body) => (dispatch) => {
   dispatch({

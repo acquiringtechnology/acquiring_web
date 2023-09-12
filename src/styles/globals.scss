@@ -2,6 +2,7 @@
 
 @import "swiper/css";
 @import "./scss/index.scss";
+@import "~plyr/dist/plyr.css";
 :root {
   --black-bg: #2d2f4e;
   --primary-bg: #bf1922;
@@ -65,5 +66,8 @@ footer {
       }
     }
   }
+}
+.active{
+  color: var(--primary-bg) !important;
 }
 

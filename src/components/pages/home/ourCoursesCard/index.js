@@ -13,7 +13,8 @@ const OurCoursesCard = (props) => {
 
     let {
         isSwiper = true,
-        isViewAllBtn=true
+        isViewAllBtn=true,
+        courseList
     } = props;
 
 
@@ -35,7 +36,7 @@ const OurCoursesCard = (props) => {
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((data, i) =>
+                    {courseList?.map((data, i) =>
                         <SwiperSlide key={i}>
                             <CourseCard />
                         </SwiperSlide>
@@ -43,9 +44,9 @@ const OurCoursesCard = (props) => {
                     )}
                 </Swiper> :
                     <div className='row'>
-                        {[1, 2, 3, 4, 5].map((data, i) =>
+                        {courseList?.map((data, i) =>
                             <div className="col-md-4 mb-3" key={i}>
-                                <CourseCard />
+                                <CourseCard courseData={data} />
                             </div>
                         )}
                     </div>

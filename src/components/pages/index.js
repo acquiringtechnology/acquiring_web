@@ -8,7 +8,7 @@ export {
 } from "./home";
 export { OurPromis } from "./aboutUs";
 export { EnquiryForm, ContactUsHeader } from "./contactUs";
-export { CourseDetailBanner, CourseCard, CourseDetailContent } from "./courses";
+export { CourseDetailBanner, CourseCard, CourseDetailContent,CourseVideoCard } from "./courses";
 export { QuizeTestCard, QuizeComplite, GetStartQuize } from "./quiztest";
 export {
   LiveClassBanner,

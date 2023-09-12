@@ -1,4 +1,4 @@
-import { USER_TYPE } from 'services/constants';
+import { USER_TYPE } from '@/services/constants';
 
 export const setStorage = (name = '', data = '') => {
   localStorage.setItem(name, data);

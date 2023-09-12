@@ -7,7 +7,8 @@ export const EXIST_LOCAL_STORAGE = {
   ATTENDANCE_CANDIDATE: 'attendanceCandidate',
   ACCOUNT_DETAIL: 'accountDetail',
   CURRENT_USER: 'curentUser',
-  SYLLABUS_DETAIL: 'syllabusdetail'
+  SYLLABUS_DETAIL: 'syllabusdetail',
+  COURSE_DETAIL: 'coursedetail'
 };
 
 export const WEEK_LIST = [

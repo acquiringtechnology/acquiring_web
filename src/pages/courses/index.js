@@ -5,17 +5,33 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as courseAction from '@/redux/action/course';
 import * as syllabusAction from '@/redux/action/syllabus';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
- function CourseDetail(props) {
-
+ function CourseDetail({getAllCoures}) {
+  const [courseList, setCourseList] = useState([]);
+  const [allSyllabusList, setSyllabusList] = useState([]);
 
 useEffect(()=>{
 
-    console.log('props-------------->',props)
+    // console.log('props-------------->',props)
+    handleGetCouseList()
+},[]);
 
-},[])
+
+const handleGetCouseList = async () => {
+  try {
+    const resCourseList = await getAllCoures();
+    const { data, status } = resCourseList;
+    console.log('data---------->', data);
+    if (status) {
+      setCourseList(data);
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 
     return (
         <>
@@ -30,7 +46,7 @@ useEffect(()=>{
 
                 <div className='row'>
                     <div className='col-12'>
-                        <OurCoursesCard isSwiper={false} isViewAllBtn={false} />
+                        <OurCoursesCard courseList={courseList} isSwiper={false} isViewAllBtn={false} />
                         {/* <CourseDetailContent/> */}
                     </div>
                 </div>

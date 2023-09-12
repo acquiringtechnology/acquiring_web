@@ -1,10 +1,10 @@
-import { apiCall } from 'services/api';
+import { apiCall } from '@/services/api';
 import {
   COURSE_LIST_ACTIONS,
   COURSE_CREATE_UPDATE_ACTIONS,
   COURSE_DELETE_ACTIONS
-} from '../../actionsType/course';
-import { course } from '../../../services/apiVariables';
+} from '@/redux/actionsType/course';
+import { course } from '@/services/apiVariables';
 
 export const getAllCoures = (body) => (dispatch) => {
   dispatch({
