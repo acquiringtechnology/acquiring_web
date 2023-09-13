@@ -1,10 +1,10 @@
 import styles from "./courseVideoCard.module.scss";
 import { useEffect } from "react";
 import Plyr from "plyr";
-export const CourseVideoCard = () => {
+export const CourseVideoCard = ({courseDetails,sendSelectedTopic={}}) => {
   useEffect(() => {
     const player = new Plyr("#player");
-  }, []);
+  }, [sendSelectedTopic]);
 
   return (
     <div className={`${styles.courseVideoCardContiner}`}>
@@ -12,7 +12,7 @@ export const CourseVideoCard = () => {
         <div className="col-md-12">
           <div class="plyr__video-embed" id="player">
             <iframe
-              src="https://player.vimeo.com/video/76979871?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
+              src={sendSelectedTopic?.videoUrl}
               allowfullscreen
               allowtransparency
               allow="autoplay"

@@ -41,12 +41,12 @@ export const course = {
     baseURL: 'normal'
   },
   delete: {
-    api: 'course',
+    api: 'courseBySyllabus',
     method: 'delete',
     baseURL: 'normal'
   },
   get: {
-    api: 'course',
+    api: 'courseBySyllabus',
     method: 'get',
     baseURL: 'normal'
   }

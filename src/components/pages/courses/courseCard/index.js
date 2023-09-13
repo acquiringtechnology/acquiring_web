@@ -21,7 +21,7 @@ export const CourseCard = (props) => {
   ];
 
   const handleRouteDetail = (data) => {
-    setStorage(EXIST_LOCAL_STORAGE.COURSE_DETAIL, data);
+    setStorage(EXIST_LOCAL_STORAGE.COURSE_DETAIL, JSON.stringify(data));
     router.push("/courses/detail");
   };
 

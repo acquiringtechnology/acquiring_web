@@ -5,13 +5,41 @@ import {
   CourseDetailContent,
   CourseVideoCard,
 } from "@/components/pages";
-import { useEffect } from "react";
+import {NodataFound} from '@/components/common'
+import { useEffect, useState } from "react";
 import { EXIST_LOCAL_STORAGE } from "@/services/constants";
 import { getStorage } from "@/services/helperFunctions";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function CourseDetail() {
-  useEffect(() => {}, []);
+  const [courseDetails, setCourseDetails] = useState({});
+  const [sendSelectedTopic, setSendSelectedTopic] = useState({});
+
+  useEffect(() => {
+    try {
+      const courseDetails =
+        JSON.parse(getStorage(EXIST_LOCAL_STORAGE.COURSE_DETAIL)) || {};
+      
+
+        if(courseDetails?.syllabusList.length >0){
+          if (courseDetails?.syllabusList[0]?.topics[0]) {
+            const selectedTopic =
+              courseDetails?.syllabusList[0].topics[0];
+                setSendSelectedTopic(selectedTopic);
+          }
+        }
+
+    
+
+      setCourseDetails(courseDetails);
+    } catch (e) {
+      console.log(e)
+    }
+  }, []);
+
+
+
+  
 
   return (
     <>
@@ -22,16 +50,23 @@ export default function CourseDetail() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`vh-100 ${inter.className}`}>
-      <div className="container">
-        <div className="row">
-          <div className="col-8">
-            <CourseVideoCard />
+        {courseDetails?.syllabusList?.length >0?
+        <div className="container">
+          <div className="row">
+            <div className="col-8">
+              <CourseVideoCard
+                courseDetails={courseDetails}
+                sendSelectedTopic={sendSelectedTopic}
+              />
+            </div>
+            <div className="col-4">
+              <CourseDetailContent
+                sendSelectedTopic={setSendSelectedTopic}
+                courseDetails={courseDetails}
+              />
+            </div>
           </div>
-          <div className="col-4">
-            <CourseDetailContent />
-          </div>
-          </div>
-        </div>
+        </div>: <NodataFound title="No syllabus yet"  subTitle="You can go to back by clicking below button"/>}
       </main>
     </>
   );
