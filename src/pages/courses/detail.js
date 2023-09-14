@@ -9,6 +9,7 @@ import {NodataFound} from '@/components/common'
 import { useEffect, useState } from "react";
 import { EXIST_LOCAL_STORAGE } from "@/services/constants";
 import { getStorage } from "@/services/helperFunctions";
+import { Layout } from "@/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function CourseDetail() {
@@ -50,6 +51,7 @@ export default function CourseDetail() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`vh-100 ${inter.className}`}>
+      <Layout>
         {courseDetails?.syllabusList?.length >0?
         <div className="container">
           <div className="row">
@@ -67,6 +69,7 @@ export default function CourseDetail() {
             </div>
           </div>
         </div>: <NodataFound title="No syllabus yet"  subTitle="You can go to back by clicking below button"/>}
+        </Layout>
       </main>
     </>
   );

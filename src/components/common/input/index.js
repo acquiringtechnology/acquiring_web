@@ -5,13 +5,15 @@ const NormalInput = (props) => {
         className = 'btn-primary',
         title = '',
         type='text',
-        placeholder=`Enter ${title }`
+        placeholder=`Enter ${title }`,
+        errorMessage=''
     } = props;
 
     return (
         <div className="mb-3">
             <label className="form-label">{title}</label>
                 <input {...props} type={type} className={`form-control ${className} ${styles.formInput}`} placeholder={placeholder}  />
+       <span className='text-danger'>{errorMessage}</span>
         </div>
 
     )

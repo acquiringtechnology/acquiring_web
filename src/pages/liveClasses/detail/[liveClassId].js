@@ -15,6 +15,8 @@ import {
 import { useEffect } from "react";
 import { liveClasssList } from "@/services/data/liveClasses";
 import { useState } from "react";
+import { Layout } from "@/layout";
+
 export default function LiveClassDetail() {
   const router = useRouter();
   const { liveClassId } = router.query;
@@ -38,6 +40,7 @@ export default function LiveClassDetail() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${inter.className}`}>
+        <Layout>
         <div className="row">
           <div className="col-12">
             <CourseDetailBanner
@@ -50,6 +53,7 @@ export default function LiveClassDetail() {
             <LiveClassPricing liveClassDetail={liveClassDetail}/>
           </div>
         </div>
+        </Layout>
       </main>
     </>
   );

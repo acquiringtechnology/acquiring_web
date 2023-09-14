@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { NormalButton } from '@/components/pages'
+import { Layout } from "@/layout";
 const inter = Inter({ subsets: ['latin'] })
 import { Banner, Description, OurCoursesCard, LiveClassPricing, LiveClassesCard, LiveClassBanner } from '@/components/pages'
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={`${inter.className}`}>
-
+<Layout>
 
                 <div className='row'>
                     <div className='col-12'>
@@ -29,7 +30,7 @@ export default function Home() {
             <OurCustomer/> */}
                     </div>
                 </div>
-
+                </Layout>
 
             </main>
         </>

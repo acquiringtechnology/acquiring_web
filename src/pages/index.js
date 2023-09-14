@@ -1,9 +1,17 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import { NormalButton } from '@/components/pages'
-const inter = Inter({ subsets: ['latin'] })
-import { Banner, AboutCompany, OurCoursesCard, HaveQue,OurCustomer,WhatOfferYou } from '@/components/pages'
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import { NormalButton } from "@/components/pages";
+import { Layout } from "@/layout";
+const inter = Inter({ subsets: ["latin"] });
+import {
+  Banner,
+  AboutCompany,
+  OurCoursesCard,
+  HaveQue,
+  OurCustomer,
+  WhatOfferYou,
+} from "@/components/pages";
 export default function Home() {
   return (
     <>
@@ -14,22 +22,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${inter.className}`}>
+        <Layout>
+          <div className="row">
+            <div className="col-12">
+              <Banner
+                title={
+                  <span>
+                    Expand your career opportunities with{" "}
+                    <span className="text-primary">Acquiring</span>
+                  </span>
+                }
+                description="Skills for your present (and your future). Get started with us."
+                bannerImage="/img/banner-img.png"
+              />
+              <AboutCompany />
+              <WhatOfferYou />
+              <OurCoursesCard isSwiper={false} />
 
-
-        <div className='row'>
-          <div className='col-12'>
-          <Banner title={<span>Expand your career opportunities with <span className='text-primary'>Acquiring</span></span>} description="Skills for your present (and your future). Get started with us." bannerImage='/img/banner-img.png'/>
-            <AboutCompany />
-            <WhatOfferYou/>
-            <OurCoursesCard isSwiper={false} />
-           
-            <HaveQue />
-            <OurCustomer/>
+              <HaveQue />
+              <OurCustomer />
+            </div>
           </div>
-        </div>
-
-
+        </Layout>
       </main>
     </>
-  )
+  );
 }

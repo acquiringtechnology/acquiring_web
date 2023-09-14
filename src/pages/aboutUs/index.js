@@ -1,28 +1,30 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import { Layout } from "@/layout";
 
-const inter = Inter({ subsets: ['latin'] })
-import { Banner, OurPromis,AboutCompany } from '@/components/pages'
+const inter = Inter({ subsets: ["latin"] });
+import { Banner, OurPromis, AboutCompany } from "@/components/pages";
 export default function Home() {
-
-const ourPromisList=[
-  {
-    title:"Our Vision",
-    description:"To be a customer-centric organization that simplifies solutions for everyday business challenges.",
-    img:"https://certontech.com/assets/images/element/create-account.svg",
-  },
-  {
-    title:"Our Promise",
-    description:"To provide unsurpassed services to our clients by extending competent, custom-fit and cost-effective...",
-    img:"https://certontech.com/assets/images/element/add-course.svg",
-  },
-  {
-    title:"Our Vibe",
-    description:"We believe that it takes people with different ideas, strengths, interests, and cultural backgrounds to...",
-    img:"https://certontech.com/assets/images/third.png",
-  }
-]
+  const ourPromisList = [
+    {
+      title: "Our Vision",
+      description:
+        "To be a customer-centric organization that simplifies solutions for everyday business challenges.",
+      img: "https://certontech.com/assets/images/element/create-account.svg",
+    },
+    {
+      title: "Our Promise",
+      description:
+        "To provide unsurpassed services to our clients by extending competent, custom-fit and cost-effective...",
+      img: "https://certontech.com/assets/images/element/add-course.svg",
+    },
+    {
+      title: "Our Vibe",
+      description:
+        "We believe that it takes people with different ideas, strengths, interests, and cultural backgrounds to...",
+      img: "https://certontech.com/assets/images/third.png",
+    },
+  ];
 
   return (
     <>
@@ -33,19 +35,21 @@ const ourPromisList=[
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${inter.className}`}>
+        <Layout>
+          <div className="row">
+            <div className="col-12">
+              <Banner
+                title={<span>About RVSB Technologies</span>}
+                description="We operate with high standards of refinement and urbanity to serve our clients. Our client servicing constitutes devising and execution of a project however, we do not limit ourselves when it comes to offering a flexible solution. We also try to understand the problems faced by our clients and only after we have provided the absolute best possible solution to the problem do we consider it a successful venture."
+                bannerImage="/why-us.png"
+              />
 
-
-        <div className='row'>
-          <div className='col-12'>
-            <Banner title={<span>About RVSB Technologies</span>} description="We operate with high standards of refinement and urbanity to serve our clients. Our client servicing constitutes devising and execution of a project however, we do not limit ourselves when it comes to offering a flexible solution. We also try to understand the problems faced by our clients and only after we have provided the absolute best possible solution to the problem do we consider it a successful venture." bannerImage='/why-us.png' />
-
-            <OurPromis ourPromisList={ourPromisList} />
-            <AboutCompany/>
+              <OurPromis ourPromisList={ourPromisList} />
+              <AboutCompany />
+            </div>
           </div>
-        </div>
-
-
+        </Layout>
       </main>
     </>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import { Layout } from "@/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 import { Banner, ContactUsHeader, EnquiryForm } from "@/components/pages";
@@ -14,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${inter.className}`}>
+        <Layout>
         <div className="row">
           <div className="col-12">
             <ContactUsHeader />
@@ -26,6 +27,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </Layout>
       </main>
     </>
   );

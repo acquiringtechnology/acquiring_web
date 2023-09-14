@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "@/styles/globals.scss";
 import Script from "next/script";
-import { Layout } from "@/layout";
+
 import store from '@/redux/store';
 import { Provider } from 'react-redux';
 export default function App({ Component, pageProps }) {
@@ -10,11 +10,10 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout>
+ 
       <Provider store={store}>
       <Component {...pageProps} />
       </Provider>
      
-    </Layout>
   );
 }

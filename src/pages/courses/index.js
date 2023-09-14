@@ -6,6 +6,8 @@ import {
   OurCoursesCard,
 } from "@/components/pages";
 
+import { Layout } from "@/layout";
+
 const inter = Inter({ subsets: ["latin"] });
 function CourseDetail({ getAllCoures }) {
   return (
@@ -17,6 +19,7 @@ function CourseDetail({ getAllCoures }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${inter.className}`}>
+        <Layout>
         <div className="row">
           <div className="col-12">
             <OurCoursesCard
@@ -26,6 +29,7 @@ function CourseDetail({ getAllCoures }) {
             {/* <CourseDetailContent/> */}
           </div>
         </div>
+        </Layout>
       </main>
     </>
   );

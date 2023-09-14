@@ -1,6 +1,6 @@
-import { apiCall } from 'services/api';
-import { AUTHENTICATE_LOGIN_ACTIONS } from '../../actionsType/authenticate';
-import { authenticate } from '../../../services/apiVariables';
+import { apiCall } from '@/services/api';
+import { AUTHENTICATE_LOGIN_ACTIONS } from '@/redux/actionsType/authenticate';
+import { authenticate } from '@/services/apiVariables';
 // import { Toast } from '../../../services/toast';
 
 export const userLogin = (body) => (dispatch) => {
