@@ -3,6 +3,16 @@ export const authenticate = {
     api: 'login',
     method: 'post',
     baseURL: 'normal'
+  },
+  register: {
+    api: 'register',
+    method: 'post',
+    baseURL: 'normal'
+  },
+  emailVerificasion: {
+    api: 'register/emailVerificasion',
+    method: 'post',
+    baseURL: 'normal'
   }
 };
 

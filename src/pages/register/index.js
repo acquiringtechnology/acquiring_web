@@ -1,62 +1,47 @@
 import Link from "next/link";
-
 import { AuthLayout } from "@/layout/authLayout";
 import { NormalInput, NormalSelect, NormalButton } from "@/components/common";
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as authAction from '@/redux/action/authenticate';
+import { RegisterForm, EmailVerification } from "@/components/pages";
+import { useRouter } from "next/router";
+import { connect } from "react-redux";
+import SimpleReactValidator from "simple-react-validator";
+import { bindActionCreators } from "redux";
+import * as authenticateAction from "@/redux/action/authenticate";
+import { setStorage } from "@/services/helperFunctions";
+import { EXIST_LOCAL_STORAGE, USER_TYPE } from "@/services/constants";
+import { useEffect, useRef, useState } from "react";
 
-export default function register() {
+
+function Register(props) {
+  const router = useRouter();
+  const { emailVerification } = router.query;
+
+  console.log("emailVerification---------->", emailVerification);
+
   return (
     <AuthLayout>
       <div className="d-flex flex-row align-items-center">
         <img className="p-4 w-50" src={"/logo.svg"} alt="" />{" "}
       </div>
-      <div className="d-flex">
-        <div className="mt-4">
-          <h3>Sign up</h3>
-          <p>Start Managing your Learners from one place</p>
-        </div>
-      </div>
-
-      <div className="d-flex flex-column mt-4">
-        <div className="row">
-          <div className="col-md-12">
-            <NormalInput title="First Name" />
-            <span className="form-text text-priamry">
-              *This name will appear in certificates.
-            </span>
-          </div>
-          <div className="col-md-12">
-            <NormalInput title="Last Name" />
-          </div>
-          <div className="col-md-12">
-            <NormalInput title="Email address" />
-          </div>
-
-          <div className="col-md-12">
-            <NormalInput title="Password" />
-          </div>
-          <div className="col-md-12">
-            <NormalInput title="Mobile number" />
-          </div>
-          <div className="col-md-12">
-            <NormalButton
-              className="btn btn-primary px-4 w-100"
-              type="submit"
-              title="Submit"
-            />
-          </div>
-          <div className="col-md-12">
-          <hr/>
-            <p>
-              Already registered User? <Link href="signIn">Log in</Link>
-            </p>
-          </div>
-        </div>
-      </div>
+      {emailVerification === "true" ? (
+        <EmailVerification />
+      ) : (
+        <RegisterForm {...props} />
+      )}
     </AuthLayout>
   );
 }
 
+const mapStatesToProps = ({ authenticate: { isloginLoader = false } }) => {
+  return { isloginLoader };
+};
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    {
+      ...authenticateAction,
+    },
+    dispatch
+  );
+};
+export default connect(mapStatesToProps, mapDispatchToProps)(Register);

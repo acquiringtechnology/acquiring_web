@@ -19,3 +19,4 @@ export {
   LiveClassPricing,
   SyllabusAction
 } from "./liveClasses";
+export {RegisterForm,EmailVerification} from './register'
