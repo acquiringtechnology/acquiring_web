@@ -91,6 +91,11 @@ export const RegisterForm = (props) => {
               onChange={handleInputChange}
               name="fName"
               value={registerFormObj.name.fName}
+              errorMessage={validator.current.message(
+                'First Name',
+                registerFormObj.name.fName,
+                'required'
+              )}
             />
             <span className="form-text text-priamry">
               *This name will appear in certificates.
@@ -110,6 +115,11 @@ export const RegisterForm = (props) => {
               onChange={handleInputChange}
               name="email"
               value={registerFormObj.email}
+              errorMessage={validator.current.message(
+                'Email',
+                registerFormObj.email,
+                'required|email'
+              )} 
             />
           </div>
 
@@ -119,6 +129,11 @@ export const RegisterForm = (props) => {
               onChange={handleInputChange}
               name="password"
               value={registerFormObj.password}
+              errorMessage={validator.current.message(
+                'Password',
+                registerFormObj.password,
+                'required'
+              )} 
             />
           </div>
           <div className="col-md-12">
@@ -127,6 +142,11 @@ export const RegisterForm = (props) => {
               onChange={handleInputChange}
               name="phone"
               value={registerFormObj.phone}
+              errorMessage={validator.current.message(
+                'phone',
+                registerFormObj.phone,
+                'required'
+              )} 
             />
           </div>
           <div className="col-md-12">

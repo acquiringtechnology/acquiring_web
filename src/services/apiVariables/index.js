@@ -61,3 +61,18 @@ export const course = {
     baseURL: 'normal'
   }
 };
+
+export const courseEnquiry = {
+  create: {
+    api: 'courseEnquiry',
+    method: 'post',
+    baseURL: 'normal'
+  },
+  otpVerify: {
+    api: 'courseEnquiryOtpVerify',
+    method: 'post',
+    baseURL: 'normal'
+  },
+ 
+};
+
