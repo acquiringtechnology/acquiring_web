@@ -4,24 +4,35 @@ import { useRouter } from "next/router";
 import { NavLink, NormalButton } from "@/components/common";
 import Image from "next/image";
 import { useEffect } from "react";
+import _ from 'lodash'
 import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+import { getStorage, setStorage } from "@/services/helperFunctions";
+import { EXIST_LOCAL_STORAGE } from "@/services/constants";
 export const Header = () => {
   const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [userDetails, setUserDetails] = useState({});
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   useEffect(() => {
+   try{
     window.addEventListener("scroll", handleverticalScroll);
+    const curentUserData = JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+    setUserDetails(curentUserData);
+   }catch(e){
+
+   }
   }, []);
 
   const handleverticalScroll = () => {
-    //! Put the class name that you want to use
+   try{
+     //! Put the class name that you want to use
     // Class name that will be added to the navbar element in the "scrolled" state
     const SCROLLED_STATE_CLASS = "fixed-top shadow";
 
@@ -37,11 +48,23 @@ export const Header = () => {
 
     // If scroll value is more than 0 - means the page is scrolled, add or remove class based on that
     if (scroll > 85) {
-      navbar.classList.add("fixed-top", "shadow", "transition4");
+      navbar.classList?.add("fixed-top", "shadow", "transition4");
     } else {
-      navbar.classList.remove("fixed-top", "shadow", "transition4");
+      navbar.classList?.remove("fixed-top", "shadow", "transition4");
     }
+   }catch(e){
+    
+   }
   };
+
+
+  const handleSiginOut=()=>{
+
+    const curentUserData = setStorage(EXIST_LOCAL_STORAGE.CURRENT_USER,"");
+    setUserDetails(curentUserData);
+    router.push('/')
+    
+  }
 
   return (
     <nav
@@ -111,7 +134,9 @@ export const Header = () => {
               </span>
             </li>
           </ul>
-          <div class="d-flex mt-md-4 mt-sm-4">
+          <div class="d-flex">
+            {/* <a  title="Contact Us"className={`btn ${styles.contactUs}`}  onClick={() => router.push("/contactUs")}><i class="fa-solid fa-phone"></i></a>
+            <a  title="Contact Us"className={`btn ${styles.contactUs}`}  onClick={() => router.push("/contactUs")}><i class="fas fa-sign-in"></i></a> */}
             <NormalButton
               className="btn btn-primary px-4"
               type="submit"
@@ -121,6 +146,13 @@ export const Header = () => {
           </div>
         </div>
       </div>
+
+      {_.isEmpty(userDetails)  && <div className="d-flex" >
+        <NormalButton title="Login" className="btn text-primary"   onClick={() => router.push("/signIn")}/>
+        <NormalButton title="Sign up" className="btn btn-outline-primary px-4"  onClick={() => router.push("/register")}/>
+      </div>}
+
+      {!_.isEmpty(userDetails)  &&
       <Dropdown
         isOpen={dropdownOpen}
         toggle={toggle}
@@ -140,18 +172,18 @@ export const Header = () => {
                 />
               </div>
               <div class="flex-grow-1 ms-3">
-                <h4 className={`mb-1 ${styles.userName}`}>Anvesh</h4>
-                <small>kb.anvesh1996@gmail.com</small>
+                <h4 className={`mb-1 ${styles.userName}`}>{userDetails?.name?.fName} {userDetails?.name?.lName}</h4>
+                <small>{userDetails?.email}</small>
               </div>
             </div>
           </DropdownItem>
 
           <DropdownItem divider />
-          <DropdownItem>My Profile</DropdownItem>
-          <DropdownItem>Change Password</DropdownItem>
-          <DropdownItem>Sign out</DropdownItem>
+          {/* <DropdownItem>My Profile</DropdownItem>
+          <DropdownItem>Change Password</DropdownItem> */}
+          <DropdownItem onClick={handleSiginOut}>Sign out</DropdownItem>
         </DropdownMenu>
-      </Dropdown>
+      </Dropdown>}
     </nav>
   );
 };

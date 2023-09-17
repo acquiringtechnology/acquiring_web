@@ -17,12 +17,12 @@ export const RegisterForm = (props) => {
   const [isFormLoder, setIsFormLoder] = useState(false);
   const [registerFormObj, setRegisterFormObj] = useState({
     name: {
-      fName: "Anvesh",
-      lName: "Blaji",
+      fName: "",
+      lName: "",
     },
-    email: "anveshbabu@cholamsispl.com",
-    password: "anvesh@123",
-    phone: "9943631660",
+    email: "",
+    password: "",
+    phone: "",
     userType: USER_TYPE.CANDIDATE,
   });
   // {"name":{"fName":"Anvesh","lName":"Blaji"},"email":"anveshbabu@cholamsispl.com","password":"anvesh@123","phone":"9943631660","userType":3}
@@ -128,6 +128,7 @@ export const RegisterForm = (props) => {
               title="Password"
               onChange={handleInputChange}
               name="password"
+              type="password"
               value={registerFormObj.password}
               errorMessage={validator.current.message(
                 'Password',

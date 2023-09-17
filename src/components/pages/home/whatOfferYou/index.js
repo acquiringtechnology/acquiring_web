@@ -19,11 +19,11 @@ const WhatOfferYou = (props) => {
             subTitle: "This is some text within a card body.",
             icon: "fa-solid fa-tv"
         },
-        {
-            title: "For Corporates",
-            subTitle: "This is some text within a card body.",
-            icon: "fa-solid fa-search"
-        }
+        // {
+        //     title: "For Corporates",
+        //     subTitle: "This is some text within a card body.",
+        //     icon: "fa-solid fa-search"
+        // }
 
     ]
 

@@ -5,6 +5,7 @@ import {
   SYLLABUS_DELETE_ACTIONS
 } from '@/redux/actionsType/course';
 import { syllabus } from '@/services/apiVariables';
+import { Toast } from "@/services/toast";
 
 export const syllabusCreate = (body) => (dispatch) => {
   dispatch({
@@ -21,7 +22,8 @@ export const syllabusCreate = (body) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
-        console.log('userLogin api catch', error);
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
         dispatch({
           type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_ERROR
           //   payload: data.data
@@ -47,7 +49,8 @@ export const syllabusUpdate = (body, id) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
-        console.log('userLogin api catch', error);
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
         dispatch({
           type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_ERROR
           //   payload: data.data
@@ -73,7 +76,8 @@ export const syllabusDeleteById = (id) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
-        console.log('userLogin api catch', error);
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
         dispatch({
           type: SYLLABUS_DELETE_ACTIONS.SYLLABUS_DELETE_ACTIONS_ERROR
           //   payload: data.data
@@ -98,7 +102,8 @@ export const getAllsyllabus = (body) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
-        console.log('userLogin api catch', error);
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
         dispatch({
           type: SYLLABUS_LIST_ACTIONS.SYLLABUS_LIST_ACTIONS_ERROR
           //   payload: data.data

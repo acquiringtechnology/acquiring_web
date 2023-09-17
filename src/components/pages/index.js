@@ -20,3 +20,4 @@ export {
   SyllabusAction
 } from "./liveClasses";
 export {RegisterForm,EmailVerification} from './register'
+export {TheStoryBehindOur,OueMissionAndVission,Leadership,JoinAndTeamUpWithUs} from './whyUs'

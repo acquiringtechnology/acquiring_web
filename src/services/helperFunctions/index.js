@@ -30,3 +30,8 @@ export const getUserType = (userType) => {
       return 'No User';
   }
 };
+
+export const isEmptyObj=(obj={})=> {
+  console.log('obj-----------?',obj)
+  return Object?.keys(obj).length === 0;
+}

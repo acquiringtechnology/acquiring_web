@@ -5,6 +5,7 @@ import {
   COURSE_DELETE_ACTIONS
 } from '@/redux/actionsType/course';
 import { course } from '@/services/apiVariables';
+import { Toast } from "@/services/toast";
 
 export const getAllCoures = (body) => (dispatch) => {
   dispatch({
@@ -21,6 +22,8 @@ export const getAllCoures = (body) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
         dispatch({
           type: COURSE_LIST_ACTIONS.COURSE_LIST_ACTIONS_ERROR
           //   payload: data.data
@@ -45,6 +48,8 @@ export const couresCreate = (body) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
         dispatch({
           type: COURSE_CREATE_UPDATE_ACTIONS.COURSE_CREATE_UPDATE_ACTIONS_ERROR
           //   payload: data.data
@@ -70,6 +75,8 @@ export const couresUpdate = (body, id) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
         dispatch({
           type: COURSE_CREATE_UPDATE_ACTIONS.COURSE_CREATE_UPDATE_ACTIONS_ERROR
           //   payload: data.data
@@ -95,6 +102,8 @@ export const couresDeleteById = (id) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
         dispatch({
           type: COURSE_DELETE_ACTIONS.COURSE_DELETE_ACTIONS_ERROR
           //   payload: data.data
