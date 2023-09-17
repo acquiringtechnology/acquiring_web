@@ -5,18 +5,29 @@ import {
   CourseDetailContent,
   CourseVideoCard,
 } from "@/components/pages";
-import {NodataFound} from '@/components/common'
+import {NodataFound, NormalButton} from '@/components/common'
 import { useEffect, useState } from "react";
 import { EXIST_LOCAL_STORAGE } from "@/services/constants";
 import { getStorage } from "@/services/helperFunctions";
 import { Layout } from "@/layout";
+import _ from 'lodash';
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function CourseDetail() {
+  const router = useRouter();
   const [courseDetails, setCourseDetails] = useState({});
   const [sendSelectedTopic, setSendSelectedTopic] = useState({});
-
+  const [userDetails, setUserDetails] = useState({});
   useEffect(() => {
+    handleGetCourseDetails();
+    handleCheckIslogin()
+  }, []);
+
+
+
+
+  const handleGetCourseDetails=()=>{
     try {
       const courseDetails =
         JSON.parse(getStorage(EXIST_LOCAL_STORAGE.COURSE_DETAIL)) || {};
@@ -36,10 +47,16 @@ export default function CourseDetail() {
     } catch (e) {
       console.log(e)
     }
-  }, []);
+  };
 
+  const handleCheckIslogin=()=>{
+    try{
+      const curentUserData = JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+      setUserDetails(curentUserData);
+    }catch(e){
 
-
+    }
+  }
   
 
   return (
@@ -56,10 +73,12 @@ export default function CourseDetail() {
         <div className="container">
           <div className="row">
             <div className="col-8">
+
+              {!_.isEmpty(userDetails)? 
               <CourseVideoCard
                 courseDetails={courseDetails}
                 sendSelectedTopic={sendSelectedTopic}
-              />
+              />: <LogOut/>}
             </div>
             <div className="col-4">
               <CourseDetailContent
@@ -73,4 +92,29 @@ export default function CourseDetail() {
       </main>
     </>
   );
+}
+
+
+const LogOut=()=>{
+return(
+  <div className="row justify-content-center align-items-center h-100">
+    <div className="col-md-12 ">
+      <div className="ratio ratio-16x9">
+     <div className="bg-dark">
+    <div className="row justify-content-center align-items-center h-100">
+      <div className="col-12 text-center">
+      <h4 className="text-white">To play this video</h4>
+      <NormalButton title="Login Now" onClick={()=>router.push('/signIn')}  />
+      </div>
+
+    </div>
+     </div>
+      </div>
+     
+
+    </div>
+
+  </div>
+)
+
 }
