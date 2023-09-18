@@ -7,8 +7,11 @@ export const AuthLayout = ({children}) => {
         {children}
         </div>
         <div
-          className={`${styles[`auth-img`]} col-lg-8 d-sm-none d-md-none  d-lg-block d-flex flex-column justify-content-center align-items-center`}
-        ></div>
+          className={`${styles[`auth-img`]} col-lg-8 d-sm-none d-md-none text-center d-lg-block d-flex flex-column justify-content-center align-items-center`}
+        >
+          <img src='/img/login_bg.jpg' className='img-fluid mh-100' alt='logim' />
+
+        </div>
       </div>
     </div>
   );
