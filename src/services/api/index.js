@@ -1,11 +1,13 @@
 import { axiosInstance } from '../utilities';
-import { EXIST_LOCAL_STORAGE } from '../constants';
+import { EXIST_LOCAL_STORAGE,BASE_URL } from '../constants';
 
 // local api base url
 const getMicroServiceURL = (baseURL = '') => {
+  console.log('process.env.NEXT_APP_ENV------->',process.env.NEXT_APP_ENV)
+  console.log('process.env.NEXT_PUBLIC_APP_ENV------->',process.env.NEXT_PUBLIC_APP_ENV)
   switch (baseURL) {
     case 'normal':
-      return 'http://localhost:3033/'; // need change dev
+      return BASE_URL; // need change dev
     case 'auth':
     case 'test':
       return 'https://jsonplaceholder.typicode.com';

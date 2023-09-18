@@ -142,6 +142,7 @@ export const RegisterForm = (props) => {
               title="Mobile number"
               onChange={handleInputChange}
               name="phone"
+              type="number"
               value={registerFormObj.phone}
               errorMessage={validator.current.message(
                 'phone',

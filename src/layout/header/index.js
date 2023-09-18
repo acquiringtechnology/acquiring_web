@@ -13,6 +13,7 @@ import {
 } from "reactstrap";
 import { getStorage, setStorage } from "@/services/helperFunctions";
 import { EXIST_LOCAL_STORAGE } from "@/services/constants";
+import Link from "next/link";
 export const Header = () => {
   const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -72,14 +73,14 @@ export const Header = () => {
       className={`navbar navbar-expand-lg pe-4 bg-body-tertiary ${styles.customNavbar}`}
     >
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" href="/">
           <Image
             width={50}
             height={50}
             className={styles.brandImage}
             src={"/logo.svg"}
           />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -108,7 +109,7 @@ export const Header = () => {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" href="/liveClasses">
-                LIVE Classes
+              Live Classes
               </NavLink>
             </li>
             <li className="nav-item">

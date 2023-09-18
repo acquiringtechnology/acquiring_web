@@ -20,7 +20,7 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
     email: "azxy@gmail.com",
     phone: "9943631660",
     liveClassId: "",
-    status: 1,
+    status: 0,
     comments: "",
   });
 

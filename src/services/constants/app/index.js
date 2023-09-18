@@ -20,3 +20,5 @@ export const WEEK_LIST = [
   { value: 5, label: 'Fri' },
   { value: 6, label: 'Sat' }
 ];
+
+export const BASE_URL=  process.env.NEXT_PUBLIC_APP_ENV== 'PROD'?'https://acquiringtechnology.onrender.com/':'http://localhost:3033/'
