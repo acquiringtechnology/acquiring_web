@@ -9,7 +9,7 @@ import {
   TheStoryBehindOur,
   JoinAndTeamUpWithUs,
   OurCoursesCard,
-  Leadership
+  Leadership,
 } from "@/components/pages";
 export default function Home() {
   const ourPromisList = [
@@ -55,10 +55,10 @@ export default function Home() {
                 description="As a software engineer, acquiring technologies is crucial to building and advancing your career. Hackathons, debates, pair programming, workshops, and lots of first principles thinking are all part of our comprehensive program! An accelerated learning program that prepares you for a career in the hottest industry."
                 bannerImage="/img/why-us.png"
               />
-<OueMissionAndVission/>
-<TheStoryBehindOur/>
-<Leadership/>
-              <JoinAndTeamUpWithUs/>
+              <OueMissionAndVission />
+              <TheStoryBehindOur />
+              <Leadership />
+              <JoinAndTeamUpWithUs />
             </div>
           </div>
         </Layout>
