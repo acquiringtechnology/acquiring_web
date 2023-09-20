@@ -22,7 +22,7 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
                     />
                     <NormalButton
                       className={`btn-outline-primary ${styles.joinCourseBtn}`}
-                      title="Join Live classes"
+                      title="View All Courses"
                       onClick={()=>router.push('/courses')}
                     />
                   </>
