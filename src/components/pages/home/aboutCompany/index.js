@@ -35,7 +35,7 @@ const AboutCompany = () => {
                             <i className="fa-solid fa-arrow-right-long me-2 "/>  Work with a dedicated career counsellor
                             </li>
                             <li className={`nav-item ${styles.aboutDescriptionList}`}>
-                            <i className="fa-solid fa-arrow-right-long me-2"/>  Placement Assistance and assurance
+                            <i className="fa-solid fa-arrow-right-long me-2"/> Placement Assistance
                             </li>
                         </ul>
 

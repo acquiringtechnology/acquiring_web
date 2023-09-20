@@ -11,12 +11,12 @@ const WhatOfferYou = (props) => {
     const offerList = [
         {
             title: "Online Streaming Courses",
-            subTitle: "This is some text within a card body.",
+            subTitle: "Online courses for learning and upskilling",
             icon: "fa-solid fa-video"
         },
         {
-            title: "LIVE Classes",
-            subTitle: "This is some text within a card body.",
+            title: "Live Classess",
+            subTitle: "Providing guaranteed job placement support through live classes",
             icon: "fa-solid fa-tv"
         },
         // {

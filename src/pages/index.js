@@ -32,7 +32,7 @@ export default function Home() {
                     <span className="text-primary">Acquiring</span>
                   </span>
                 }
-                description="Skills for your present (and your future). Get started with us."
+                description="Acquire Skills for your present (and future). Get started with us"
                 bannerImage="/img/banner-img.png"
               />
               <AboutCompany />
@@ -40,7 +40,7 @@ export default function Home() {
               <OurCoursesCard isSwiper={false} />
 
               <HaveQue />
-              <OurCustomer />
+              {/* <OurCustomer /> */}
             </div>
           </div>
         </Layout>

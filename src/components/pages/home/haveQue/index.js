@@ -1,9 +1,10 @@
 
 import styles from './haveQue.module.scss';
-import { NormalButton } from '@/components/common'
+import { NormalButton } from '@/components/common';
+import { useRouter } from "next/router";
 const HaveQue = () => {
 
-
+    const router = useRouter();
     return (
         <section className={`${styles.haveQueContiner}`}>
             <div className='container '>
@@ -15,7 +16,7 @@ const HaveQue = () => {
                     */}
                                           </div>
                     <div className="col-lg-6 text-center">
-                        <NormalButton className={`btn-outline-primary ${styles['join-team-btn']}`} title='Contact Us' />
+                        <NormalButton onClick={()=>router.push('/contactUs')} className={`btn-outline-primary ${styles['join-team-btn']}`} title='Contact Us' />
                     </div>
 
                 </div>

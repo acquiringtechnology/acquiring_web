@@ -1,6 +1,7 @@
 
+import Link from 'next/link'
 import styles from './footer.module.scss'
-import Image from 'next/image';
+
 // import profilePic from '../../../public/logo.svg';
 export const Footer = () => {
 
@@ -16,17 +17,17 @@ export const Footer = () => {
             </div>
             <div className="row gy- gx-5">
                 <div className="col-lg-4 col-md-6">
-                    <h5 className="h1 text-muted"><Image width={50} height={50} className={styles.brandImage} src={'/logo.svg'}/></h5>
+                    <h5 className="h1 text-muted"><img width={50} height={50} className={styles.brandImage} src={'/logo.svg'}/></h5>
                     <p className="small text-muted">Skills for your present (and your future). Get started with us.</p>
                     <p className="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a className="text-primary" href="#">Acquiring</a></p>
                 </div>
                 <div className="col-lg-3 col-md-6">
                     <h5 className="text-muted mb-3">Quick links</h5>
                     <ul className="list-unstyled text-muted">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">All Courses</a></li>
-                        <li><a href="#">LIVE Classes</a></li>
-                        <li><a href="#">Why Us?</a></li>
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/courses">All Courses</Link></li>
+                        <li><Link href="/liveClasses">LIVE Classes</Link></li>
+                        <li><Link href="/whyUs">Why Us?</Link></li>
                     </ul>
                 </div>
                 {/* <div className="col-lg-2 col-md-6">

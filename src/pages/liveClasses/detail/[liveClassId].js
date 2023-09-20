@@ -48,7 +48,7 @@ export default function LiveClassDetail() {
               fromPage={"liveClass"}
             />
             <LiveClassCourseContent liveClassDetail={liveClassDetail} />
-            <SyllabusAction/>
+            <SyllabusAction  liveClassDetail={liveClassDetail}/>
             <TechnologiesCovered liveClassDetail={liveClassDetail} />
             <LiveClassPricing liveClassDetail={liveClassDetail}/>
           </div>

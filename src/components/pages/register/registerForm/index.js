@@ -39,9 +39,9 @@ export const RegisterForm = (props) => {
         console.log("status-------------->", status);
         if (status) {
           router.push({
-            pathname: '/register',
-            query: { emailVerification: 'true' },
-        });
+            pathname: "/register",
+            query: { emailVerification: "true" },
+          });
         }
       } else {
         validator.current.showMessages();
@@ -92,9 +92,9 @@ export const RegisterForm = (props) => {
               name="fName"
               value={registerFormObj.name.fName}
               errorMessage={validator.current.message(
-                'First Name',
+                "First Name",
                 registerFormObj.name.fName,
-                'required'
+                "required"
               )}
             />
             <span className="form-text text-priamry">
@@ -116,10 +116,10 @@ export const RegisterForm = (props) => {
               name="email"
               value={registerFormObj.email}
               errorMessage={validator.current.message(
-                'Email',
+                "Email",
                 registerFormObj.email,
-                'required|email'
-              )} 
+                "required|email"
+              )}
             />
           </div>
 
@@ -131,10 +131,10 @@ export const RegisterForm = (props) => {
               type="password"
               value={registerFormObj.password}
               errorMessage={validator.current.message(
-                'Password',
+                "Password",
                 registerFormObj.password,
-                'required'
-              )} 
+                "required"
+              )}
             />
           </div>
           <div className="col-md-12">
@@ -143,12 +143,14 @@ export const RegisterForm = (props) => {
               onChange={handleInputChange}
               name="phone"
               type="number"
+              inputGroup={true}
+              inputGroupRightText='+91'
               value={registerFormObj.phone}
               errorMessage={validator.current.message(
-                'phone',
+                "phone",
                 registerFormObj.phone,
-                'required'
-              )} 
+                "required"
+              )}
             />
           </div>
           <div className="col-md-12">

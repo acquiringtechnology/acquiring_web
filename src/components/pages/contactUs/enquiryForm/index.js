@@ -7,19 +7,26 @@ import SimpleReactValidator from "simple-react-validator";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as courseEnquiryAction from "@/redux/action/courseEnquiry";
-import {OtpVerifyModel} from './otpVerifyModel'
+import { OtpVerifyModel } from "./otpVerifyModel";
 
-const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVerify }) => {
+const EnquiryForm = ({
+  fromPage = false,
+  courseEnquiryCreate,
+  courseEnquiryOtpVerify,
+  liveClassId,
+  isFromSyllabus=false,
+  oncloseSyllabusEnquiryFrom=()=>{}
+}) => {
   const validator = useRef(new SimpleReactValidator());
   const [, forceUpdate] = useState(0);
   const [isFormLoder, setIsFormLoder] = useState(false);
   const [isOtpModelOpen, setIsOtpModelOpen] = useState(false);
   const [courseEnquiryData, setCourseEnquiryData] = useState({});
   const [courseEnquiryFormObj, setCourseEnquiryFormObj] = useState({
-    name: "JayaShree",
-    email: "azxy@gmail.com",
-    phone: "9943631660",
-    liveClassId: "",
+    name: "",
+    email: "",
+    phone: "",
+    liveClassId: liveClassId ? liveClassId : "",
     status: 0,
     comments: "",
   });
@@ -27,7 +34,13 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
   const [courseList, setCourseList] = useState([]);
 
   useEffect(() => {
-  
+    setCourseEnquiryFormObj({
+      ...courseEnquiryFormObj,
+      liveClassId,
+    });
+  }, [liveClassId]);
+
+  useEffect(() => {
     const resList = liveClasssList.map(({ name, id }) => ({
       value: id,
       label: name,
@@ -35,18 +48,18 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
     setCourseList(resList);
   }, []);
 
-  const handleInputChange = (event,selectName) => {
+  const handleInputChange = (event, selectName) => {
     if (!event?.target) {
       event.target = {
         ...event,
-        name:selectName
+        name: selectName,
       };
     }
     console.log("event----------->", event);
     const {
       target: { value, checked, type, name },
     } = event;
-    console.log("event----------->", name,value);
+    console.log("event----------->", name, value);
     setCourseEnquiryFormObj({
       ...courseEnquiryFormObj,
       [name]: type === "checkbox" ? checked : value,
@@ -55,22 +68,25 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
 
   const handleFormSubmit = async () => {
     try {
-      
       const formValid = validator.current.allValid();
-      console.log('courseEnquiryFormObj---------->',courseEnquiryFormObj)
+      console.log("courseEnquiryFormObj---------->", courseEnquiryFormObj);
       if (formValid) {
-        
         setIsFormLoder(true);
-       
-        const courseEnquiryReq = await courseEnquiryCreate(courseEnquiryFormObj);
-        console.log('fom')
+
+        const courseEnquiryReq = await courseEnquiryCreate(
+          courseEnquiryFormObj
+        );
+        console.log("fom");
         setIsFormLoder(false);
-        const { status,data:{courseEnquiryData }} = courseEnquiryReq;
-       
+        const {
+          status,
+          data: { courseEnquiryData },
+        } = courseEnquiryReq;
+
         if (status) {
-          console.log('courseEnquiryData---------->',courseEnquiryData)
+          console.log("courseEnquiryData---------->", courseEnquiryData);
           setIsOtpModelOpen(true);
-          setCourseEnquiryData(courseEnquiryData)
+          setCourseEnquiryData(courseEnquiryData);
         }
       } else {
         validator.current.showMessages();
@@ -78,7 +94,7 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
       }
     } catch (e) {
       // setIsFormLoder(false);
-      console.log(e)
+      console.log(e);
     }
   };
 
@@ -86,9 +102,9 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
     setIsOtpModelOpen(!isOtpModelOpen);
   };
 
-  const handlOtpVerifySucess=()=>{
+  const handlOtpVerifySucess = () => {
     handleCloseOtpModel();
-    setCourseEnquiryData({})
+    setCourseEnquiryData({});
     setCourseEnquiryFormObj({
       name: "",
       email: "",
@@ -96,19 +112,20 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
       liveClassId: "",
       status: 1,
       comments: "",
-    })
-
-  }
- 
+    });
+    if(isFromSyllabus){
+      oncloseSyllabusEnquiryFrom()
+    }
+  };
 
   return (
-    <div className={` mb-5 ${styles.enquiryFormontainer}`}>
+    <div className={`  ${!isFromSyllabus && 'mb-5' } ${styles.enquiryFormontainer}`}>
       <div className="card border-0 shadow">
         <div className="card-body">
           <div className="row">
-            <div className="col-md-12">
+           {!isFromSyllabus && <div className="col-md-12">
               <h4 className={`mb-3 ${styles.title}`}>Start Your Career Now</h4>
-            </div>
+            </div>}
             <div className="col-md-12">
               <NormalInput
                 title="Name"
@@ -148,18 +165,17 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
                 value={courseEnquiryFormObj.phone}
               />
             </div>
+
             {fromPage !== "liveClass" && (
               <div className="col-md-12 mb-2">
                 <NormalSelect
                   title="Course Preference"
                   options={courseList}
-                  onChange={(e)=>handleInputChange(e,'liveClassId')}
+                  onChange={(e) => handleInputChange(e, "liveClassId")}
                   name="liveClassId"
-                  value={
-                    courseList?.find(
-                      ({ value }) => value === courseEnquiryFormObj.liveClassId
-                    )
-                  }
+                  value={courseList?.find(
+                    ({ value }) => value === courseEnquiryFormObj.liveClassId
+                  )}
                   errorMessage={validator.current.message(
                     "Course",
                     courseEnquiryFormObj.liveClassId,
@@ -180,19 +196,26 @@ const EnquiryForm = ({ fromPage = false, courseEnquiryCreate,courseEnquiryOtpVer
             </div>
           </div>
         </div>
-
-        
       </div>
 
-      <OtpVerifyModel isOpen={isOtpModelOpen} courseEnquiryData={courseEnquiryData} otpVerifySucess={handlOtpVerifySucess} courseEnquiryOtpVerify={courseEnquiryOtpVerify} toggle={handleCloseOtpModel}/>
+      <OtpVerifyModel
+        isOpen={isOtpModelOpen}
+        courseEnquiryData={courseEnquiryData}
+        otpVerifySucess={handlOtpVerifySucess}
+        courseEnquiryOtpVerify={courseEnquiryOtpVerify}
+        toggle={handleCloseOtpModel}
+      />
     </div>
   );
 };
 
 const mapStatesToProps = ({
-  courseEnquiry: { isCourseEnquiryLoader = false ,isCourseEnquiryOtpVerifyLoader=false},
+  courseEnquiry: {
+    isCourseEnquiryLoader = false,
+    isCourseEnquiryOtpVerifyLoader = false,
+  },
 }) => {
-  return { isCourseEnquiryLoader ,isCourseEnquiryOtpVerifyLoader};
+  return { isCourseEnquiryLoader, isCourseEnquiryOtpVerifyLoader };
 };
 
 const mapDispatchToProps = (dispatch) => {

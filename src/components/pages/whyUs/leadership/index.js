@@ -14,15 +14,15 @@ export const Leadership = () => {
           <div className="col-lg-4 col-md-4 col-sm-12">
             <div className={styles.imageContainer}>
               <img
-                src="https://www.guvi.in/build/images/sridevi.f8555c68ee3fe907a557e72468fa46cd.webp"
-                alt="Sri Devi"
-                title="Sri Devi"
+                src={'/img/user_img.avif'}
+                alt="Anvesh Babu"
+                title="Anvesh Babu"
                 loading="lazy"
                 className="w-100"
               />
               <div class={styles.imageName}>
-                <h3>Late Mrs. Sridevi Arunprakash</h3>
-                <h4>Co-Founder</h4>
+                <h3>Mr. Anvesh Babu</h3>
+                <h4>Founder</h4>
               </div>
             </div>
             {/* <h4 className={styles.leadershipTitle}>Leadership</h4> */}
@@ -30,14 +30,14 @@ export const Leadership = () => {
           <div className="col-lg-4 col-md-4 col-sm-12">
             <div className={styles.imageContainer}>
               <img
-                src="https://www.guvi.in/build/images/sridevi.f8555c68ee3fe907a557e72468fa46cd.webp"
-                alt="Sri Devi"
-                title="Sri Devi"
-                loading="lazy"
-                className="w-100"
+                 src={'/img/user_img.avif'}
+                 alt="Mirsha"
+                 title="Mirsha"
+                 loading="lazy"
+                 className="w-100"
               />
               <div class={styles.imageName}>
-                <h3>Late Mrs. Sridevi Arunprakash</h3>
+                <h3>Mr. Mirsha</h3>
                 <h4>Co-Founder</h4>
               </div>
             </div>

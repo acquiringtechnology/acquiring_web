@@ -23,7 +23,7 @@ export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
             <p>
               Live Classes available in <strong>English, தமிழ், ಕನ್ನಡ</strong>{" "}
             </p>
-            <div className="mb-4">
+            {/* <div className="mb-4">
               <span className={`me-2 ${styles.ratingText}`}>4.6</span>
               <StarRatings
                 rating={4}
@@ -39,7 +39,7 @@ export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
               <span className={`ms-2 ${styles.overRatingPerCount}`}>
                 (12.5 rating)
               </span>
-            </div>
+            </div> */}
             {fromPage !== "liveClass" && (
               <NormalButton title="Start Quiz!" onClick={handleRedirectQuiz} />
             )}
@@ -90,7 +90,7 @@ export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
             {fromPage !== "liveClass" ? (
               <CourseCard isDetailBanner={true} />
             ) : (
-              <EnquiryForm fromPage={fromPage} />
+              <EnquiryForm liveClassId={liveClassDetail?.id} fromPage={fromPage} />
             )}
           </div>
         </div>

@@ -1,7 +1,9 @@
 import styles from "./banner.module.scss";
 import PropTypes from "prop-types";
 import { NormalButton } from "@/components/common";
+import { useRouter } from "next/router";
 const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
+  const router = useRouter();
   return (
     <section>
       <div class="container mb-5">
@@ -16,10 +18,12 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
                     <NormalButton
                       className={`btn-primary me-3 ${styles.joinCourseBtn}`}
                       title="Join LIVE Classes"
+                      onClick={()=>router.push('/liveClasses')}
                     />
                     <NormalButton
                       className={`btn-outline-primary ${styles.joinCourseBtn}`}
-                      title="View All Courses"
+                      title="Join Live classes"
+                      onClick={()=>router.push('/courses')}
                     />
                   </>
                 )}

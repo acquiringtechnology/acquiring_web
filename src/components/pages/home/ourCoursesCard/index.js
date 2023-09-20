@@ -61,7 +61,7 @@ const OurCoursesCard = (props) => {
           </div>
         }
         {isSwiper ? (
-          <Swiper
+       allCourseList.length > 0 ?  <Swiper
             spaceBetween={30}
             slidesPerView={4.5}
             onSlideChange={() => console.log("slide change")}
@@ -69,21 +69,22 @@ const OurCoursesCard = (props) => {
           >
             {allCourseList?.map((data, i) => (
               <SwiperSlide key={i}>
+                <h4>{ allCourseList.length}</h4>
                 <CourseCard />
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper>:<h4 className="text-center">No Course yet</h4>
         ) : (
-          <div className="row">
+          allCourseList.length > 0 ?   <div className="row">
             {allCourseList?.map((data, i) => (
               <div className="col-md-4 mb-3" key={i}>
                 <CourseCard courseData={data} />
               </div>
             ))}
-          </div>
+          </div>:<h4 className="text-center">No Course yet</h4>
         )}
 
-        {isViewAllBtn && (
+        {isViewAllBtn && allCourseList.length >0 && (
           <div className="row">
             <div className="col-md-12 text-center mb-4">
               <NormalButton

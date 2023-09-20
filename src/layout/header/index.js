@@ -2,7 +2,6 @@ import styles from "./header.module.scss";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { NavLink, NormalButton } from "@/components/common";
-import Image from "next/image";
 import { useEffect } from "react";
 import _ from 'lodash'
 import {
@@ -74,7 +73,7 @@ export const Header = () => {
     >
       <div className="container">
         <Link className="navbar-brand" href="/">
-          <Image
+          <img
             width={50}
             height={50}
             className={styles.brandImage}
@@ -113,7 +112,7 @@ export const Header = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" href="/services">
+              <NavLink className="nav-link" href="/whyUs">
                 Why Us?
               </NavLink>
             </li>
