@@ -153,7 +153,7 @@ export const Header = () => {
       </div>
 
       {_.isEmpty(userDetails) && (
-        <div className="d-flex">
+        <div className="d-flex d-block d-lg-none">
           <NormalButton
             title="Login"
             className="btn text-primary"
