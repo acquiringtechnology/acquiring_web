@@ -51,23 +51,22 @@ footer {
   }
 }
 
-@media (max-width: 992px){
+@media (max-width: 992px) {
   .navbar-collapse {
     &.collapse.show {
       height: 100vh;
       z-index: 9;
-      .navbar-nav{
-        .nav-item{
-          .nav-link{
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
             border-bottom: 1px solid #95a4c2;
           }
-  
         }
       }
     }
   }
 }
-.active{
+.active {
   color: var(--primary-bg) !important;
 }
 
@@ -79,12 +78,15 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.input-group{
-  .input-group-text{
+.input-group {
+  .input-group-text {
     border: 2px solid #cbd2e0;
   }
 }
+
+// @import "../../../../assets/scss/abstracts/abstracts-dir.scss";
+

@@ -20,5 +20,5 @@ export const WEEK_LIST = [
   { value: 5, label: 'Fri' },
   { value: 6, label: 'Sat' }
 ];
-
+export const NEXT_PUBLIC_GOOGLE_ANALYTICS= 'G-S02J90JMSB'
 export const BASE_URL=  process.env.NEXT_PUBLIC_APP_ENV== 'PROD'?'https://acquiringapi.azurewebsites.net/':'http://localhost:3033/'

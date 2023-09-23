@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { NavLink, NormalButton } from "@/components/common";
 import { useEffect } from "react";
-import _ from 'lodash'
+import _ from "lodash";
 import {
   Dropdown,
   DropdownToggle,
@@ -11,7 +11,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 import { getStorage, setStorage } from "@/services/helperFunctions";
-import { EXIST_LOCAL_STORAGE } from "@/services/constants";
+import { EXIST_LOCAL_STORAGE,MENU } from "@/services/constants";
 import Link from "next/link";
 export const Header = () => {
   const router = useRouter();
@@ -21,50 +21,50 @@ export const Header = () => {
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   useEffect(() => {
-   try{
-    window.addEventListener("scroll", handleverticalScroll);
-    const curentUserData = JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
-    setUserDetails(curentUserData);
-   }catch(e){
-
-   }
+    try {
+      window.addEventListener("scroll", handleverticalScroll);
+      const curentUserData =
+        JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+      setUserDetails(curentUserData);
+    } catch (e) {}
   }, []);
 
-  const handleverticalScroll = () => {
-   try{
-     //! Put the class name that you want to use
-    // Class name that will be added to the navbar element in the "scrolled" state
-    const SCROLLED_STATE_CLASS = "fixed-top shadow";
-
-    //! Use your own ID or selector
-    // The id of navigation bar HTML element
-    const NAVBAR_ID = "navbar";
-
-    // Get the navigation bar element
-    const navbar = document.getElementById(NAVBAR_ID);
-
-    // Get scroll value
-    const scroll = document.documentElement.scrollTop;
-
-    // If scroll value is more than 0 - means the page is scrolled, add or remove class based on that
-    if (scroll > 85) {
-      navbar.classList?.add("fixed-top", "shadow", "transition4");
-    } else {
-      navbar.classList?.remove("fixed-top", "shadow", "transition4");
-    }
-   }catch(e){
-    
-   }
+  const handleMenuShow = () => {
+    // document.getElementById("mobileSidenav").style.width = "250px";
+    let menu = document.getElementById("mobileSidenav");
+    menu.classList.toggle("show");
   };
 
+  const handleverticalScroll = () => {
+    try {
+      //! Put the class name that you want to use
+      // Class name that will be added to the navbar element in the "scrolled" state
+      const SCROLLED_STATE_CLASS = "fixed-top shadow";
 
-  const handleSiginOut=()=>{
+      //! Use your own ID or selector
+      // The id of navigation bar HTML element
+      const NAVBAR_ID = "navbar";
 
-    const curentUserData = setStorage(EXIST_LOCAL_STORAGE.CURRENT_USER,"");
+      // Get the navigation bar element
+      const navbar = document.getElementById(NAVBAR_ID);
+
+      // Get scroll value
+      const scroll = document.documentElement.scrollTop;
+
+      // If scroll value is more than 0 - means the page is scrolled, add or remove class based on that
+      if (scroll > 85) {
+        navbar.classList?.add("fixed-top", "shadow", "transition4");
+      } else {
+        navbar.classList?.remove("fixed-top", "shadow", "transition4");
+      }
+    } catch (e) {}
+  };
+
+  const handleSiginOut = () => {
+    const curentUserData = setStorage(EXIST_LOCAL_STORAGE.CURRENT_USER, "");
     setUserDetails(curentUserData);
-    router.push('/')
-    
-  }
+    router.push("/");
+  };
 
   return (
     <nav
@@ -83,39 +83,44 @@ export const Header = () => {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          // data-bs-toggle="collapse"
+          // data-bs-target="#navbarSupportedContent"
+          // aria-controls="navbarSupportedContent"
+          // aria-expanded="false"
+          // aria-label="Toggle navigation"
+          onClick={handleMenuShow}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div
           className="collapse navbar-collapse bg-white"
           id="navbarSupportedContent"
         >
           <ul className={`navbar-nav mx-auto mb-2 mb-lg-0 ${styles.navMenu}`}>
-            <li className="nav-item">
-              <NavLink className="nav-link" href="/">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
+            {MENU.map(({ title ,link}, i) => (
+              <li className="nav-item"  key={i}>
+                <NavLink className="nav-link" href={link}>
+                  {title}
+                </NavLink>
+              </li>
+            ))}
+
+            {/* <li className="nav-item">
               <NavLink className="nav-link" href="/courses">
                 All Courses
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" href="/liveClasses">
-              Live Classes
+                Live Classes
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" href="/whyUs">
                 Why Us?
               </NavLink>
-            </li>
+            </li> */}
 
             <li className="nav-item d-block d-lg-none">
               <span className="nav-link">
@@ -147,43 +152,56 @@ export const Header = () => {
         </div>
       </div>
 
-      {_.isEmpty(userDetails)  && <div className="d-flex" >
-        <NormalButton title="Login" className="btn text-primary"   onClick={() => router.push("/signIn")}/>
-        <NormalButton title="Sign up" className="btn btn-outline-primary px-4"  onClick={() => router.push("/register")}/>
-      </div>}
+      {_.isEmpty(userDetails) && (
+        <div className="d-flex">
+          <NormalButton
+            title="Login"
+            className="btn text-primary"
+            onClick={() => router.push("/signIn")}
+          />
+          <NormalButton
+            title="Sign up"
+            className="btn btn-outline-primary px-4"
+            onClick={() => router.push("/register")}
+          />
+        </div>
+      )}
 
-      {!_.isEmpty(userDetails)  &&
-      <Dropdown
-        isOpen={dropdownOpen}
-        toggle={toggle}
-        className="d-none d-lg-block"
-      >
-        <DropdownToggle color="transparent" care={false}>
-          <img className={styles.userProfile} src="/img/user-icon.svg" />
-        </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem header>
-            <div class="d-flex align-items-center">
-              <div class="flex-shrink-0">
-                <img
-                  className={styles.userProfile}
-                  src="/img/user-icon.svg"
-                  alt="..."
-                />
+      {!_.isEmpty(userDetails) && (
+        <Dropdown
+          isOpen={dropdownOpen}
+          toggle={toggle}
+          className="d-none d-lg-block"
+        >
+          <DropdownToggle color="transparent" care={false}>
+            <img className={styles.userProfile} src="/img/user-icon.svg" />
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem header>
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <img
+                    className={styles.userProfile}
+                    src="/img/user-icon.svg"
+                    alt="..."
+                  />
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h4 className={`mb-1 ${styles.userName}`}>
+                    {userDetails?.name?.fName} {userDetails?.name?.lName}
+                  </h4>
+                  <small>{userDetails?.email}</small>
+                </div>
               </div>
-              <div class="flex-grow-1 ms-3">
-                <h4 className={`mb-1 ${styles.userName}`}>{userDetails?.name?.fName} {userDetails?.name?.lName}</h4>
-                <small>{userDetails?.email}</small>
-              </div>
-            </div>
-          </DropdownItem>
+            </DropdownItem>
 
-          <DropdownItem divider />
-          {/* <DropdownItem>My Profile</DropdownItem>
+            <DropdownItem divider />
+            {/* <DropdownItem>My Profile</DropdownItem>
           <DropdownItem>Change Password</DropdownItem> */}
-          <DropdownItem onClick={handleSiginOut}>Sign out</DropdownItem>
-        </DropdownMenu>
-      </Dropdown>}
+            <DropdownItem onClick={handleSiginOut}>Sign out</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      )}
     </nav>
   );
 };

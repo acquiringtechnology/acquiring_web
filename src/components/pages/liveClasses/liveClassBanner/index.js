@@ -7,17 +7,17 @@ export const LiveClassBanner = (props) => {
 
     return (
         <section>
-            <div class="container mb-5">
+            <div class="container mb-5 h-100">
                 <div className={styles.bannerContiner}>
 
 
-                    <div className="row h-100 ">
+                <div className="row h-100 align-items-center">
                         <div className="col-md-6 h-100 d-flex align-items-center justify-content-center">
 
                             <div className={styles.bannerTitleContiner}>
                                 <h4 className={`mb-5 ${styles.bannerTitle}`}>{props?.title}</h4>
                                 <ul>
-                                    <li>100% Job Placement Support.</li>
+                                    <li>100% Job Assistance Support.</li>
                                     <li> Mentors from Top Global Product companies.</li>
                                     <li>A Portfolio of Real-world Projects.</li>
                                     <li>Globally Recognized Certification.</li>
