@@ -7,7 +7,7 @@ import { NormalInput, NormalSelect, NormalButton } from "@/components/common";
 import { RegisterForm, EmailVerification } from "@/components/pages";
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
-import SimpleReactValidator from "simple-react-validator";
+
 import { bindActionCreators } from "redux";
 import * as authenticateAction from "@/redux/action/authenticate";
 import { setStorage } from "@/services/helperFunctions";

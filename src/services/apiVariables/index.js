@@ -76,3 +76,14 @@ export const courseEnquiry = {
  
 };
 
+export const subscribe = {
+  create: {
+    api: 'subscribe',
+    method: 'post',
+    baseURL: 'normal'
+  },
+
+ 
+};
+
+
