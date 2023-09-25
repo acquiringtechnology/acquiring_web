@@ -39,7 +39,7 @@ const WhatOfferYou = (props) => {
                     </div>
 
 
-                    <div className='row'>
+                    <div className='row row justify-content-center align-items-center'>
                         <div className='col-md-6 col-sm-12'>
                             <div className='row justify-content-center'>
                                 {offerList?.map(({ title = '', subTitle = '', icon = '' }, i) =>
