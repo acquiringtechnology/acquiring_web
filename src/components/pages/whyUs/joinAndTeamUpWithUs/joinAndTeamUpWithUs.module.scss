@@ -1,9 +1,23 @@
+@import '@/styles/abstracts/abstracts-dir.scss';
 .joinAndTeamUpWithUsContainer{
     background-image: url('/img/join-team-banner.png');
     background-size: cover;
     padding: 6rem 10rem;
+    @include media-breakpoint-mobile-port{
+        padding: 1rem 1rem;
+    }
+    @include  media-breakpoint-tab-port{
+        padding: 2rem 3rem; 
+    }
     .joinAndTeamUpWithUsTitle{
+        
         font-size: 3rem;
+        @include media-breakpoint-mobile-port{
+            font-size: 1.5rem;
+        }
+        @include  media-breakpoint-tab-port{
+            font-size: 1.8rem;
+        }
     // position: relative;
     color: var(--primary-bg);
    

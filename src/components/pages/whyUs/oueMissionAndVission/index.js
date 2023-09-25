@@ -12,7 +12,7 @@ export const OueMissionAndVission=()=>{
         
          {/* <h4></h4> */}
          <div className="row justify-content-center align-items-center h-100">
-            <div className={`col-md-6  mb-4 ${styles.rightB}`}>
+            <div className={`col-md-6 text-center  mb-4 ${styles.rightB}`}>
               <h4 className={styles.oueMissionAndVissionTitle}>Our Mission</h4>
               <p className={styles.oueMissionAndVissionSubTitle}>
               To democratize tech education worldwide by meeting the standards of the EdTech industry.

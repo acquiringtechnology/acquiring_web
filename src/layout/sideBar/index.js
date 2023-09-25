@@ -69,18 +69,11 @@ export const SideBar = () => {
             {title}
           </NavLink>
         ))}
+        <NavLink className="list-group-item" href={"/contactUs"}>
+          Contact Us
+        </NavLink>
 
-        <a className="list-group-item border-0">
-          {/* <NormalButton
-                    onClick={this.handleDiscard}
-                    id="cancelProfile"
-                    onClick={this.handleGetStart}
-                    label="Get started"
-                    outline={true}
-                    className="btn btn-primary action-btn"
-                /> */}
-        </a>
-        <div
+        {/* <div
           className={`py-2 contact-us-end ${
             !_.isEmpty(userDetails) ? "text-start" : ""
           }`}
@@ -92,21 +85,18 @@ export const SideBar = () => {
                 className="btn text-primary px-4 me-1"
                 onClick={() => router.push("/signIn")}
               />
-              {/* <div className="vr"></div> */}
-              <NormalButton
+                      <NormalButton
                 title="Sign up"
                 className="btn btn-outline-primary px-4 ms-1"
                 onClick={() => router.push("/register")}
               />
             </>
-          )}
-          {!_.isEmpty(userDetails) && (
+          )} */}
+        {/* {!_.isEmpty(userDetails) && (
             <Dropdown
               isOpen={dropdownOpen}
               toggle={toggle}
-              ca
-              //   className="d-none d-lg-block"
-            >
+                         >
               <DropdownToggle color="transparent" caret>
                 <img className={styles.userProfile} src="/img/user-icon.svg" />{" "}
                 {userDetails?.name?.fName} {userDetails?.name?.lName}
@@ -131,29 +121,13 @@ export const SideBar = () => {
                 </DropdownItem>
 
                 <DropdownItem divider />
-                {/* <DropdownItem>My Profile</DropdownItem>
-          <DropdownItem>Change Password</DropdownItem> */}
+
                 <DropdownItem onClick={handleSiginOut}>Sign out</DropdownItem>
               </DropdownMenu>
             </Dropdown>
-          )}
-          {/* <nav className="nav nav-pills flex-column flex-sm-row">
-            <div className="flex-sm-fill text-sm-center nav-link ">
-            <NormalButton
-            title="Login"
-            className="btn text-primary"
-            onClick={() => router.push("/signIn")}
-          />
-            </div>
-            <div className="flex-sm-fill text-sm-center nav-link" href="#">
-            <NormalButton
-            title="Sign up"
-            className="btn btn-outline-primary px-4"
-            onClick={() => router.push("/register")}
-          />
-            </div>
-          </nav> */}
-        </div>
+          )} */}
+
+        {/* </div> */}
       </div>
     </div>
   );

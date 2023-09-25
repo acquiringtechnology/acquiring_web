@@ -4,6 +4,14 @@
     padding-top: 100px;
     padding-bottom: 130px;
     background-color: var(--primary-bg-light);
+
+    @include media-breakpoint-mobile-port{
+        padding-bottom: .5rem
+    }
+    @include  media-breakpoint-tab-port{
+        padding-bottom: .5rem
+    }
+    
     .couseTitle {
         font-size: 2.5rem;
     }

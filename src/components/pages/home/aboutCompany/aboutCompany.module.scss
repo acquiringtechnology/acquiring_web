@@ -9,6 +9,12 @@
     .aboutTitle{
         font-size: 2.34375rem;
         font-weight: 700;
+        @include media-breakpoint-mobile-port {
+            font-size: fontSize(30px) !important;
+        }
+        @include media-breakpoint-tab-port {
+            font-size: fontSize(30px) !important;
+        }
     }
     .aboutDescription{
         font-size: fontSize(15px) !important;

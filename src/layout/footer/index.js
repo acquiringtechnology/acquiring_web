@@ -71,14 +71,14 @@ const Footer = ({ subscribeCreate }) => {
         </div>
         <div className="row gy- gx-5">
           <div className="col-lg-4 col-md-6">
-            <h5 className="h1 text-muted">
+            <Link href='/' className="h1 text-muted">
               <img
                 width={50}
                 height={50}
                 className={styles.brandImage}
                 src={"/logo.svg"}
               />
-            </h5>
+            </Link>
             <p className="small text-muted">
               Skills for your present (and your future). Get started with us.
             </p>

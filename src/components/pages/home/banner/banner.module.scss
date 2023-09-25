@@ -4,6 +4,12 @@
     .bannerTitleContiner {
         .bannerTitle {
             font-size: fontSize(45px) !important;
+            @include media-breakpoint-mobile-port{
+                font-size: fontSize(30px) !important;
+            }
+            @include  media-breakpoint-tab-port{
+                font-size: fontSize(30px) !important;
+            }
         }
     }
     .joinCourseBtn{

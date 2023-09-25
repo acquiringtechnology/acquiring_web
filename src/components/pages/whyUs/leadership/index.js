@@ -11,7 +11,7 @@ export const Leadership = () => {
           </div>
         </div>
         <div className="row justify-content-center align-items-center h-100">
-          <div className="col-lg-4 col-md-4 col-sm-12">
+          <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
             <div className={styles.imageContainer}>
               <img
                 src={'/img/user_img.avif'}
@@ -27,7 +27,7 @@ export const Leadership = () => {
             </div>
             {/* <h4 className={styles.leadershipTitle}>Leadership</h4> */}
           </div>
-          <div className="col-lg-4 col-md-4 col-sm-12">
+          <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
             <div className={styles.imageContainer}>
               <img
                  src={'/img/user_img.avif'}

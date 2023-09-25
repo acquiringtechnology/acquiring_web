@@ -1,10 +1,4 @@
-.btn{
-    font-weight: 500;
-    letter-spacing: .5px;
-    border-radius: 4px;
-    min-height: 48px;
-    font-size: 1rem;
-}
+@import '@/styles/abstracts/abstracts-dir.scss';
 
 .btn-primary {
     --bs-btn-color: var(--white-bg);
@@ -39,3 +33,24 @@
     --bs-btn-disabled-border-color: var(--primary-bg);;
     --bs-gradient: none;
 }
+
+.btn{
+    font-weight: 500;
+    letter-spacing: .5px;
+    border-radius: 4px;
+    height: 48px;
+    font-size: 1rem;
+    &.signup-btn{
+        @include  media-breakpoint-tab-port{
+            // padding: 0.3rem 1rem!important;
+            height:38px !important
+        }
+        @include media-breakpoint-mobile-port{
+            // padding: 0.3rem 1rem!important;
+            height:38px !important;
+        }
+    }
+   
+}
+
+

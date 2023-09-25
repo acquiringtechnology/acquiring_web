@@ -9,7 +9,7 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
       <div class="container h-100  mb-5">
         <div className={styles.bannerContiner}>
           <div className="row h-100 align-items-center">
-            <div className="col-md-6 mb-sm-3 h-100 d-flex align-items-center justify-content-center">
+            <div className="col-lg-6 mb-sm-3 h-100 d-flex align-items-center justify-content-center">
               <div className={styles.bannerTitleContiner}>
                 <h4 className={styles.bannerTitle}>{title}</h4>
                 <p>{description}</p>
@@ -29,7 +29,7 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
                 )}
               </div>
             </div>
-            <div className="col-md-6 h-100 ">
+            <div className="col-lg-6 h-100 ">
               <img
                 className={`img-fluid ${styles.bannerImage}`}
                 src={bannerImage}

@@ -14,14 +14,14 @@ export const SyllabusAction = ({liveClassDetail}) => {
     <div className={`${styles.syllabusActionCard} mb-5`}>
       <div className="container">
         <div className="row">
-          <div className="col-9 py-4">
+          <div className="col-md-9 col-sm-7 py-4">
             <h4>Syllabus</h4>
             <p>
               Get a peek through on the entire curriculum designed that ensures
               Job Placement Support
             </p>
           </div>
-          <div className="col-3 py-4">
+          <div className="col-md-3 col-sm-5 py-4">
             <NormalButton
               className="btn-primary mt-4"
               title="Download syllabus"

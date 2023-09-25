@@ -11,14 +11,16 @@ import {
   DropdownItem,
 } from "reactstrap";
 import { getStorage, setStorage } from "@/services/helperFunctions";
-import { EXIST_LOCAL_STORAGE,MENU } from "@/services/constants";
+import { EXIST_LOCAL_STORAGE, MENU } from "@/services/constants";
 import Link from "next/link";
 export const Header = () => {
   const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [userDetails, setUserDetails] = useState({});
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const toggleMobileDrop = () => setMobileDropdownOpen((prevState) => !prevState);
 
   useEffect(() => {
     try {
@@ -72,34 +74,36 @@ export const Header = () => {
       className={`navbar navbar-expand-lg pe-4 bg-body-tertiary ${styles.customNavbar}`}
     >
       <div className="container">
-        <Link className="navbar-brand" href="/">
-          <img
-            width={50}
-            height={50}
-            className={styles.brandImage}
-            src={"/logo.svg"}
-          />
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          // data-bs-toggle="collapse"
-          // data-bs-target="#navbarSupportedContent"
-          // aria-controls="navbarSupportedContent"
-          // aria-expanded="false"
-          // aria-label="Toggle navigation"
-          onClick={handleMenuShow}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <div className="d-flex mr-auto">
+          <button
+            className="navbar-toggler p-0 border-0 me-3"
+            type="button"
+            // data-bs-toggle="collapse"
+            // data-bs-target="#navbarSupportedContent"
+            // aria-controls="navbarSupportedContent"
+            // aria-expanded="false"
+            // aria-label="Toggle navigation"
+            onClick={handleMenuShow}
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <Link className="navbar-brand" href="/">
+            <img
+              width={50}
+              height={50}
+              className={styles.brandImage}
+              src={"/logo.svg"}
+            />
+          </Link>
+        </div>
 
         <div
           className="collapse navbar-collapse bg-white"
           id="navbarSupportedContent"
         >
           <ul className={`navbar-nav mx-auto mb-2 mb-lg-0 ${styles.navMenu}`}>
-            {MENU.map(({ title ,link}, i) => (
-              <li className="nav-item"  key={i}>
+            {MENU.map(({ title, link }, i) => (
+              <li className="nav-item" key={i}>
                 <NavLink className="nav-link" href={link}>
                   {title}
                 </NavLink>
@@ -150,6 +154,56 @@ export const Header = () => {
             />
           </div>
         </div>
+        {_.isEmpty(userDetails) && (
+          <div className="d-flex d-block d-lg-none">
+            <NormalButton
+              title="Login"
+              className="btn text-primary signup-btn"
+              onClick={() => router.push("/signIn")}
+            />
+            <NormalButton
+              title="Sign up"
+              className="btn btn-outline-primary signup-btn signup-btn"
+              onClick={() => router.push("/register")}
+            />
+          </div>
+        )}
+
+        {!_.isEmpty(userDetails) && (
+          <Dropdown
+            isOpen={mobileDropdownOpen}
+            toggle={toggleMobileDrop}
+            className="d-block d-lg-none"
+          >
+            <DropdownToggle color="transparent" care>
+              <img className={styles.userProfile} src="/img/user-icon.svg" />
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      className={styles.userProfile}
+                      src="/img/user-icon.svg"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h4 className={`mb-1 ${styles.userName}`}>
+                      {userDetails?.name?.fName} {userDetails?.name?.lName}
+                    </h4>
+                    <small>{userDetails?.email}</small>
+                  </div>
+                </div>
+              </DropdownItem>
+
+              <DropdownItem divider />
+              {/* <DropdownItem>My Profile</DropdownItem>
+          <DropdownItem>Change Password</DropdownItem> */}
+              <DropdownItem onClick={handleSiginOut}>Sign out</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        )}
       </div>
 
       {_.isEmpty(userDetails) && (
