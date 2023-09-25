@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { AuthLayout } from "@/layout/authLayout";
 
-
 import Head from "next/head";
 import { NormalInput, NormalSelect, NormalButton } from "@/components/common";
 import { RegisterForm, EmailVerification } from "@/components/pages";
@@ -14,7 +13,6 @@ import { setStorage } from "@/services/helperFunctions";
 import { EXIST_LOCAL_STORAGE, USER_TYPE } from "@/services/constants";
 import { useEffect, useRef, useState } from "react";
 
-
 function Register(props) {
   const router = useRouter();
   const { emailVerification } = router.query;
@@ -23,22 +21,28 @@ function Register(props) {
 
   return (
     <>
-    <Head>
-      <title>Acquiring | Sign-up</title>
-      <meta name="description" content="Acquiring | Sign-up" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <AuthLayout>
-      <div className="d-flex flex-row align-items-center">
-        <img className="p-4 w-50" src={"/logo.svg"} alt="" />{" "}
-      </div>
-      {emailVerification === "true" ? (
-        <EmailVerification />
-      ) : (
-        <RegisterForm {...props} />
-      )}
-    </AuthLayout>
+      <Head>
+        <title>Acquiring | Sign-up</title>
+        <meta name="title" content="Acquiring | Sign-up" />
+        <meta
+          name="description"
+          content="By registering on our user-friendly registration page, you will be able to discover a world of knowledge about Acquiring. Become a learner today."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.acquiring.in/register" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <AuthLayout>
+        <div className="d-flex flex-row align-items-center">
+          <img className="p-4 w-50" src={"/logo.svg"} alt="" />{" "}
+        </div>
+        {emailVerification === "true" ? (
+          <EmailVerification />
+        ) : (
+          <RegisterForm {...props} />
+        )}
+      </AuthLayout>
     </>
   );
 }

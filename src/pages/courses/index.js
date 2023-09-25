@@ -14,9 +14,18 @@ function CourseDetail({ getAllCoures }) {
     <>
       <Head>
         <title>Acquiring | courses</title>
-        <meta name="description" content="Acquiring | courses" />
+        <meta name="title" content="Acquiring | courses" />
+
+        <meta
+          name="description"
+          content="
+          Get in-demand IT & software skills through self-paced online courses taught in your preferred native languages, such as Hindi, Tamil, Telugu, and Malayalam.
+          "
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.acquiring.in/courses/" />
+        <meta name="robots" content="index, follow" />
       </Head>
       <main className={`${inter.className}`}>
         <Layout>

@@ -62,68 +62,74 @@ const Signin = (props) => {
 
   return (
     <>
-    <Head>
-      <title>Acquiring | Sign-in</title>
-      <meta name="description" content="Acquiring | Sign-in" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <AuthLayout>
-      <div className="d-flex flex-row align-items-center">
-        <img className="p-4 w-50" src={"/logo.svg"} alt="" />{" "}
-      </div>
-      <div className="d-flex">
-        <div className="mt-4">
-          <h3>Login</h3>
-          <p>The new wave of AI Learning that adapts to the future</p>
+      <Head>
+        <title>Acquiring | Sign-in</title>
+        <meta name="description" content="Acquiring | Sign-in" />
+        <meta
+          name="title"
+          content="With the convenient Sign-in page, you can easily access your Acquiring account. Learn more with a simple login process."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.acquiring.in/signIn/" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <AuthLayout>
+        <div className="d-flex flex-row align-items-center">
+          <img className="p-4 w-50" src={"/logo.svg"} alt="" />{" "}
         </div>
-      </div>
+        <div className="d-flex">
+          <div className="mt-4">
+            <h3>Login</h3>
+            <p>The new wave of AI Learning that adapts to the future</p>
+          </div>
+        </div>
 
-      <div className="d-flex flex-column mt-4">
-        <div className="row">
-          <div className="col-md-12">
-            <NormalInput
-              title="Email"
-              onChange={handleInputChange}
-              name="email"
-              errorMessage={validator.current.message(
-                'Email',
-                loginFormObj.email,
-                'required|email'
-              )}
-            />
-          </div>
-          <div className="col-md-12">
-            <NormalInput
-              title="Password"
-              onChange={handleInputChange}
-              name="password"
-              type="password"
-              errorMessage={validator.current.message(
-                'Password',
-                loginFormObj.password,
-                'required'
-              )}
-            />
-          </div>
-          <div className="col-md-12">
-            <NormalButton
-              className="btn btn-primary px-4 w-100"
-              type="submit"
-              title="Submit"
-              isLoader={isFormLoder}
-              onClick={handleLogin}
-            />
-          </div>
-          <div className="col-md-12">
-            <hr />
-            <p>
-              Dont have any account <Link href="/register">Register</Link>
-            </p>
+        <div className="d-flex flex-column mt-4">
+          <div className="row">
+            <div className="col-md-12">
+              <NormalInput
+                title="Email"
+                onChange={handleInputChange}
+                name="email"
+                errorMessage={validator.current.message(
+                  "Email",
+                  loginFormObj.email,
+                  "required|email"
+                )}
+              />
+            </div>
+            <div className="col-md-12">
+              <NormalInput
+                title="Password"
+                onChange={handleInputChange}
+                name="password"
+                type="password"
+                errorMessage={validator.current.message(
+                  "Password",
+                  loginFormObj.password,
+                  "required"
+                )}
+              />
+            </div>
+            <div className="col-md-12">
+              <NormalButton
+                className="btn btn-primary px-4 w-100"
+                type="submit"
+                title="Submit"
+                isLoader={isFormLoder}
+                onClick={handleLogin}
+              />
+            </div>
+            <div className="col-md-12">
+              <hr />
+              <p>
+                Dont have any account <Link href="/register">Register</Link>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </AuthLayout>
+      </AuthLayout>
     </>
   );
 };

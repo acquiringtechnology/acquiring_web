@@ -17,9 +17,22 @@ export default function Home() {
     <>
       <Head>
         <title>Acquiring | Learn to code in your native language</title>
-        <meta name="description" content="Acquiring | Learn to code in your native language" />
+        <meta
+          name="title"
+          content="Acquiring | Learn to code in your native language"
+        />
+        <meta
+          name="description"
+          content="Acquire online programming courses to advance your tech career. Get 100% Job Assistance Support while learning in native languages. Get started now!"
+        />
+        <meta
+          name="keywords"
+          content="online full stack developer course,React JS, Angular, Angular Js, full stack web developer,chennai software training institute, mern stack developer course, full stack web developer training,  mern stack training full stack  web with placements, web development training, Javascript"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="canonical" href="https://www.acquiring.in/" />
+        <meta name="robots" content="index, follow" />
       </Head>
       <main className={`${inter.className}`}>
         <Layout>

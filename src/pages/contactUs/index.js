@@ -9,9 +9,12 @@ export default function Home() {
     <>
       <Head>
         <title>Acquiring | Contact Us</title>
-        <meta name="description" content="Acquiring | Contact Us" />
+        <meta name="title" content="Acquiring | Contact Us" />
+        <meta name="description" content="Is there anything I can help you with? Fill out this form and we'll get in touch with you." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.acquiring.in/contactUs/" />
+        <meta name="robots" content="index, follow" />
       </Head>
       <main className={`${inter.className}`}>
         <Layout>

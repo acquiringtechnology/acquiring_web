@@ -37,9 +37,12 @@ export default function Home() {
     <>
       <Head>
         <title>Acquiring | why-us</title>
-        <meta name="description" content="Acquiring | why-us" />
+        <meta name="title" content="Acquiring | why-us" />
+        <meta name="description" content="As a software engineer, acquiring technologies is crucial to building and advancing your career. Hackathons, debates, pair programming, workshops, and lots of first principles thinking are all part of our comprehensive program! An accelerated learning program that prepares you for a career in the hottest industry." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.acquiring.in/whyUs/" />
+        <meta name="robots" content="index, follow" />
       </Head>
       <main className={`${inter.className}`}>
         <Layout>

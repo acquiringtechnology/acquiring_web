@@ -63,7 +63,17 @@ export default function CourseDetail() {
     <>
       <Head>
         <title>Acquiring | Coures</title>
-        <meta name="description" content="Acquiring | Coures" />
+        <meta name="title" content="Acquiring | Coures" />
+        <meta
+          name="description"
+          content="
+          Get in-demand IT & software skills through self-paced online courses taught in your preferred native languages, such as Hindi, Tamil, Telugu, and Malayalam.
+          "
+        />
+         {/* <meta
+          name="keywords"
+          content="React JS, Angular, Angular Js,  web developer,chennai software training institute, mern stack developer course, full stack web developer training,  mern stack training full stack  web with placements, web development training, Javascript"
+        /> */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
