@@ -8,8 +8,10 @@ import SimpleReactValidator from "simple-react-validator";
 import { bindActionCreators } from "redux";
 import * as authenticateAction from "@/redux/action/authenticate";
 import { setStorage } from "@/services/helperFunctions";
-import { EXIST_LOCAL_STORAGE } from "@/services/constants";
-import { useEffect, useRef, useState } from "react";
+import { EXIST_LOCAL_STORAGE, USER_TYPE } from "@/services/constants";
+import { useRef, useState } from "react";
+import Swal from "sweetalert2";
+
 const Signin = (props) => {
   const router = useRouter();
   const validator = useRef(new SimpleReactValidator());
@@ -32,7 +34,28 @@ const Signin = (props) => {
           data: { token, userDetail },
         } = loginReq;
         console.log("loginReq--------->", loginReq);
+        // if (status) {
         if (token && userDetail) {
+          if (
+            userDetail.userType === USER_TYPE.CANDIDATE &&
+            !userDetail?.isEmailVerified
+          ) {
+            Swal.fire({
+              title: "You have an unverified email",
+              text: "Logging in isn't possible because your email address hasn't been verified. Check your email inbox and click the link to verify",
+              icon: "warning",
+              showCancelButton: false,
+              confirmButtonColor: "#3085d6",
+              confirmButtonText: "Ok",
+            }).then((result) => {
+              if (result.isConfirmed) {
+
+              }
+            });
+
+            return;
+          }
+
           setStorage(EXIST_LOCAL_STORAGE.AUTHTOKEN, token);
           setStorage(
             EXIST_LOCAL_STORAGE.CURRENT_USER,
@@ -40,13 +63,15 @@ const Signin = (props) => {
           );
           router.push("/");
         }
+        // } else {
+        // }
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
-    } catch (e) {
+    } catch (error) {
       setIsFormLoder(false);
-      console.log(e);
+      // consol e.log(e);
     }
   };
 

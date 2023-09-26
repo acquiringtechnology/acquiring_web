@@ -63,4 +63,36 @@ export const courseEnquiryOtpVerify= (body,id) => (dispatch) => {
       });
   });
 
+};
+
+
+
+export const resendOtpCourseEnquiry= (id) => (dispatch) => {
+  // dispatch({
+  //   type: COURSE_ENQUIRY_OTP_VERIFY_ACTIONS.COURSE_ENQUIRY_OTP_VERIFY_ACTIONS_REQUEST,
+  //   isCourseEnquiryOtpVerifyLoader: true
+  // });
+  return new Promise((resolve, reject) => {
+
+    const prefixUrl = `/${id}`;
+    apiCall({ ...courseEnquiry.otpResend ,prefixUrl})
+      .then((data) => {
+        dispatch({
+          type: COURSE_ENQUIRY_OTP_VERIFY_ACTIONS.COURSE_ENQUIRY_OTP_VERIFY_ACTIONS_RESPONSE,
+          payload: data.data
+        });
+        Toast({ message:"Verification code was resent successfully."});
+        resolve(data);
+      })
+      .catch((error) => {
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
+        dispatch({
+          type: COURSE_ENQUIRY_OTP_VERIFY_ACTIONS.COURSE_ENQUIRY_OTP_VERIFY_ACTIONS_ERROR 
+          //   payload: data.data
+        });
+        reject(error);
+      });
+  });
+
 }

@@ -15,6 +15,9 @@ const EnquiryForm = ({
   courseEnquiryOtpVerify,
   liveClassId,
   isFromSyllabus=false,
+  isSyllabusModal=false,
+  liveClassDetail={},
+  resendOtpCourseEnquiry,
   oncloseSyllabusEnquiryFrom=()=>{}
 }) => {
   const validator = useRef(new SimpleReactValidator());
@@ -200,9 +203,12 @@ const EnquiryForm = ({
 
       <OtpVerifyModel
         isOpen={isOtpModelOpen}
+        liveClassDetail={liveClassDetail}
+        isSyllabusModal={isSyllabusModal}
         courseEnquiryData={courseEnquiryData}
         otpVerifySucess={handlOtpVerifySucess}
         courseEnquiryOtpVerify={courseEnquiryOtpVerify}
+        resendOtpCourseEnquiry={resendOtpCourseEnquiry}
         toggle={handleCloseOtpModel}
       />
     </div>

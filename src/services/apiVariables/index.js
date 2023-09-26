@@ -73,6 +73,11 @@ export const courseEnquiry = {
     method: 'post',
     baseURL: 'normal'
   },
+  otpResend: {
+    api: 'courseEnquiryOtpResend',
+    method: 'post',
+    baseURL: 'normal'
+  },
  
 };
 

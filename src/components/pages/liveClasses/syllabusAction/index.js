@@ -34,7 +34,7 @@ export const SyllabusAction = ({liveClassDetail}) => {
       <Modal isOpen={isSyllabusDownloadModal} toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)} className="modal-dialog-centered">
         <ModalHeader toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)}>Fill the below form to download the syllabus</ModalHeader>
         {/* <ModalBody> */}
-        <EnquiryForm fromPage={"liveClass"} liveClassId={liveClassDetail?.id} isFromSyllabus={true} oncloseSyllabusEnquiryFrom={()=>handleCloseModel()}/>
+        <EnquiryForm liveClassDetail={liveClassDetail} isSyllabusModal={true} fromPage={"liveClass"} liveClassId={liveClassDetail?.id} isFromSyllabus={true} oncloseSyllabusEnquiryFrom={()=>handleCloseModel()}/>
         {/* </ModalBody> */}
       </Modal>
     </div>
