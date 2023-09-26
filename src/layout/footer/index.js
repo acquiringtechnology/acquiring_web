@@ -25,26 +25,26 @@ const Footer = ({ subscribeCreate }) => {
       const formValid = validator.current.allValid();
       if (formValid) {
         setIsFormLoder(true);
-         const subscribeReq = await subscribeCreate(subscribeObj);
+        const subscribeReq = await subscribeCreate(subscribeObj);
         setIsFormLoder(false);
         const { status } = subscribeReq;
         if (status) {
-            setSubscribeObj({
-                email:""
-            })
-            // router.push({
-            //   pathname: "/register",
-            //   query: { emailVerification: "true" },
-            // });
-          }
+          setSubscribeObj({
+            email: "",
+          });
+          // router.push({
+          //   pathname: "/register",
+          //   query: { emailVerification: "true" },
+          // });
+        }
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
     } catch (e) {
-        setSubscribeObj({
-            email:""
-        })
+      setSubscribeObj({
+        email: "",
+      });
       setIsFormLoder(false);
       console.log(e);
     }
@@ -55,23 +55,49 @@ const Footer = ({ subscribeCreate }) => {
       target: { value, checked, type, name },
     } = event;
 
-
     setSubscribeObj({
-        ...subscribeObj,
-        [name]: type === "checkbox" ? checked : value,
-      });
-    
+      ...subscribeObj,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
 
   return (
     <footer className={`w-100 py-4 flex-shrink-0 ${styles.footer}`}>
+      {/* <section
+        className="d-flex justify-content-between p-4 bg-primary"
+      >
+        <div className="me-5">
+          <span>Get connected with us on social networks:</span>
+        </div>
+
+        <div>
+          <a href="" className="text-white me-4">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="" className="text-white me-4">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="" className="text-white me-4">
+            <i className="fab fa-google"></i>
+          </a>
+          <a href="" className="text-white me-4">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="" className="text-white me-4">
+            <i className="fab fa-linkedin"></i>
+          </a>
+          <a href="" className="text-white me-4">
+            <i className="fab fa-github"></i>
+          </a>
+        </div>
+      </section> */}
       <div className="container py-4">
         <div className="row gy-4 gx-5">
           <div className="col-lg-4 col-md-6"></div>
         </div>
         <div className="row gy- gx-5">
           <div className="col-lg-4 col-md-6">
-            <Link href='/' className="h1 text-muted">
+            <Link href="/" className="h1 text-muted">
               <img
                 width={50}
                 height={50}
@@ -124,30 +150,30 @@ const Footer = ({ subscribeCreate }) => {
               Workshops, & Masterclasses
             </p>
             {/* <form action="#"> */}
-              <div className="input-group mb-3">
-                <input
-                  className="form-control"
-                  value={subscribeObj.email}
-                  type="text"
-                  name="email"
-                  placeholder="Enter your mail id"
-                  aria-label="Enter your mail id"
-                  aria-describedby="button-addon2"
-                  onChange={handleInputChange}
-                />
-                <button
-                  className="btn btn-primary"
-                  onClick={handleSubmitSubscribe}
-                  type="button"
-                >
-                  <i className="fas fa-paper-plane"></i>
-                </button>
-              </div>
-              {validator.current.message(
-                "Subscribe Email",
-                subscribeObj.email,
-                "required"
-              )}
+            <div className="input-group mb-3">
+              <input
+                className="form-control"
+                value={subscribeObj.email}
+                type="text"
+                name="email"
+                placeholder="Enter your mail id"
+                aria-label="Enter your mail id"
+                aria-describedby="button-addon2"
+                onChange={handleInputChange}
+              />
+              <button
+                className="btn btn-primary"
+                onClick={handleSubmitSubscribe}
+                type="button"
+              >
+                <i className="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            {validator.current.message(
+              "Subscribe Email",
+              subscribeObj.email,
+              "required"
+            )}
             {/* </form> */}
           </div>
         </div>
@@ -157,7 +183,7 @@ const Footer = ({ subscribeCreate }) => {
 };
 
 const mapStatesToProps = ({
-    subscribe: { isSubscribeCreateLoader = false },
+  subscribe: { isSubscribeCreateLoader = false },
 }) => {
   return { isSubscribeCreateLoader };
 };

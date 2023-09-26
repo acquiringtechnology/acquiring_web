@@ -18,7 +18,7 @@ export const ContactUsHeader = () => {
                                     </div>
                                     <div className="flex-grow-1 ms-4">
                                         <h4 className='text-primary mb-0'>Phone</h4>
-                                        <label>+91 9943631660</label>
+                                        <label>+91 9042771660</label>
                                     </div>
                                 </div>
                             </div>

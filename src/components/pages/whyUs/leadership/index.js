@@ -14,7 +14,7 @@ export const Leadership = () => {
           <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
             <div className={styles.imageContainer}>
               <img
-                src={'/img/user_img.avif'}
+                src={'/img/acquiring_founder.png'}
                 alt="Anvesh Babu"
                 title="Anvesh Babu"
                 loading="lazy"
