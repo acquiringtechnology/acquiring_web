@@ -1,9 +1,25 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import { Layout } from "@/layout";
+import { ProfileCard ,ProfileFormCard} from "@/components/pages";
+import { getStorage} from "@/services/helperFunctions";
+import { EXIST_LOCAL_STORAGE} from "@/services/constants";
+import { useEffect,useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
  export default function Profile() {
+  const [userDetails, setUserDetails] = useState({});
+
+useEffect(()=>{
+  try {
+    // window.addEventListener("scroll", handleverticalScroll);
+    const curentUserData =
+      JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+      console.log('curentUserData--------->',curentUserData)
+    setUserDetails(curentUserData);
+  } catch (e) {   console.log('curentUserData-------e-->',e)}
+},[])
+
 
 
     return(
@@ -26,10 +42,13 @@ const inter = Inter({ subsets: ["latin"] });
         </Head>
         <main className={`${inter.className}`}>
         <Layout>
-         <div className="vh-100 ">
+         <div className="vh-100 container mt-4">
          <div className="row">
-            <div className="col-12">
-             <h4>hgjgjh</h4>
+            <div className="col-md-4 col-sm-12">
+             <ProfileCard userDetails={userDetails}/>
+            </div>
+            <div className="col-md-8 col-sm-12">
+             <ProfileFormCard userDetails={userDetails}/>
             </div>
           </div>
 
