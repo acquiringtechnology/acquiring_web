@@ -91,4 +91,14 @@ export const subscribe = {
  
 };
 
+export const candidate = {
+  put: {
+    api: 'user',
+    method: 'put',
+    baseURL: 'normal'
+  },
+
+ 
+};
+
 

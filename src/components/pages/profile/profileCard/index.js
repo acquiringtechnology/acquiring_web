@@ -54,10 +54,10 @@ console.log('userDetails-----2',userDetails)
                   <tr>
                     <td>
                       Mobile Number{" "}
-                      <i
+                      {/* <i
                         className="fa-solid fa-circle-xmark text-danger"
                         title="unverified"
-                      />
+                      /> */}
                     </td>
                     <td>{userDetails?.phone || '-'}</td>
                   </tr>

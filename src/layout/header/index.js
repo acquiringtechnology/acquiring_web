@@ -252,8 +252,9 @@ export const Header = () => {
             <DropdownItem divider />
             {/* <DropdownItem>My Profile</DropdownItem>
           <DropdownItem>Change Password</DropdownItem> */}
+           <DropdownItem onClick={()=>router.push('/profile')}>My Profile</DropdownItem>
             <DropdownItem onClick={handleSiginOut}>Sign out</DropdownItem>
-            <DropdownItem onClick={()=>router.push('/profile')}>My Profile</DropdownItem>
+           
           </DropdownMenu>
         </Dropdown>
       )}
