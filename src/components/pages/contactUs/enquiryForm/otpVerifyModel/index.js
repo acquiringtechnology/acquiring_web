@@ -142,8 +142,9 @@ export const OtpVerifyModel = ({
                 </div>
               ) : (
                 <span
-                  className="float-end text-decoration cursor-pointer"
+                  className="float-end text-decoration-underline cursor-pointer"
                   onClick={handleResendOtp}
+                  // style={}
                 >
                   Resend OTP
                 </span>
