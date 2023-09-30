@@ -13,6 +13,21 @@ export const TechnologiesCovered = ({liveClassDetail}) => {
         <Swiper
           spaceBetween={30}
           slidesPerView={4.3}
+          breakpoints={{
+            0: {
+              slidesPerView: 1.5,
+            },
+            576:{
+              slidesPerView:1.5,
+            },
+            768: {
+              slidesPerView: 2.3,
+            },
+            992:{
+              slidesPerView:4.3
+            },
+           
+          }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
             loop={!true}

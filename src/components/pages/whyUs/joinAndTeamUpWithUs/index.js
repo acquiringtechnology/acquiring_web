@@ -15,7 +15,7 @@ export const JoinAndTeamUpWithUs = () => {
             <p>Welcoming to hire professionals for Technical Development, Graphic Design, Digital Marketing, Sales, & Industry experts across various domains.</p>
           </div>
           <div className="col-md-12">
-            <h4 >Send your updated CV & resume to hr@acquiring.in </h4>
+            <h4 >Send your updated CV & resume to acquiringtechnology@gmail.com </h4>
             {/* <p>Welcoming to hire professionals for Technical Development, Graphic Design, Digital Marketing, Sales, & Industry experts across various domains.</p> */}
           </div>
         </div>

@@ -1,8 +1,17 @@
 import styles from "./liveClassPricing.module.scss";
 import { NormalButton } from "@/components/common";
 import { useRouter } from "next/router";
+import { EnquiryForm } from "@/components/pages";
+import { useState } from "react";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 export const LiveClassPricing = ({liveClassDetail}) => {
   const router = useRouter();
+  const [isSyllabusDownloadModal,setIsSyllabusDownloadModal] =useState(false);
+
+  const handleCloseModel=()=>{
+    setIsSyllabusDownloadModal(false)
+  }
+  
   return (
     <section>
       <div className="container mb-5">
@@ -46,6 +55,7 @@ export const LiveClassPricing = ({liveClassDetail}) => {
                     <NormalButton
                       title="Book Now"
                       className="btn-outline-primary"
+                      onClick={()=>setIsSyllabusDownloadModal(true)}
                     />
                   </div>
                 </div>
@@ -96,6 +106,13 @@ export const LiveClassPricing = ({liveClassDetail}) => {
                 </div>
               </div>
             </div> */}
+
+<Modal isOpen={isSyllabusDownloadModal} toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)} className="modal-dialog-centered">
+        <ModalHeader toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)}>Start Your Career Now</ModalHeader>
+        {/* <ModalBody> */}
+        <EnquiryForm liveClassDetail={liveClassDetail} fromPage={"liveClass"} liveClassId={liveClassDetail?.id} isFromSyllabus={true} oncloseSyllabusEnquiryFrom={()=>handleCloseModel()}/>
+        {/* </ModalBody> */}
+      </Modal>
           </div>
         </div>
       </div>

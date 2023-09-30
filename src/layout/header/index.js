@@ -95,6 +95,22 @@ export const Header = () => {
               src={"/logo.svg"}
             />
           </Link>
+
+          {_.isEmpty(userDetails) && (
+          <div className="d-flex d-block d-lg-none mt-2">
+            <NormalButton
+              title="Login"
+              className="btn text-primary signup-btn"
+              onClick={() => router.push("/signIn")}
+            />
+            <NormalButton
+              title="Sign up"
+              className="btn btn-outline-primary signup-btn signup-btn"
+              onClick={() => router.push("/register")}
+            />
+          </div>
+        )}
+
         </div>
 
         <div
@@ -153,22 +169,9 @@ export const Header = () => {
               title="Contact Us"
             />
           </div>
+          
         </div>
-        {_.isEmpty(userDetails) && (
-          <div className="d-flex d-block d-lg-none">
-            <NormalButton
-              title="Login"
-              className="btn text-primary signup-btn"
-              onClick={() => router.push("/signIn")}
-            />
-            <NormalButton
-              title="Sign up"
-              className="btn btn-outline-primary signup-btn signup-btn"
-              onClick={() => router.push("/register")}
-            />
-          </div>
-        )}
-
+     
         {!_.isEmpty(userDetails) && (
           <Dropdown
             isOpen={mobileDropdownOpen}

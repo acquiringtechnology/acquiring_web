@@ -12,7 +12,7 @@ export const Leadership = () => {
         </div>
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
-            <div className={styles.imageContainer}>
+            <div className={`${styles.imageContainer} `}>
               <img
                 src={'/img/acquiring_founder.png'}
                 alt="Anvesh Babu"
@@ -30,7 +30,7 @@ export const Leadership = () => {
           <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
             <div className={styles.imageContainer}>
               <img
-                 src={'/img/user_img.avif'}
+                 src={'/img/mirsha.png'}
                  alt="Mirsha"
                  title="Mirsha"
                  loading="lazy"
