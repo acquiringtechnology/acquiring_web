@@ -12,6 +12,7 @@ export const OtpVerifyModel = ({
   isSyllabusModal = false,
   liveClassDetail,
   resendOtpCourseEnquiry,
+  courseEnquiryFormObj
 }) => {
   const validator = useRef(new SimpleReactValidator());
   const [, forceUpdate] = useState(0);
@@ -75,7 +76,8 @@ export const OtpVerifyModel = ({
 
   const handleResendOtp = async () => {
     setIsOtpResendLoder(true);
-    const courseEnquiryOtpResendReq = await resendOtpCourseEnquiry(
+    console.log("status-------------->", courseEnquiryFormObj);
+    const courseEnquiryOtpResendReq = await resendOtpCourseEnquiry(courseEnquiryFormObj.phone,
       courseEnquiryData?.id
     );
     setIsOtpResendLoder(false);
@@ -121,7 +123,7 @@ export const OtpVerifyModel = ({
             <div className="col-md-12">
               <NormalInput
                 placeholder="Enter the OTP to verify and proceed"
-                title={`OTP sent to ${courseEnquiryData.phone}`}
+                title={`OTP sent to ${courseEnquiryFormObj.phone}`}
                 onChange={handleOtpInputChange}
                 name="otpCode"
                 errorMessage={validator.current.message(

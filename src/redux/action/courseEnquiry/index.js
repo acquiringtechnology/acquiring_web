@@ -67,7 +67,7 @@ export const courseEnquiryOtpVerify= (body,id) => (dispatch) => {
 
 
 
-export const resendOtpCourseEnquiry= (id) => (dispatch) => {
+export const resendOtpCourseEnquiry= (phone,id) => (dispatch) => {
   // dispatch({
   //   type: COURSE_ENQUIRY_OTP_VERIFY_ACTIONS.COURSE_ENQUIRY_OTP_VERIFY_ACTIONS_REQUEST,
   //   isCourseEnquiryOtpVerifyLoader: true
@@ -75,7 +75,10 @@ export const resendOtpCourseEnquiry= (id) => (dispatch) => {
   return new Promise((resolve, reject) => {
 
     const prefixUrl = `/${id}`;
-    apiCall({ ...courseEnquiry.otpResend ,prefixUrl})
+    const body={
+      phone
+    }
+    apiCall({ ...courseEnquiry.otpResend ,body,prefixUrl})
       .then((data) => {
         dispatch({
           type: COURSE_ENQUIRY_OTP_VERIFY_ACTIONS.COURSE_ENQUIRY_OTP_VERIFY_ACTIONS_RESPONSE,

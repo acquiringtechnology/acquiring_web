@@ -209,6 +209,7 @@ const EnquiryForm = ({
         otpVerifySucess={handlOtpVerifySucess}
         courseEnquiryOtpVerify={courseEnquiryOtpVerify}
         resendOtpCourseEnquiry={resendOtpCourseEnquiry}
+        courseEnquiryFormObj={courseEnquiryFormObj}
         toggle={handleCloseOtpModel}
       />
     </div>
