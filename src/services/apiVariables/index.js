@@ -9,8 +9,8 @@ export const authenticate = {
     method: 'post',
     baseURL: 'normal'
   },
-  emailVerificasion: {
-    api: 'register/emailVerificasion',
+  updatePassword: {
+    api: 'user/updatePassword',
     method: 'post',
     baseURL: 'normal'
   }

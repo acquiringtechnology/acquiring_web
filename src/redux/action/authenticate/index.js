@@ -3,6 +3,7 @@ import {
   AUTHENTICATE_LOGIN_ACTIONS,
   AUTHENTICATE_REGISTER_ACTIONS,
   AUTHENTICATE_REGISTER_EMAIL_VERIFICATION_ACTIONS,
+  AUTHENTICATE_CHANGE_PASSWORD_ACTIONS
 } from "@/redux/actionsType/authenticate";
 import { authenticate } from "@/services/apiVariables";
 import { Toast } from "@/services/toast";
@@ -94,3 +95,33 @@ export const userRegisterEmailVerification = (id) => (dispatch) => {
       });
   });
 };
+
+
+export const changePassword = (body) => (dispatch) => {
+  console.log("userLogin api");
+  dispatch({
+    type: AUTHENTICATE_CHANGE_PASSWORD_ACTIONS.AUTHENTICATE_CHANGE_PASSWORD_REQUEST,
+    isChangePasswordLoader: true,
+  });
+  return new Promise((resolve, reject) => {
+    apiCall({ ...authenticate.updatePassword, body })
+      .then((data) => {
+        dispatch({
+          type: AUTHENTICATE_CHANGE_PASSWORD_ACTIONS.AUTHENTICATE_CHANGE_PASSWORD_RESPONSE,
+          payload: data.data,
+        });
+        Toast({ message: "your password has been successfully updated" });
+        resolve(data);
+      })
+      .catch((error) => {
+        let message = error?.message || "Something went wrong";
+        Toast({ message, type: "error" });
+        dispatch({
+          type: AUTHENTICATE_CHANGE_PASSWORD_ACTIONS.AUTHENTICATE_CHANGE_PASSWORD_ERROR,
+          //   payload: data.data
+        });
+        reject(error);
+      });
+  });
+};
+

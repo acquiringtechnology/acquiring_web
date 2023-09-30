@@ -82,7 +82,7 @@ export default function CourseDetail() {
         {courseDetails?.syllabusList?.length >0?
         <div className="container">
           <div className="row">
-            <div className="col-8">
+            <div className="col-md-8 mb-4">
 
               {!_.isEmpty(userDetails)? 
               <CourseVideoCard
@@ -90,7 +90,7 @@ export default function CourseDetail() {
                 sendSelectedTopic={sendSelectedTopic}
               />: <LogOut/>}
             </div>
-            <div className="col-4">
+            <div className="col-md-4">
               <CourseDetailContent
                 sendSelectedTopic={setSendSelectedTopic}
                 courseDetails={courseDetails}
