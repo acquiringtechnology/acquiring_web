@@ -106,6 +106,7 @@ export default function CourseDetail() {
 
 
 const LogOut=()=>{
+  const router = useRouter();
 return(
   <div className="row justify-content-center align-items-center h-100">
     <div className="col-md-12 ">

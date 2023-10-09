@@ -89,8 +89,9 @@ export const OtpVerifyModel = ({
       backdrop={"static"}
       toggle={toggle}
     >
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title ">Verify OTP</h5>
+      <div className="modal-header bg-primary text-white">
+        <h5 className="modal-title ">Verify OTP</h5>
+        <button type="button" onClick={toggle} className="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <ModalBody>
         <div className="row">

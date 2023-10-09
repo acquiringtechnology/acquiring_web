@@ -100,8 +100,8 @@ const Footer = ({ subscribeCreate }) => {
             <Link href="/" className="h1 text-muted">
               <img
                 width={50}
-                height={50}
-                className={styles.brandImage}
+                                height={50}
+                className={`${styles.brandImage} mb-3`}
                 src={"/logo.svg"}
               />
             </Link>
