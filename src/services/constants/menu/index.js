@@ -28,6 +28,12 @@ export const MENU = [
     isShow: false,
   },
   {
+    title: "Webinars",
+    // icon: <PersonIcon />,
+    link: "/webinars",
+    isShow: false,
+  },
+  {
     title: "Why Us?",
     // icon: <PersonIcon />,
     link: "/whyUs",

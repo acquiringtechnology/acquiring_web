@@ -9,7 +9,7 @@ import {
   AboutCompany,
   OurCoursesCard,
   HaveQue,
-  OurCustomer,
+  UpcommingWebinarsCards,
   WhatOfferYou,
 } from "@/components/pages";
 export default function Home() {
@@ -48,6 +48,7 @@ export default function Home() {
                 description="Acquire Skills for your present (and future). Get started with us"
                 bannerImage="/img/banner-img.png"
               />
+              <UpcommingWebinarsCards/>
               <AboutCompany />
               <WhatOfferYou />
               <OurCoursesCard isSwiper={false} />

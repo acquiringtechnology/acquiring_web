@@ -5,6 +5,7 @@ export {
   HaveQue,
   OurCustomer,
   WhatOfferYou,
+  UpcommingWebinarsCards,
 } from "./home";
 export { OurPromis } from "./aboutUs";
 export { EnquiryForm, ContactUsHeader } from "./contactUs";
@@ -32,3 +33,4 @@ export {
   JoinAndTeamUpWithUs,
 } from "./whyUs";
 export { ProfileCard, ProfileFormCard } from "./profile";
+export { WebinarsBanners ,AboutWebinar , WebinarsRegisterForm} from "./webinars";
