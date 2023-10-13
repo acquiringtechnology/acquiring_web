@@ -14,7 +14,7 @@ const reducers = combineReducers({
   courseEnquiry: courseEnquiryReducer,
   subscribe: subscribeReducer,
   candidate:candidatereducer,
-  Webinar:WebinarReducer
+  webinar:WebinarReducer
 });
 
 export default reducers;

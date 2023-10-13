@@ -1,6 +1,6 @@
 import { WebinarsRegisterForm } from "@/components/pages/webinars";
 import styles from "./aboutWebinar.module.scss";
-export const AboutWebinar = ({ webinarDetails = {} }) => {
+export const AboutWebinar = ({ webinarDetails = {}  ,createWebinearEnrolled ,webinearEnrolledOtpResend,webinearEnrolledOtpVerify}) => {
   return (
     <div className={`container ${styles.aboutWebinarContiner}`}>
       <div className="row">
@@ -46,7 +46,7 @@ export const AboutWebinar = ({ webinarDetails = {} }) => {
         </div>
 
         <div className="col-md-4">
-          <WebinarsRegisterForm />
+          <WebinarsRegisterForm webinarId={webinarDetails?.id} webinearEnrolledOtpResend={webinearEnrolledOtpResend} createWebinearEnrolled={createWebinearEnrolled} webinearEnrolledOtpVerify={webinearEnrolledOtpVerify}/>
         </div>
       </div>
     </div>

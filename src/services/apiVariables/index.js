@@ -109,6 +109,23 @@ export const webinar = {
     baseURL: 'normal'
   },
 
+  enrolledCreate: {
+    api: 'webinar/enrolled',
+    method: 'post',
+    baseURL: 'normal'
+  },
+  enrolledOTPVerify: {
+    api: 'webinar/enrolledOTPVerify',
+    method: 'post',
+    baseURL: 'normal'
+  },
+  enrolledOTPResend: {
+    api: 'webinar/enrolledOTPResend',
+    method: 'post',
+    baseURL: 'normal'
+  },
+
+
  
 };
 

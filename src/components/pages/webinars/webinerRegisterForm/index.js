@@ -3,13 +3,19 @@ import SimpleReactValidator from "simple-react-validator";
 import { NormalInput, NormalButton } from "@/components/common";
 import styles from "./webinarRegisterForm.module.scss";
 import { WebinarOtpVerify } from "./verifyOtp";
-export const WebinarsRegisterForm = () => {
+export const WebinarsRegisterForm = ({
+  createWebinearEnrolled,
+  webinearEnrolledOtpVerify,
+  webinarId,
+  webinearEnrolledOtpResend
+}) => {
   const validator = useRef(new SimpleReactValidator());
   const [, forceUpdate] = useState(0);
   const [isOtpModelOpen, setIsOtpModelOpen] = useState(false);
+  const [isFormLoder, setIsFormLoder] = useState(false);
   const [webinarEnrolledFormObj, setWebinarEnrolledFormObj] = useState({
     name: "",
-    webinarId: "r3zEE6hxUXH9skuD93Aq",
+    webinarId: webinarId,
     email: "",
     phone: "",
     joinCourseStatus: 0,
@@ -26,19 +32,53 @@ export const WebinarsRegisterForm = () => {
     });
   };
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = async () => {
     try {
       const formValid = validator.current.allValid();
       if (formValid) {
+        setIsFormLoder(true);
+
+        const webinarEnrolledReq = await createWebinearEnrolled(
+          {...webinarEnrolledFormObj,webinarId}
+        );
+        setIsFormLoder(false);
+        const {
+          status,
+          data: { WebinarsEnrollData },
+        } = webinarEnrolledReq;
+
+        if (status) {
+          console.log("courseEnquiryData---------->", WebinarsEnrollData);
+          setIsOtpModelOpen(true);
+          setWebinarEnrolledFormObj(WebinarsEnrollData);
+        }
+        console.log("fom");
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
-    } catch (e) {}
+    } catch (e) {
+      setIsFormLoder(false);
+      console.log("errr------", e);
+    }
   };
 
   const handleCloseOtpModel = () => {
     setIsOtpModelOpen(!isOtpModelOpen);
+  };
+
+  const handlOtpVerifySucess = () => {
+    handleCloseOtpModel();
+    // setCourseEnquiryData({});
+    setWebinarEnrolledFormObj({
+      name: "",
+      webinarId,
+      email: "",
+      phone: "",
+      joinCourseStatus: 0,
+      isExistUser: 0,
+    });
+
   };
   return (
     <div className={styles.webinarsRegisterFormContiner}>
@@ -97,14 +137,21 @@ export const WebinarsRegisterForm = () => {
                 className="btn btn-primary px-4"
                 type="submit"
                 title="Submit"
-                // isLoader={isFormLoder}
+                isLoader={isFormLoder}
                 onClick={handleFormSubmit}
               />
             </div>
           </div>
         </div>
       </div>
-      <WebinarOtpVerify toggle={handleCloseOtpModel} isOpen={isOtpModelOpen} />
+      <WebinarOtpVerify
+        toggle={handleCloseOtpModel}
+        isOpen={isOtpModelOpen}
+        otpVerifySucess={handlOtpVerifySucess}
+        webinearEnrolledOtpVerify={webinearEnrolledOtpVerify}
+        webinarEnrolledFormObj={webinarEnrolledFormObj}
+        webinearEnrolledOtpResend={webinearEnrolledOtpResend}
+      />
     </div>
   );
 };

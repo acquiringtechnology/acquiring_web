@@ -3,7 +3,14 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { NormalInput, NormalButton } from "@/components/common";
 import SimpleReactValidator from "simple-react-validator";
 
-export const WebinarOtpVerify = ({ toggle, isOpen, webinarFromObj }) => {
+export const WebinarOtpVerify = ({
+  toggle,
+  isOpen,
+  webinarEnrolledFormObj,
+  webinearEnrolledOtpVerify,
+  otpVerifySucess,
+  webinearEnrolledOtpResend
+}) => {
   const validator = useRef(new SimpleReactValidator());
   const [, forceUpdate] = useState(0);
   const [isFormLoder, setIsFormLoder] = useState(false);
@@ -28,6 +35,21 @@ export const WebinarOtpVerify = ({ toggle, isOpen, webinarFromObj }) => {
     try {
       const formValid = validator.current.allValid();
       if (formValid) {
+        // webinearEnrolledOtpVerify();
+
+        setIsFormLoder(true);
+
+        const webinarEnrolledOtpVerifiedReq = await webinearEnrolledOtpVerify(
+          otpFromObj,
+          webinarEnrolledFormObj?.id
+        );
+        setIsFormLoder(false);
+        // webinarEnrolledOtpVerifiedData
+        const { status } = webinarEnrolledOtpVerifiedReq;
+        if (status) {
+       
+          setIsOtpVeSucessrified(true);
+        }
       } else {
         validator.current.showMessages();
         forceUpdate(1);
@@ -38,15 +60,34 @@ export const WebinarOtpVerify = ({ toggle, isOpen, webinarFromObj }) => {
     }
   };
 
-
   const handleResendOtp = async () => {
+   try{
     setIsOtpResendLoder(true);
- 
-    // const courseEnquiryOtpResendReq = await resendOtpCourseEnquiry(courseEnquiryFormObj.phone,
-    //   courseEnquiryData?.id
-    // );
+
+    const body ={
+phone: webinarEnrolledFormObj.phone
+    }
+
+    const courseEnquiryOtpResendReq = await webinearEnrolledOtpResend(body,
+        webinarEnrolledFormObj?.id
+    );
     setIsOtpResendLoder(false);
+   } catch (e) {
+    setIsOtpResendLoder(false);
+    // console
+  }
   };
+
+  const handleSucess=()=>{
+    setIsOtpVeSucessrified(false);
+    otpVerifySucess();
+    setOtpFromObj({
+        otpCode:""
+    })
+  }
+  
+
+
   return (
     <Modal
       isOpen={isOpen}
@@ -66,10 +107,17 @@ export const WebinarOtpVerify = ({ toggle, isOpen, webinarFromObj }) => {
       </div>
       <ModalBody>
         <div className="row">
-          <div className="col-12">
+        {isOtpVeSucessrified ? (
+            <div className="col-md-12">
+              <div class="alert alert-success" role="alert">
+                You have successfully registered for this Webinar.
+              </div>
+            </div>
+          ) : (
+            <div className="col-12">
             <NormalInput
               placeholder="Enter the OTP to verify and proceed"
-              title={`OTP sent to ${webinarFromObj?.phone}`}
+              title={`OTP sent to ${webinarEnrolledFormObj?.phone}`}
               onChange={handleOtpInputChange}
               name="otpCode"
               errorMessage={validator.current.message(
@@ -96,6 +144,9 @@ export const WebinarOtpVerify = ({ toggle, isOpen, webinarFromObj }) => {
               </span>
             )}
           </div>
+          )}
+
+         
           <div className="col-md-12 text-center">
             {!isOtpVeSucessrified && (
               <NormalButton
@@ -114,7 +165,7 @@ export const WebinarOtpVerify = ({ toggle, isOpen, webinarFromObj }) => {
                 type="submit"
                 title="Ok"
                 isLoader={isFormLoder}
-                onClick={otpVerifySucess}
+                onClick={handleSucess}
               />
             )}
           </div>

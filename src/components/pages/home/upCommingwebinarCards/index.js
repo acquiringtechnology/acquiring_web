@@ -112,7 +112,7 @@ const handleRouteDetailPage=(data)=>{
 };
 
 const mapStatesToProps = ({
-  Webinar: { isWebinarListLoader = false, webinarList = [] },
+  webinar: { isWebinarListLoader = false, webinarList = [] },
 }) => {
   return { isWebinarListLoader, webinarList };
 };
