@@ -1,4 +1,4 @@
-const { useRef, useState, useEffect } = require("react");
+import { useRef, useState, useEffect } from  'react'
 import styles from "./enquiryForm.module.scss";
 import { NormalInput, NormalSelect, NormalButton } from "@/components/common";
 import { COURSE_LIST } from "@/services/constants";

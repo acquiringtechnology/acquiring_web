@@ -5,6 +5,7 @@ import { coursereducer } from "./course";
 import { courseEnquiryReducer } from "./courseEnquiry";
 import { subscribeReducer } from "./subscribe";
 import { candidatereducer } from "./candidate";
+import { WebinarReducer } from "./webinars";
 
 const reducers = combineReducers({
   authenticate: authenticateReducer,
@@ -12,7 +13,8 @@ const reducers = combineReducers({
   course: coursereducer,
   courseEnquiry: courseEnquiryReducer,
   subscribe: subscribeReducer,
-  candidate:candidatereducer
+  candidate:candidatereducer,
+  Webinar:WebinarReducer
 });
 
 export default reducers;

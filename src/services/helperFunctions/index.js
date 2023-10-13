@@ -35,3 +35,11 @@ export const isEmptyObj=(obj={})=> {
   console.log('obj-----------?',obj)
   return Object?.keys(obj).length === 0;
 }
+
+
+export const convertStringToHTML = htmlString => {
+  const parser = new DOMParser();
+  const html = parser.parseFromString(htmlString, 'text/html');
+
+  return html.body.toString();
+}

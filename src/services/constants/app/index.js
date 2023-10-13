@@ -8,7 +8,8 @@ export const EXIST_LOCAL_STORAGE = {
   ACCOUNT_DETAIL: 'accountDetail',
   CURRENT_USER: 'curentUser',
   SYLLABUS_DETAIL: 'syllabusdetail',
-  COURSE_DETAIL: 'coursedetail'
+  COURSE_DETAIL: 'coursedetail',
+  WEBINAR_DETAIL: 'webinardetail'
 };
 
 export const WEEK_LIST = [

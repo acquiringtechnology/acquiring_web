@@ -102,3 +102,13 @@ export const candidate = {
 };
 
 
+export const webinar = {
+  get: {
+    api: 'webinar',
+    method: 'get',
+    baseURL: 'normal'
+  },
+
+ 
+};
+
