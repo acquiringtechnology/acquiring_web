@@ -17,9 +17,9 @@ export const liveClasssList = [
         <p>
           MERN stands for MongoDB, Express.js, React.js and Node.js - and
           combined, these four technologies allow you to build amazing web
-          applications. You'll learn to build dynamic, data-driven web
+          applications. {"You'll"} learn to build dynamic, data-driven web
           applications, mastering essential technologies, tools, and best
-          practices. By the end of the course, you'll have the expertise to
+          practices. By the end of the course, {"you'll"} have the expertise to
           develop full-fledged web applications, making you a valuable asset in
           the world of software development.
         </p>
@@ -117,7 +117,7 @@ export const liveClasssList = [
     dis: (
       <>
         <p>
-          Our "Mean Full Stack Course" is a comprehensive training program
+          Our {"Mean Full Stack Course"} is a comprehensive training program
           designed to equip individuals with the essential skills and knowledge
           required to become proficient full stack developers using the MEAN
           stack. MEAN stands for MongoDB, Express.js, Angular, and Node.js, and
@@ -220,11 +220,11 @@ export const liveClasssList = [
     dis: (
       <>
         <p>
-          Our "React.js Course" is an immersive training program focused on
+          Our {"React.js Course"} is an immersive training program focused on
           mastering React.js, a popular JavaScript library for building user
           interfaces. In this course, participants will learn how to create
           dynamic and interactive web applications, leveraging the power of
-          React's component-based architecture.
+          {"React's"} component-based architecture.
         </p>
 
         <p>
@@ -296,7 +296,7 @@ export const liveClasssList = [
     dis: (
       <>
         <p>
-          Our "Angular Course" is a comprehensive training program designed to
+          Our {"Angular Course"} is a comprehensive training program designed to
           provide in-depth expertise in Angular, a powerful front-end framework
           for building dynamic web applications. This course covers a wide range
           of topics, including component development, data binding, routing,
@@ -304,7 +304,7 @@ export const liveClasssList = [
         </p>
         <p>
           Learn how to create robust and maintainable web applications with
-          Angular's structured and modular approach. By the end of the course,
+          {"Angular's"} structured and modular approach. By the end of the course,
           students will have the skills to develop feature-rich, single-page
           applications that deliver a seamless user experience using Angular.
         </p>
@@ -367,7 +367,7 @@ export const liveClasssList = [
     dis: (
       <>
         <p>
-          Our "React Native Development Course" is a specialized training
+          Our {"React Native Development Course"} is a specialized training
           program that immerses participants in the world of mobile app
           development using the React Native framework. React Native is an
           open-source technology created by Facebook for building cross-platform
