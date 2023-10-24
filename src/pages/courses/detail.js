@@ -30,7 +30,7 @@ export default function CourseDetail() {
   const handleGetCourseDetails=()=>{
     try {
       const courseDetails =
-        JSON.parse(getStorage(EXIST_LOCAL_STORAGE.COURSE_DETAIL)) || {};
+      getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
       
 
         if(courseDetails?.syllabusList.length >0){
@@ -51,7 +51,7 @@ export default function CourseDetail() {
 
   const handleCheckIslogin=()=>{
     try{
-      const curentUserData = JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+      const curentUserData =  getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
       setUserDetails(curentUserData);
     }catch(e){
 

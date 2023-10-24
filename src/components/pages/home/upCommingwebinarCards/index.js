@@ -16,6 +16,7 @@ const UpcommingWebinarsCards = ({
   isViewAll = false,
   getAllWebinear,
   webinarList = [],
+  isWebinarListLoader=false
 }) => {
   const router = useRouter();
 
@@ -34,8 +35,13 @@ const UpcommingWebinarsCards = ({
     router.push(`/webinars/details/${data.id}`);
   };
 
+  const handleShowUpCommingWebinarList = (data) => {
+    const res = data.filter(({ sDate }) => moment(sDate) >= moment());
+    return res.length > 0 ? res.slice(0, 4) : [];
+  };
+
   return (
-    <section>
+    webinarList.length>0 && !isWebinarListLoader &&  <section>
       <div className={`container mb-5`}>
         <div className={styles.upCommingWebinarsContiner}>
           <div className="row mb-4">
@@ -47,7 +53,7 @@ const UpcommingWebinarsCards = ({
           </div>
 
           <div className="row justify-content-center">
-            {webinarList?.map((data, i) => (
+            {handleShowUpCommingWebinarList(webinarList)?.map((data, i) => (
               <div className="col-md-3" key={i}>
                 <div className="card border-0 shadow mb-5">
                   <img
@@ -81,19 +87,20 @@ const UpcommingWebinarsCards = ({
               </div>
             ))}
           </div>
-          {!isViewAll && webinarList.length > 4 && (
-            <div className="row mb-4">
-              <div className="col-md-12 text-center mb-4">
-                <button
-                  onClick={() => router.push("/webinars")}
-                  type="button"
-                  className={`btn btn-primary btn-lg  ${styles.servicesCardButton}`}
-                >
-                  View All webinars
-                </button>
+          {!isViewAll &&
+            handleShowUpCommingWebinarList(webinarList).length > 4 && (
+              <div className="row mb-4">
+                <div className="col-md-12 text-center mb-4">
+                  <button
+                    onClick={() => router.push("/webinars")}
+                    type="button"
+                    className={`btn btn-primary btn-lg  ${styles.servicesCardButton}`}
+                  >
+                    View All webinars
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
         </div>
       </div>
       {/* </div>

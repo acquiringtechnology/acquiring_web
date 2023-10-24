@@ -4,16 +4,22 @@
     background-attachment: fixed;
     background-size: cover;
     padding: 20px 0;
-    background-color: #df8c90;
+    background-color: var(--primary-bg);
 
     .haveQueTitle {
-        font-size: fontSize(28px);
-        font-weight: 500;
+        font-weight: 700;
+        font-size: 3.5rem;
+        line-height: 4rem;
+        font-family: Ubuntu,sans-serif;
     }
 
     .join-team-btn {
-        // padding: 20px;
-        // width: 200px;
-        padding: 10px 25px;
+
+        background: #fff;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color:var(--primary-bg);
     }
 }

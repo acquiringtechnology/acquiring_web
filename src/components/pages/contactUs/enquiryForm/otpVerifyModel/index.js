@@ -82,16 +82,33 @@ export const OtpVerifyModel = ({
     );
     setIsOtpResendLoder(false);
   };
+
+  const handleSucessOkClick=()=>{
+    setIsOtpVeSucessrified(false);
+    otpVerifySucess();
+    setOtpFromObj({
+      otpCode: "",
+    })
+  };
+
+  const handleCloseOtp=()=>{
+    setIsOtpVeSucessrified(false);
+    toggle();
+    setOtpFromObj({
+      otpCode: "",
+    });
+    otpVerifySucess();
+  }
   return (
     <Modal
       isOpen={isOpen}
       className={`modal-dialog-centered`}
       backdrop={"static"}
-      toggle={toggle}
+      toggle={handleCloseOtp}
     >
       <div className="modal-header bg-primary text-white">
         <h5 className="modal-title ">Verify OTP</h5>
-        <button type="button" onClick={toggle} className="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" onClick={handleCloseOtp} className="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <ModalBody>
         <div className="row">
@@ -171,7 +188,7 @@ export const OtpVerifyModel = ({
                 type="submit"
                 title="Ok"
                 isLoader={isFormLoder}
-                onClick={otpVerifySucess}
+                onClick={handleSucessOkClick}
               />
             )}
           </div>

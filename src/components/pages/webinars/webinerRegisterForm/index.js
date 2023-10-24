@@ -1,8 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import SimpleReactValidator from "simple-react-validator";
 import { NormalInput, NormalButton } from "@/components/common";
+import { getStorage} from "@/services/helperFunctions";
+import { EXIST_LOCAL_STORAGE} from "@/services/constants";
 import styles from "./webinarRegisterForm.module.scss";
 import { WebinarOtpVerify } from "./verifyOtp";
+import _ from 'lodash'
 export const WebinarsRegisterForm = ({
   createWebinearEnrolled,
   webinearEnrolledOtpVerify,
@@ -13,6 +16,7 @@ export const WebinarsRegisterForm = ({
   const [, forceUpdate] = useState(0);
   const [isOtpModelOpen, setIsOtpModelOpen] = useState(false);
   const [isFormLoder, setIsFormLoder] = useState(false);
+  const [userDetail, setUserDetail] = useState(null);
   const [webinarEnrolledFormObj, setWebinarEnrolledFormObj] = useState({
     name: "",
     webinarId: webinarId,
@@ -21,6 +25,23 @@ export const WebinarsRegisterForm = ({
     joinCourseStatus: 0,
     isExistUser: 0,
   });
+
+  useEffect(()=>{
+    const userDetail = getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
+    setUserDetail(userDetail)
+    if(!_.isEmpty(userDetail)){
+
+      setWebinarEnrolledFormObj({
+        ...webinarEnrolledFormObj,
+        name:`${userDetail?.name.fName} ${userDetail?.name.lName}`,
+        email:`${userDetail?.email}`,
+        phone:`${userDetail?.phone}`,
+      })
+
+    }
+    console.log(userDetail)
+
+  },[])
 
   const handleInputChange = (event) => {
     const {
@@ -100,6 +121,7 @@ export const WebinarsRegisterForm = ({
                   webinarEnrolledFormObj.name,
                   "required"
                 )}
+                readOnly={!_.isEmpty(userDetail)}
               />
             </div>
             <div className="col-md-12">
@@ -113,6 +135,7 @@ export const WebinarsRegisterForm = ({
                   webinarEnrolledFormObj.email,
                   "required|email"
                 )}
+                readOnly={!_.isEmpty(userDetail)}
               />
             </div>
             <div className="col-md-12">
@@ -129,6 +152,7 @@ export const WebinarsRegisterForm = ({
                   webinarEnrolledFormObj.phone,
                   "required|phone"
                 )}
+                readOnly={!_.isEmpty(userDetail)}
               />
             </div>
             <div className="col-md-12">

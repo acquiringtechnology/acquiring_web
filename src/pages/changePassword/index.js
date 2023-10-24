@@ -38,7 +38,7 @@ const ForgotPassword = ({ changePassword }) => {
       if (formValid) {
         setIsFormLoder(true);
         const currentUserData =
-          JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+        getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
         const body = {
           email: currentUserData.email ? currentUserData?.email : "",
           ...forgatFormObj,

@@ -49,7 +49,7 @@ export const LiveClassPricing = ({liveClassDetail}) => {
                       </li>
                       <li className="list-group-item border-0 ps-0">
                         <i className="fa-regular text-primary fa-square-check me-2"></i>{" "}
-                        The refund option is available for seven days.
+                        The refund option is available within seven days.
                       </li>
                     </ul>
                     <NormalButton

@@ -17,8 +17,9 @@ function Profile({ candidateUpdate }) {
   useEffect(() => {
     try {
       // window.addEventListener("scroll", handleverticalScroll);
-      const curentUserData =
-        JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+      const curentUserData = getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)
+        ? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER))
+        : {};
       setUserDetails(curentUserData);
     } catch (e) {}
   }, []);

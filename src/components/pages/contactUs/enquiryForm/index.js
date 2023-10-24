@@ -112,7 +112,7 @@ const EnquiryForm = ({
       name: "",
       email: "",
       phone: "",
-      liveClassId: "",
+      liveClassId: liveClassId,
       status: 1,
       comments: "",
     });

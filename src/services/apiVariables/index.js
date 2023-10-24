@@ -13,6 +13,11 @@ export const authenticate = {
     api: 'user/updatePassword',
     method: 'post',
     baseURL: 'normal'
+  },
+  emailVerificasion: {
+    api: 'register/emailVerificasion',
+    method: 'post',
+    baseURL: 'normal'
   }
 };
 

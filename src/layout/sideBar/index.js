@@ -22,7 +22,7 @@ export const SideBar = () => {
     try {
       window.addEventListener("resize", handleWindowSize);
       const curentUserData =
-        JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+      getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
 
       console.log("curentUserData-----------", curentUserData);
       setUserDetails(curentUserData);

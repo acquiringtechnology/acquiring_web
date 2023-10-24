@@ -8,7 +8,8 @@ const NormalInput = (props) => {
     placeholder = `Enter ${title}`,
     errorMessage = "",
     inputGroup = false,
-    inputGroupRightText=''
+    inputGroupRightText='',
+    readOnly=false
   } = props;
 
   return (
@@ -25,6 +26,7 @@ const NormalInput = (props) => {
             type={type}
             className={`form-control border-start-0 ${className} ${styles.formInput}`}
             placeholder={placeholder}
+            readOnly={readOnly}
           />
         </div>
       ) : (
@@ -33,6 +35,7 @@ const NormalInput = (props) => {
           type={type}
           className={`form-control ${className} ${styles.formInput}`}
           placeholder={placeholder}
+          readOnly={readOnly}
         />
       )}
       <span className="text-danger">{errorMessage}</span>

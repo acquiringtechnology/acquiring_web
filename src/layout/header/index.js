@@ -26,7 +26,7 @@ export const Header = () => {
     try {
       window.addEventListener("scroll", handleverticalScroll);
       const curentUserData =
-        JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) || {};
+      getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
       setUserDetails(curentUserData);
     } catch (e) {}
   }, []);
@@ -118,9 +118,9 @@ export const Header = () => {
           id="navbarSupportedContent"
         >
           <ul className={`navbar-nav mx-auto mb-2 mb-lg-0 ${styles.navMenu}`}>
-            {MENU.map(({ title, link }, i) => (
+            {MENU.map(({ title, link ,exact }, i) => (
               <li className="nav-item" key={i}>
-                <NavLink className="nav-link" href={link}>
+                <NavLink exact={exact} className="nav-link" href={link}>
                   {title}
                 </NavLink>
               </li>
