@@ -1,6 +1,7 @@
 export const liveClasssList = [
   {
     name: "MERN Fullstack",
+    img:"/img/mern.png",
     dis: (
       <>
         <p>
@@ -114,6 +115,7 @@ export const liveClasssList = [
   },
   {
     name: "MEAN Fullstack",
+    img:"/img/mean.png",
     dis: (
       <>
         <p>
@@ -217,6 +219,7 @@ export const liveClasssList = [
   },
   {
     name: "React Js  (incl. React Router & Redux)",
+    img:"/img/reactJs_liv.png",
     dis: (
       <>
         <p>
@@ -293,6 +296,7 @@ export const liveClasssList = [
   },
   {
     name: "Angular ",
+    img:"/img/angular_liv.png",
     dis: (
       <>
         <p>
@@ -364,6 +368,7 @@ export const liveClasssList = [
   },
   {
     name: "React Native ",
+    img:"/img/react_native.png",
     dis: (
       <>
         <p>

@@ -20,7 +20,7 @@ export const LiveClassesCard = (props) => {
               <div className="col-md-3 col-sm-6 mb-4" key={i}>
                 <div class={`card ${styles.liveClassCard}`}>
                   <img
-                    src="https://media.swipepages.com/2021/11/5fcde7acf64f9100108c719e/instagram-post---1-300.webp"
+                    src={data.img}
                     class="card-img-top"
                     alt="courseName"
                   />

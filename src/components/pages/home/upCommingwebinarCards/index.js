@@ -11,12 +11,14 @@ import * as webinarAction from "@/redux/action/webinear";
 import { setStorage } from "@/services/helperFunctions";
 import { EXIST_LOCAL_STORAGE } from "@/services/constants";
 import { useEffect } from "react";
+import {NodataFound} from '@/components/common'
 
 const UpcommingWebinarsCards = ({
   isViewAll = false,
   getAllWebinear,
   webinarList = [],
-  isWebinarListLoader=false
+  isWebinarListLoader=false,
+  fromPage=''
 }) => {
   const router = useRouter();
 
@@ -41,9 +43,9 @@ const UpcommingWebinarsCards = ({
   };
 
   return (
-    webinarList.length>0 && !isWebinarListLoader &&  <section>
-      <div className={`container mb-5`}>
-        <div className={styles.upCommingWebinarsContiner}>
+    <section>
+      { webinarList.length>0 && !isWebinarListLoader &&<div className={`container mb-5`}>
+    <div className={styles.upCommingWebinarsContiner}>
           <div className="row mb-4">
             <div className="col-md-12 text-center mb-4">
               <h4 className={styles.upCommingWebinarsTitle}>
@@ -102,7 +104,14 @@ const UpcommingWebinarsCards = ({
               </div>
             )}
         </div>
-      </div>
+      
+      </div>}
+
+      { webinarList.length===0 && !isWebinarListLoader &&  isViewAll && <NodataFound title="Keep a lookout for our webinars, they're coming soon"  subTitle="You can go to back by clicking below button"/>}
+      
+
+      
+      {/* <h4> </h4> */}
       {/* </div>
       </div> */}
     </section>

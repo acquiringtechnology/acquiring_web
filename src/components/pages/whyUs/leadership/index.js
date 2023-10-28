@@ -14,7 +14,7 @@ export const Leadership = () => {
           <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
             <div className={`${styles.imageContainer} `}>
               <img
-                src={'/img/acquiring_founder.png'}
+                src={"/img/acquiring_founder.png"}
                 alt="Anvesh Babu"
                 title="Anvesh Babu"
                 loading="lazy"
@@ -27,22 +27,21 @@ export const Leadership = () => {
             </div>
             {/* <h4 className={styles.leadershipTitle}>Leadership</h4> */}
           </div>
-          <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
+          {/* <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
             <div className={styles.imageContainer}>
               <img
-                 src={'/img/mirsha.png'}
-                 alt="Mirsha"
-                 title="Mirsha"
-                 loading="lazy"
-                 className="w-100"
+                src={"/img/mirsha.png"}
+                alt="Mirsha"
+                title="Mirsha"
+                loading="lazy"
+                className="w-100"
               />
               <div class={styles.imageName}>
                 <h3>Mr. Mirsha</h3>
                 <h4>Co-Founder</h4>
               </div>
             </div>
-            {/* <h4 className={styles.leadershipTitle}>Leadership</h4> */}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

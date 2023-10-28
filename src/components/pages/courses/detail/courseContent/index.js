@@ -31,7 +31,7 @@ export const CourseDetailContent = ({
         <div className="col-md-12">
           {/* <CourseCard courseData={{}}/> */}
           {courseDetails?.syllabusList?.map((syllabus, i) => (
-            <div className="card" key={i}>
+            <div className="card mb-4" key={i}>
               <div className="card-header">
                 <h4 className={`${styles.titleCourseList}`}>
                   {syllabus?.syllabusName}

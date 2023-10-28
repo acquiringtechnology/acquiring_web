@@ -30,7 +30,7 @@ export default function CourseDetail() {
   const handleGetCourseDetails=()=>{
     try {
       const courseDetails =
-      getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
+      getStorage(EXIST_LOCAL_STORAGE.COURSE_DETAIL)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.COURSE_DETAIL)):{};
       
 
         if(courseDetails?.syllabusList.length >0){
