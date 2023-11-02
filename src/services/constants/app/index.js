@@ -23,4 +23,4 @@ export const WEEK_LIST = [
 ];
 export const NEXT_PUBLIC_GOOGLE_ANALYTICS= 'G-S02J90JMSB'
 // export const BASE_URL=  process.env.NEXT_PUBLIC_APP_ENV== 'PROD'?'https://acquiringapi.azurewebsites.net/':'http://localhost:3033/'
-export const BASE_URL=  process.env.NEXT_PUBLIC_APP_ENV== 'PROD'?'https://api.acquiring.in:3033/':'http://localhost:3033/'
+export const BASE_URL=  process.env.NEXT_PUBLIC_APP_ENV== 'PROD'?'https://api.acquiring.in/':'http://localhost:3033/'
