@@ -26,7 +26,7 @@ export const liveClasssList = [
         </p>
       </>
     ),
-    syllabusUrl: "/img/banner-img.png",
+    syllabusUrl: "/syllabus/mern_syllabus.pdf",
     id: "d5eb2822-507c-11ee-be56-0242ac120002",
     prgOverView: {
       dur: `3 Months / 5 Months (Weekday/Weekend)`,
@@ -134,7 +134,7 @@ export const liveClasssList = [
         </p>
       </>
     ),
-    syllabusUrl: "/img/banner-img.png",
+    syllabusUrl: "/syllabus/mean_syllabus.pdf",
     id: "e24b5aa6-507c-11ee-be56-0242ac120002",
     prgOverView: {
       dur: `3 Months / 5 Months (Weekday/Weekend)`,
@@ -244,7 +244,7 @@ export const liveClasssList = [
       classType: `Online`,
       maxCtc: `21L/annum`,
     },
-    syllabusUrl: "/img/banner-img.png",
+    syllabusUrl: "/syllabus/java fullstack.pdf",
     courseContent: [
       {
         title: "React JS",
@@ -314,7 +314,7 @@ export const liveClasssList = [
         </p>
       </>
     ),
-    syllabusUrl: "/img/banner-img.png",
+    syllabusUrl: "",
     id: "24b601e-507c-11ee-be56-0242ac120002",
     prgOverView: {
       dur: `1.5 Months / 2.5 Months (Weekday/Weekend)`,
@@ -395,7 +395,7 @@ export const liveClasssList = [
       classType: `Online`,
       maxCtc: `21L/annum`,
     },
-    syllabusUrl: "/img/banner-img.png",
+    syllabusUrl: "",
     courseContent: [
       {
         title: "React JS",
