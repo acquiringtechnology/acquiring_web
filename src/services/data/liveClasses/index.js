@@ -244,7 +244,8 @@ export const liveClasssList = [
       classType: `Online`,
       maxCtc: `21L/annum`,
     },
-    syllabusUrl: "/syllabus/java fullstack.pdf",
+    // syllabusUrl: "/syllabus/java fullstack.pdf",
+    syllabusUrl: "",
     courseContent: [
       {
         title: "React JS",
