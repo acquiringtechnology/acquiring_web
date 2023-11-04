@@ -111,7 +111,7 @@ export const liveClasssList = [
         name: "Git",
       },
     ],
-    fees: "19,999",
+    fees: "10,000",
   },
   {
     name: "MEAN Fullstack",
@@ -215,7 +215,7 @@ export const liveClasssList = [
         name: "Git",
       },
     ],
-    fees: "19,999",
+    fees: "10,000",
   },
   {
     name: "React Js  (incl. React Router & Redux)",
@@ -293,7 +293,7 @@ export const liveClasssList = [
         name: "Git",
       },
     ],
-    fees: "8000",
+    fees: "5,000",
   },
   {
     name: "Angular ",
@@ -365,7 +365,7 @@ export const liveClasssList = [
         name: "Git",
       },
     ],
-    fees: "8000",
+    fees: "5,000",
   },
   {
     name: "React Native ",
@@ -445,6 +445,6 @@ export const liveClasssList = [
         name: "Git",
       },
     ],
-    fees: "8000",
+    fees: "5,000",
   },
 ];
