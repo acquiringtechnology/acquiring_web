@@ -27,7 +27,7 @@ export const Leadership = () => {
             </div>
             {/* <h4 className={styles.leadershipTitle}>Leadership</h4> */}
           </div>
-          {/* <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
+          <div className="col-lg-4 col-md-4 col-sm-12 mb-2">
             <div className={styles.imageContainer}>
               <img
                 src={"/img/mirsha.png"}
@@ -41,7 +41,7 @@ export const Leadership = () => {
                 <h4>Co-Founder</h4>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

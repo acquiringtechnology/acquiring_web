@@ -59,7 +59,7 @@ export default function Home() {
                 bannerImage="/img/why-us.png"
               />
               <OueMissionAndVission />
-              <TheStoryBehindOur />
+              {/* <TheStoryBehindOur /> */}
               <Leadership />
               <JoinAndTeamUpWithUs />
             </div>
