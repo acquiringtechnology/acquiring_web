@@ -36,9 +36,9 @@ export const AboutWebinar = ({ webinarDetails = {}  ,createWebinearEnrolled ,web
                 KB Anvesh Babu (<a href="#">LinkedIn</a>)
               </h4>
               <ul>
-                <li>Senior Product Manager & Lead Instructor, Acquiring</li>
+                <li>Senior Software Engineer  & Front-End Tech architect</li>
                 <li>Ex-Software Developer at Dishny</li>
-                <li>Senior Product Manager & Lead Instructor, Acquiring</li>
+                <li>Founder, Acquiring Technology</li>
               </ul>
               <hr />
             </div>
