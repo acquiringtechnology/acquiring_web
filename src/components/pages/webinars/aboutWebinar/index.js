@@ -16,7 +16,7 @@ export const AboutWebinar = ({ webinarDetails = {}  ,createWebinearEnrolled ,web
                   <strong>ENDS ON: </strong> {webinarDetails?.eDate || "-"}
                 </span>
                 <span className="me-2">
-                  <strong>VENUE: </strong> Online
+                  <strong>MODE: </strong> Online
                 </span>
               </p>
               <hr />
@@ -24,7 +24,7 @@ export const AboutWebinar = ({ webinarDetails = {}  ,createWebinearEnrolled ,web
           </div>
           <div className="row mb-5">
             <div className="col-md-12">
-              <h4>About this Webinars</h4>
+              <h4>About this Webinar</h4>
               <div dangerouslySetInnerHTML={{ __html: webinarDetails?.about}}/>
               {/* {convertStringToHTML(webinarDetails?.about || "-") } */}
               <hr />

@@ -49,7 +49,7 @@ const UpcommingWebinarsCards = ({
           <div className="row mb-4">
             <div className="col-md-12 text-center mb-4">
               <h4 className={styles.upCommingWebinarsTitle}>
-                Upcoming Webinar{webinarList.length>0 &&'s'}
+                Upcoming Webinar{handleShowUpCommingWebinarList(webinarList)?.length>0 &&'s'}
               </h4>
             </div>
           </div>
