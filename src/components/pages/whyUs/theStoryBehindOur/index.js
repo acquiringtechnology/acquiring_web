@@ -12,10 +12,11 @@ export const TheStoryBehindOur=()=>{
          {/* <h4></h4> */}
          <div className="row">
             <div className="col-md-12 text-center mb-4">
-              <h4 className={styles.theStoryBehindOurTitle}>The story behind our</h4>
+              <h4 className={styles.theStoryBehindOurTitle}>About</h4>
               <p className={styles.ourServicesSubTitle}>
-                We are focused on understanding client’s business first, and
-                dedicated to solve their business problems.
+              Acquiring Technology was developed and is the {`world's`} first cloudbased Ed-Tech learning platform, allowing students to master
+programming skills in their native language. In order to democratize tech
+education worldwide, it meets the EdTech {`industry's`} standards
               </p>
             </div>
           </div>
