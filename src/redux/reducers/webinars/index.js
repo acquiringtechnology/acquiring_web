@@ -1,4 +1,4 @@
-import { WEBINARS_LIST_ACTIONS ,WEBINARS_ENROLLED_ACTIONS ,WEBINARS_ENROLLED_OTP_VERIFY_ACTIONS ,WEBINARS_ENROLLED_RESEND_OTP_ACTIONS} from "../../actionsType/webinear";
+import { WEBINARS_LIST_ACTIONS ,WEBINARS_ENROLLED_ACTIONS,WEBINARS_DETAIL_ACTIONS ,WEBINARS_ENROLLED_OTP_VERIFY_ACTIONS ,WEBINARS_ENROLLED_RESEND_OTP_ACTIONS} from "../../actionsType/webinear";
 
 const intialState = {
   webinarList: [],
@@ -12,6 +12,9 @@ const intialState = {
 
   webinarEnrolledOtpResend:{},
   isWebinarEnrolledOtpResendLoader:false,
+
+  webinarDetailData:{},
+  isWebinarDetailLoader:false,
   // webinar
 
 };
@@ -79,6 +82,23 @@ export const WebinarReducer = (state = intialState, { type, payload }) => {
               webinarEnrolledOtpResend: payload,
               isWebinarEnrolledOtpResendLoader: false,
             };
+
+
+            case WEBINARS_DETAIL_ACTIONS.WEBINARS_DETAIL_ACTIONS_REQUEST:
+              return { ...state, isWebinarDetailLoader: true };
+            case WEBINARS_DETAIL_ACTIONS.WEBINARS_DETAIL_ACTIONS_RESPONSE:
+              return {
+                ...state,
+                webinarDetailData: payload,
+                isWebinarDetailLoader: false,
+              };
+            case WEBINARS_DETAIL_ACTIONS.WEBINARS_DETAIL_ACTIONS_ERROR:
+              return {
+                ...state,
+                webinarDetailData: payload,
+                isWebinarDetailLoader: false,
+              };
+  
 
     default:
       return state;

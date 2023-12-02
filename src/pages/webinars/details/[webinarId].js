@@ -15,14 +15,37 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as webinearAction from "@/redux/action/webinear";
-function WebinarsDetails({ createWebinearEnrolled ,webinearEnrolledOtpVerify,webinearEnrolledOtpResend}) {
+import { useRouter } from 'next/router'
+function WebinarsDetails({ createWebinearEnrolled ,webinearEnrolledOtpVerify,webinearEnrolledOtpResend ,webinearDetailById}) {
   const [webinarDetails, setWebinerDetails] = useState(null);
+  const router = useRouter()
+
+
+
+  const handleGetWebinearDetailById= async ()=>{
+   try{
+   
+    if(!router.query.webinarId) return;
+    const res = await webinearDetailById(router.query.webinarId)
+
+    const {data ,status}= res;
+
+    if(status){
+      setWebinerDetails(data);
+    }
+
+   }catch(e){
+
+    console.log('errrr',e)
+
+   }
+    
+  }
 
   useEffect(() => {
-    const details =
-      JSON.parse(getStorage(EXIST_LOCAL_STORAGE.WEBINAR_DETAIL)) || {};
-    setWebinerDetails(details);
-  }, []);
+    console.log('router.query.webinarId-----------',router.query.webinarId)
+  handleGetWebinearDetailById()
+  }, [router.query.webinarId]);
 
   return (
     <>

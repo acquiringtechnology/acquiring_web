@@ -129,6 +129,11 @@ export const webinar = {
     method: 'post',
     baseURL: 'normal'
   },
+  webinarDetailById: {
+    api: 'webinar',
+    method: 'get',
+    baseURL: 'normal'
+  },
 
 
  
