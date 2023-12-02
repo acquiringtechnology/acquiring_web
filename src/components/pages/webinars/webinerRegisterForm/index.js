@@ -1,17 +1,20 @@
 import { useRef, useState, useEffect } from "react";
 import SimpleReactValidator from "simple-react-validator";
 import { NormalInput, NormalButton } from "@/components/common";
-import { getStorage} from "@/services/helperFunctions";
-import { EXIST_LOCAL_STORAGE} from "@/services/constants";
+import { getStorage } from "@/services/helperFunctions";
+import { EXIST_LOCAL_STORAGE } from "@/services/constants";
 import styles from "./webinarRegisterForm.module.scss";
 import { WebinarOtpVerify } from "./verifyOtp";
-import _ from 'lodash'
+import _ from "lodash";
+import { useRouter } from "next/router";
 export const WebinarsRegisterForm = ({
   createWebinearEnrolled,
   webinearEnrolledOtpVerify,
   webinarId,
-  webinearEnrolledOtpResend
+  webinearEnrolledOtpResend,
 }) => {
+  const router = useRouter();
+
   const validator = useRef(new SimpleReactValidator());
   const [, forceUpdate] = useState(0);
   const [isOtpModelOpen, setIsOtpModelOpen] = useState(false);
@@ -19,29 +22,28 @@ export const WebinarsRegisterForm = ({
   const [userDetail, setUserDetail] = useState(null);
   const [webinarEnrolledFormObj, setWebinarEnrolledFormObj] = useState({
     name: "",
-    webinarId: webinarId,
+    webinarId: router?.query?.webinarId ? "" : "",
     email: "",
     phone: "",
     joinCourseStatus: 0,
     isExistUser: 0,
   });
 
-  useEffect(()=>{
-    const userDetail = getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
-    setUserDetail(userDetail)
-    if(!_.isEmpty(userDetail)){
-
+  useEffect(() => {
+    const userDetail = getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)
+      ? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER))
+      : {};
+    setUserDetail(userDetail);
+    if (!_.isEmpty(userDetail)) {
       setWebinarEnrolledFormObj({
         ...webinarEnrolledFormObj,
-        name:`${userDetail?.name.fName} ${userDetail?.name.lName}`,
-        email:`${userDetail?.email}`,
-        phone:`${userDetail?.phone}`,
-      })
-
+        name: `${userDetail?.name.fName} ${userDetail?.name.lName}`,
+        email: `${userDetail?.email}`,
+        phone: `${userDetail?.phone}`,
+      });
     }
-    console.log(userDetail)
-
-  },[])
+    console.log(userDetail);
+  }, []);
 
   const handleInputChange = (event) => {
     const {
@@ -58,10 +60,14 @@ export const WebinarsRegisterForm = ({
       const formValid = validator.current.allValid();
       if (formValid) {
         setIsFormLoder(true);
-
-        const webinarEnrolledReq = await createWebinearEnrolled(
-          {...webinarEnrolledFormObj,webinarId}
-        );
+        //         if(!router?.query?.webinarId){
+        // return:""
+        //         }
+        console.log("courseEnquiryData---------->", webinarId);
+        const webinarEnrolledReq = await createWebinearEnrolled({
+          ...webinarEnrolledFormObj,
+          webinarId: router?.query?.webinarId ? "" : "",
+        });
         setIsFormLoder(false);
         const {
           status,
@@ -69,7 +75,7 @@ export const WebinarsRegisterForm = ({
         } = webinarEnrolledReq;
 
         if (status) {
-          console.log("courseEnquiryData---------->", WebinarsEnrollData);
+          console.log("courseEnquiryData---------->", webinarId);
           setIsOtpModelOpen(true);
           setWebinarEnrolledFormObj(WebinarsEnrollData);
         }
@@ -99,7 +105,6 @@ export const WebinarsRegisterForm = ({
       joinCourseStatus: 0,
       isExistUser: 0,
     });
-
   };
   return (
     <div className={styles.webinarsRegisterFormContiner}>
