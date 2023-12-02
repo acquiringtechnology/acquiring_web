@@ -22,7 +22,7 @@ export const WebinarsRegisterForm = ({
   const [userDetail, setUserDetail] = useState(null);
   const [webinarEnrolledFormObj, setWebinarEnrolledFormObj] = useState({
     name: "",
-    webinarId: router?.query?.webinarId ? "" : "",
+    webinarId: router?.query?.webinarId ? router?.query?.webinarId : "",
     email: "",
     phone: "",
     joinCourseStatus: 0,
@@ -66,7 +66,7 @@ export const WebinarsRegisterForm = ({
         console.log("courseEnquiryData---------->", webinarId);
         const webinarEnrolledReq = await createWebinearEnrolled({
           ...webinarEnrolledFormObj,
-          webinarId: router?.query?.webinarId ? "" : "",
+          webinarId: router?.query?.webinarId ? router?.query?.webinarId : "",
         });
         setIsFormLoder(false);
         const {
