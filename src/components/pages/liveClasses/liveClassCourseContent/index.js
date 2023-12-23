@@ -1,5 +1,5 @@
 import { NormalAccordion } from "@/components/common";
-import { EnquiryForm } from "@/components/pages";
+
 import styles from "./liveClassCourseContent.module.scss";
 
 export const LiveClassCourseContent = ({liveClassDetail}) => {
@@ -62,6 +62,7 @@ export const LiveClassCourseContent = ({liveClassDetail}) => {
             </h4>
             <div className="row">
               <div className="col-md-12">
+
                 <NormalAccordion
                   data={liveClassDetail?.courseContent}
                   className={styles.liveClassAccordion}

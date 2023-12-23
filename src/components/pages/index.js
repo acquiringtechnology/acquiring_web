@@ -6,6 +6,8 @@ export {
   OurCustomer,
   WhatOfferYou,
   UpcommingWebinarsCards,
+  Faq,
+  StudentFeedBack
 } from "./home";
 export { OurPromis } from "./aboutUs";
 export { EnquiryForm, ContactUsHeader } from "./contactUs";

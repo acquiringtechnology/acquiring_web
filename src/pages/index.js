@@ -11,6 +11,8 @@ import {
   HaveQue,
   UpcommingWebinarsCards,
   WhatOfferYou,
+  Faq,
+  OurCustomer,
 } from "@/components/pages";
 export default function Home() {
   return (
@@ -48,13 +50,14 @@ export default function Home() {
                 description="Acquire Skills for your present (and future). Get started with us"
                 bannerImage="/img/banner-img.png"
               />
-              <UpcommingWebinarsCards/>
+              <UpcommingWebinarsCards />
               <AboutCompany />
               <WhatOfferYou />
               <OurCoursesCard isSwiper={false} />
-
+              <OurCustomer />
+              <Faq />
               <HaveQue />
-              {/* <OurCustomer /> */}
+              
             </div>
           </div>
         </Layout>

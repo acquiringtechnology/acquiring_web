@@ -1,3 +1,4 @@
+import { flatMap } from "lodash";
 import { useState } from "react";
 
 const NormalAccordion = (props) => {
@@ -14,12 +15,15 @@ const NormalAccordion = (props) => {
   } = props;
 
   const handleCollaps = (i) => {
-    if (!isShow) {
-      setShowIndex(i);
-    } else {
+    if(isShowIndex === i){
+      setShow(false);
       setShowIndex(-1);
+    }else{
+      setShowIndex(i);
+      setShow(true);
+    
     }
-    setShow(!isShow);
+   
   };
 
   return (

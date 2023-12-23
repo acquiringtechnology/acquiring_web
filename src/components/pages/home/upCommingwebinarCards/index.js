@@ -44,7 +44,7 @@ const UpcommingWebinarsCards = ({
 
   return (
     <section>
-      { webinarList.length>0 && !isWebinarListLoader &&<div className={`container mb-5`}>
+      {  handleShowUpCommingWebinarList(webinarList).length>0 && !isWebinarListLoader &&<div className={`container mb-5`}>
     <div className={styles.upCommingWebinarsContiner}>
           <div className="row mb-4">
             <div className="col-md-12 text-center mb-4">
