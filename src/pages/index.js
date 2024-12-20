@@ -12,6 +12,7 @@ import {
   UpcommingWebinarsCards,
   WhatOfferYou,
   Faq,
+  LiveClassesCard,
   OurCustomer,
 } from "@/components/pages";
 export default function Home() {
@@ -53,7 +54,8 @@ export default function Home() {
               <UpcommingWebinarsCards />
               <AboutCompany />
               <WhatOfferYou />
-              <OurCoursesCard isSwiper={false} />
+              <LiveClassesCard/>
+              {/* <OurCoursesCard isSwiper={false} /> */}
               <OurCustomer />
               <Faq />
               <HaveQue />

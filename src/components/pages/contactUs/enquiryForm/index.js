@@ -1,145 +1,149 @@
-import { useRef, useState, useEffect } from  'react'
-import styles from "./enquiryForm.module.scss";
-import { NormalInput, NormalSelect, NormalButton } from "@/components/common";
-import { COURSE_LIST } from "@/services/constants";
-import { liveClasssList } from "@/services/data/liveClasses";
-import SimpleReactValidator from "simple-react-validator";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as courseEnquiryAction from "@/redux/action/courseEnquiry";
-import { OtpVerifyModel } from "./otpVerifyModel";
+import { useRef, useState, useEffect, useCallback } from 'react';
+import styles from './enquiryForm.module.scss';
+import { NormalInput, NormalSelect, NormalButton } from '@/components/common';
+import { COURSE_LIST } from '@/services/constants';
+import { liveClasssList } from '@/services/data/liveClasses';
+import SimpleReactValidator from 'simple-react-validator';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as courseEnquiryAction from '@/redux/action/courseEnquiry';
+import { OtpVerifyModel } from './otpVerifyModel';
+import { createDocument } from '@/api';
+import { Toast } from '@/services/toast';
 
 const EnquiryForm = ({
   fromPage = false,
   courseEnquiryCreate,
   courseEnquiryOtpVerify,
   liveClassId,
-  isFromSyllabus=false,
-  isSyllabusModal=false,
-  liveClassDetail={},
+  isFromSyllabus = false,
+  isSyllabusModal = false,
+  liveClassDetail = {},
   resendOtpCourseEnquiry,
-  oncloseSyllabusEnquiryFrom=()=>{}
+  oncloseSyllabusEnquiryFrom = () => {}
 }) => {
   const validator = useRef(new SimpleReactValidator());
-  const [, forceUpdate] = useState(0);
-  const [isFormLoder, setIsFormLoder] = useState(false);
+  const [isFormLoader, setIsFormLoader] = useState(false);
   const [isOtpModelOpen, setIsOtpModelOpen] = useState(false);
   const [courseEnquiryData, setCourseEnquiryData] = useState({});
   const [courseEnquiryFormObj, setCourseEnquiryFormObj] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    liveClassId: liveClassId ? liveClassId : "",
+    name: '',
+    email: '',
+    phone: '',
+    liveClassId:  'd5eb2822-507c-11ee-be56-0242ac120002',
     status: 0,
-    comments: "",
+    comments: ''
   });
-
   const [courseList, setCourseList] = useState([]);
+  const [, forceUpdate] = useState(0);
 
-  useEffect(() => {
-    setCourseEnquiryFormObj({
-      ...courseEnquiryFormObj,
-      liveClassId,
-    });
-  }, [liveClassId]);
+  // useEffect(() => {
+  //   setCourseEnquiryFormObj(prevState => ({
+  //     ...prevState,
+  //     liveClassId
+  //   }));
+  // }, [liveClassId]);
 
   useEffect(() => {
     const resList = liveClasssList.map(({ name, id }) => ({
       value: id,
-      label: name,
+      label: name
     }));
     setCourseList(resList);
   }, []);
 
-  const handleInputChange = (event, selectName) => {
+  const handleInputChange = useCallback((event, selectName) => {
     if (!event?.target) {
-      event.target = {
-        ...event,
-        name: selectName,
-      };
+      event.target = { ...event, name: selectName };
     }
-    console.log("event----------->", event);
-    const {
-      target: { value, checked, type, name },
-    } = event;
-    console.log("event----------->", name, value);
-    setCourseEnquiryFormObj({
-      ...courseEnquiryFormObj,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
+
+    const { value, checked, type, name } = event.target;
+
+    setCourseEnquiryFormObj(prevState => ({
+      ...prevState,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  }, []);
 
   const handleFormSubmit = async () => {
-    try {
-      const formValid = validator.current.allValid();
-      console.log("courseEnquiryFormObj---------->", courseEnquiryFormObj);
-      if (formValid) {
-        setIsFormLoder(true);
+    const formValid = validator.current.allValid();
+    console.log('formValid----',validator.current)
 
-        const courseEnquiryReq = await courseEnquiryCreate(
-          courseEnquiryFormObj
-        );
-        console.log("fom");
-        setIsFormLoder(false);
-        const {
-          status,
-          data: { courseEnquiryData },
-        } = courseEnquiryReq;
+    if (formValid) {
+      validator.current.hideMessages();
+      setIsFormLoader(true);
+      try {
+        const courseEnquiryReq = await createDocument('courseEnquiry', courseEnquiryFormObj);
 
-        if (status) {
-          console.log("courseEnquiryData---------->", courseEnquiryData);
-          setIsOtpModelOpen(true);
-          setCourseEnquiryData(courseEnquiryData);
+        setIsFormLoader(false);
+        console.log('courseEnquiryReq----',courseEnquiryReq)
+
+        if (courseEnquiryReq.status) {
+          Toast({ message: 'Thank you. Our team will contact you soon.' });
+          setCourseEnquiryData(courseEnquiryReq); // Save response data if needed
+          handleOtpVerifySuccess()
         }
-      } else {
-        validator.current.showMessages();
-        forceUpdate(1);
+      } catch (e) {
+        setIsFormLoader(false);
+        Toast({ message: 'Something went wrong. Please try again later.' });
+        console.error(e);
       }
-    } catch (e) {
-      // setIsFormLoder(false);
-      console.log(e);
+    } else {
+      validator.current.showMessages();
+      forceUpdate(1)
     }
   };
 
-  const handleCloseOtpModel = () => {
-    setIsOtpModelOpen(!isOtpModelOpen);
-  };
+  const handleCloseOtpModel = () => setIsOtpModelOpen(prev => !prev);
 
-  const handlOtpVerifySucess = () => {
-    handleCloseOtpModel();
+  const handleOtpVerifySuccess = () => {
+    // handleCloseOtpModel();
+    debugger
     setCourseEnquiryData({});
     setCourseEnquiryFormObj({
-      name: "",
-      email: "",
-      phone: "",
-      liveClassId: liveClassId,
-      status: 1,
-      comments: "",
+      name: '',
+      email: '',
+      phone: '',
+      liveClassId:  'd5eb2822-507c-11ee-be56-0242ac120002',
+      status:0,
+      comments: ''
     });
-    if(isFromSyllabus){
-      oncloseSyllabusEnquiryFrom()
+
+    if (isFromSyllabus) {
+      oncloseSyllabusEnquiryFrom();
+      handleDownloadSyllabus();
     }
+
+  };
+
+  const handleDownloadSyllabus = () => {
+    console.log(liveClassDetail,'------liveClassDetail.syllabusUrl--');
+    let link = document.createElement("a");
+    link.download = liveClassDetail.name;
+    link.href = liveClassDetail.syllabusUrl;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    // delete link;
   };
 
   return (
-    <div className={`  ${!isFromSyllabus && 'mb-5' } ${styles.enquiryFormontainer}`}>
+    <div className={`${!isFromSyllabus && 'mb-5'} ${styles.enquiryFormontainer}`}>
       <div className="card border-0 shadow">
         <div className="card-body">
           <div className="row">
-           {!isFromSyllabus && <div className="col-md-12">
-              <h4 className={`mb-3 ${styles.title}`}>Start Your Career Now</h4>
-            </div>}
+            {!isFromSyllabus && (
+              <div className="col-md-12">
+                <h4 className={`mb-3 ${styles.title}`}>Start Your Career Now</h4>
+              </div>
+            )}
             <div className="col-md-12">
               <NormalInput
                 title="Name"
                 onChange={handleInputChange}
                 name="name"
                 value={courseEnquiryFormObj.name}
-                errorMessage={validator.current.message(
-                  "Name",
-                  courseEnquiryFormObj.name,
-                  "required"
-                )}
+                errorMessage={validator.current.message('Name', courseEnquiryFormObj.name, 'required')}
               />
             </div>
             <div className="col-md-12">
@@ -148,11 +152,7 @@ const EnquiryForm = ({
                 onChange={handleInputChange}
                 name="email"
                 value={courseEnquiryFormObj.email}
-                errorMessage={validator.current.message(
-                  "Email",
-                  courseEnquiryFormObj.email,
-                  "required|email"
-                )}
+                errorMessage={validator.current.message('Email', courseEnquiryFormObj.email, 'required|email')}
               />
             </div>
             <div className="col-md-12">
@@ -160,40 +160,30 @@ const EnquiryForm = ({
                 title="Mobile Number"
                 onChange={handleInputChange}
                 name="phone"
-                errorMessage={validator.current.message(
-                  "Phone",
-                  courseEnquiryFormObj.phone,
-                  "required|phone"
-                )}
                 value={courseEnquiryFormObj.phone}
+                errorMessage={validator.current.message('Phone', courseEnquiryFormObj.phone, 'required|phone')}
               />
             </div>
 
-            {fromPage !== "liveClass" && (
+            {/* {fromPage !== 'liveClass' && (
               <div className="col-md-12 mb-2">
                 <NormalSelect
                   title="Course Preference"
                   options={courseList}
-                  onChange={(e) => handleInputChange(e, "liveClassId")}
+                  onChange={(e) => handleInputChange(e, 'liveClassId')}
                   name="liveClassId"
-                  value={courseList?.find(
-                    ({ value }) => value === courseEnquiryFormObj.liveClassId
-                  )}
-                  errorMessage={validator.current.message(
-                    "Course",
-                    courseEnquiryFormObj.liveClassId,
-                    "required"
-                  )}
+                  value={courseList.find(({ value }) => value === courseEnquiryFormObj.liveClassId)}
+                  errorMessage={validator.current.message('Course', courseEnquiryFormObj.liveClassId, 'required')}
                 />
               </div>
-            )}
+            )} */}
+
             <div className="col-md-12">
-              {/* <button type="button" className="btn btn-primary">Submit</button> */}
               <NormalButton
                 className="btn btn-primary px-4"
                 type="submit"
                 title="Submit"
-                isLoader={isFormLoder}
+                isLoader={isFormLoader}
                 onClick={handleFormSubmit}
               />
             </div>
@@ -206,7 +196,7 @@ const EnquiryForm = ({
         liveClassDetail={liveClassDetail}
         isSyllabusModal={isSyllabusModal}
         courseEnquiryData={courseEnquiryData}
-        otpVerifySucess={handlOtpVerifySucess}
+        otpVerifySucess={handleOtpVerifySuccess}
         courseEnquiryOtpVerify={courseEnquiryOtpVerify}
         resendOtpCourseEnquiry={resendOtpCourseEnquiry}
         courseEnquiryFormObj={courseEnquiryFormObj}
@@ -216,21 +206,11 @@ const EnquiryForm = ({
   );
 };
 
-const mapStatesToProps = ({
-  courseEnquiry: {
-    isCourseEnquiryLoader = false,
-    isCourseEnquiryOtpVerifyLoader = false,
-  },
-}) => {
-  return { isCourseEnquiryLoader, isCourseEnquiryOtpVerifyLoader };
-};
+const mapStatesToProps = ({ courseEnquiry }) => ({
+  isCourseEnquiryLoader: courseEnquiry.isCourseEnquiryLoader || false,
+  isCourseEnquiryOtpVerifyLoader: courseEnquiry.isCourseEnquiryOtpVerifyLoader || false
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(
-    {
-      ...courseEnquiryAction,
-    },
-    dispatch
-  );
-};
+const mapDispatchToProps = (dispatch) => bindActionCreators(courseEnquiryAction, dispatch);
+
 export default connect(mapStatesToProps, mapDispatchToProps)(EnquiryForm);

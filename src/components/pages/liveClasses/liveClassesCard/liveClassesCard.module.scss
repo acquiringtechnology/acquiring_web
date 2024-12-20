@@ -3,13 +3,27 @@
 
 .liveClassesCardContiner {
     .liveClassTitle {
+        font-size: 2.34375rem;
+        font-weight: 700;
+    }
+    .fullstackIconImg{
+        width: 4rem;
+    }
+    .liveClassCardTitle{
+        @media (min-width: 1024px) {
+                font-size: 1.8rem;
+                line-height: 2.25rem;
+        }
       
+        font-weight: 600;
+        line-height: 1.75rem;
+        font-size: 1.25rem;
+    }
+    .liveClassCardSubTitle{
+        max-width: 42rem;
     }
     .liveClassCard{
-        .liveClassCardTitle{
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
+       
         .liveClassCardDisc {
             color: var(--text-grey);
             font-size: 0.9375rem;

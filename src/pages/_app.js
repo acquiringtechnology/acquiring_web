@@ -6,6 +6,8 @@ import Script from "next/script";
 import { ToastContainer, toast } from "react-toastify";
 import store from "@/redux/store";
 import { Provider } from "react-redux";
+import '@/firebase';
+
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");

@@ -64,7 +64,7 @@ const OurCoursesCard = (props) => {
        allCourseList.length > 0 ?  <Swiper
             spaceBetween={30}
             slidesPerView={4.5}
-            onSlideChange={() => console.log("slide change")}
+            // onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
             {allCourseList?.map((data, i) => (

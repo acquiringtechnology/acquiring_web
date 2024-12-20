@@ -90,7 +90,7 @@ export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
             {fromPage !== "liveClass" ? (
               <CourseCard isDetailBanner={true} />
             ) : (
-              <EnquiryForm liveClassId={liveClassDetail?.id} fromPage={fromPage} />
+              <EnquiryForm liveClassDetail={liveClassDetail} isFromSyllabus={true} liveClassId={liveClassDetail?.id} fromPage={fromPage} />
             )}
           </div>
         </div>

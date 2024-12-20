@@ -96,7 +96,7 @@ export const Header = () => {
             />
           </Link>
 
-          {_.isEmpty(userDetails) && (
+          {/* {_.isEmpty(userDetails) && (
           <div className="d-flex d-block d-lg-none mt-2">
             <NormalButton
               title="Login"
@@ -109,7 +109,7 @@ export const Header = () => {
               onClick={() => router.push("/register")}
             />
           </div>
-        )}
+        )} */}
 
         </div>
 
@@ -172,7 +172,7 @@ export const Header = () => {
           
         </div>
      
-        {!_.isEmpty(userDetails) && (
+        {/* {!_.isEmpty(userDetails) && (
           <Dropdown
             isOpen={mobileDropdownOpen}
             toggle={toggleMobileDrop}
@@ -201,15 +201,13 @@ export const Header = () => {
               </DropdownItem>
 
               <DropdownItem divider />
-              {/* <DropdownItem>My Profile</DropdownItem>
-          <DropdownItem>Change Password</DropdownItem> */}
               <DropdownItem onClick={handleSiginOut}>Sign out</DropdownItem>
             </DropdownMenu>
           </Dropdown>
-        )}
+        )} */}
       </div>
 
-      {_.isEmpty(userDetails) && (
+      {/* {_.isEmpty(userDetails) && (
         <div className="d-flex d-none d-lg-block">
           <NormalButton
             title="Login"
@@ -222,9 +220,9 @@ export const Header = () => {
             onClick={() => router.push("/register")}
           />
         </div>
-      )}
+      )} */}
 
-      {!_.isEmpty(userDetails) && (
+      {/* {!_.isEmpty(userDetails) && (
         <Dropdown
           isOpen={dropdownOpen}
           toggle={toggle}
@@ -253,15 +251,13 @@ export const Header = () => {
             </DropdownItem>
 
             <DropdownItem divider />
-            {/* <DropdownItem>My Profile</DropdownItem>
-          <DropdownItem>Change Password</DropdownItem> */}
            <DropdownItem onClick={()=>router.push('/profile')}>My Profile</DropdownItem>
            <DropdownItem onClick={()=>router.push('/changePassword')}>Change Password</DropdownItem>
             <DropdownItem onClick={handleSiginOut}>Sign out</DropdownItem>
            
           </DropdownMenu>
         </Dropdown>
-      )}
+      )} */}
     </nav>
   );
 };

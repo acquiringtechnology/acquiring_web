@@ -6,12 +6,12 @@ export const MENU = [
     isShow: false,
     exact:true
   },
-  {
-    title: " All Courses",
+  // {
+  //   title: " All Courses",
 
-    isShow: false,
-    link: "/courses",
-    exact:false
+  //   isShow: false,
+  //   link: "/courses",
+  //   exact:false
     // subMenu: [
     //     {
     //         title: "Home",
@@ -22,7 +22,7 @@ export const MENU = [
     //         icon: <PersonIcon />
     //     }
     // ]
-  },
+  // },
   {
     title: "Live Classes",
     // icon: <PersonIcon />,
@@ -30,13 +30,13 @@ export const MENU = [
     isShow: false,
     exact:false
   },
-  {
-    title: "Webinars",
-    // icon: <PersonIcon />,
-    link: "/webinars",
-    isShow: false,
-    exact:false
-  },
+  // {
+  //   title: "Webinars",
+  //   // icon: <PersonIcon />,
+  //   link: "/webinars",
+  //   isShow: false,
+  //   exact:false
+  // },
   {
     title: "Why Us?",
     // icon: <PersonIcon />,

@@ -28,7 +28,7 @@ export const TechnologiesCovered = ({liveClassDetail}) => {
             },
            
           }}
-          onSlideChange={() => console.log("slide change")}
+          // onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
             loop={!true}
             autoplay={{

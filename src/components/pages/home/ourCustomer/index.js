@@ -61,7 +61,7 @@ const OurCustomer = () => {
         <Swiper
           spaceBetween={30}
           slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
+          // onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
           breakpoints={{
             0: {
