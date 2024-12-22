@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Head from "next/head";
 // import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
@@ -43,9 +44,9 @@ function WebinarsDetails({ createWebinearEnrolled ,webinearEnrolledOtpVerify,web
   }
 
   useEffect(() => {
-    console.log('router.query.webinarId-----------',router.query.webinarId)
+ 
   handleGetWebinearDetailById()
-  }, [router.query.webinarId]);
+  }, [handleGetWebinearDetailById, router.query.webinarId]);
 
   return (
     <>
