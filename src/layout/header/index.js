@@ -32,9 +32,10 @@ export const Header = () => {
   }, []);
 
   const handleMenuShow = () => {
-    // document.getElementById("mobileSidenav").style.width = "250px";
+    if (process.browser) {
     let menu = document.getElementById("mobileSidenav");
     menu.classList.toggle("show");
+    }
   };
 
   const handleverticalScroll = () => {
