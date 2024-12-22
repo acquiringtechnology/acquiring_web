@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Layout } from "@/layout";
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 import {
   Banner,
   AboutWebinar,
@@ -61,7 +61,7 @@ function WebinarsDetails({ createWebinearEnrolled ,webinearEnrolledOtpVerify,web
         <link rel="canonical" href="https://www.acquiring.in/whyUs/" />
         <meta name="robots" content="index, follow" />
       </Head>
-      <main className={`${inter.className}`}>
+      <main>
         <Layout>
           <div className="row">
             <div className="col-12">

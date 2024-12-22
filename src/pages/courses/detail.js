@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import {
   CourseDetailBanner,
   CourseDetailContent,
@@ -13,7 +13,7 @@ import { Layout } from "@/layout";
 import _ from 'lodash';
 import { useRouter } from "next/router";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 export default function CourseDetail() {
   const router = useRouter();
   const [courseDetails, setCourseDetails] = useState({});
@@ -77,7 +77,8 @@ export default function CourseDetail() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`vh-100 ${inter.className}`}>
+      {/* <main className={`vh-100 ${inter.className}`}> */}
+      <main className={`vh-100`}>
       <Layout>
         {courseDetails?.syllabusList?.length >0?
         <div className="container">

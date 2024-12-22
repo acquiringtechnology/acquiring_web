@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import { Layout } from "@/layout";
 import { connect } from "react-redux";
 // import SimpleReactValidator from "simple-react-validator";
@@ -9,7 +9,7 @@ import { ProfileCard, ProfileFormCard } from "@/components/pages";
 import { getStorage, setStorage } from "@/services/helperFunctions";
 import { EXIST_LOCAL_STORAGE } from "@/services/constants";
 import { useEffect, useState } from "react";
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 function Profile({ candidateUpdate }) {
   const [userDetails, setUserDetails] = useState({});
@@ -64,7 +64,7 @@ function Profile({ candidateUpdate }) {
         <link rel="canonical" href="https://www.acquiring.in/liveClasses/" />
         <meta name="robots" content="index, follow" />
       </Head>
-      <main className={`${inter.className}`}>
+      <main >
         <Layout>
           <div className="vh-100 container mt-4">
             <div className="row">
