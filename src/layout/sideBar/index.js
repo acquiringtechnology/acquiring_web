@@ -32,11 +32,12 @@ export const SideBar = () => {
   }, []);
 
   const handleWindowSize = (e) => {
-    console.log("handleWindowSize err-----------", document.body.clientWidth);
+    if (process.browser) {
     if (document.body.clientWidth >= 992) {
       let menu = document.getElementById("mobileSidenav");
       menu.classList.remove("show");
     }
+  }
   };
 
   const handleMenuShow = () => {

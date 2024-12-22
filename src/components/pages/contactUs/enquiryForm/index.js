@@ -117,7 +117,7 @@ const EnquiryForm = ({
   };
 
   const handleDownloadSyllabus = () => {
-    console.log(liveClassDetail,'------liveClassDetail.syllabusUrl--');
+    if (process.browser) {
     let link = document.createElement("a");
     link.download = liveClassDetail.name;
     link.href = liveClassDetail.syllabusUrl;
@@ -125,6 +125,7 @@ const EnquiryForm = ({
     link.click();
     document.body.removeChild(link);
     // delete link;
+    }
   };
 
   return (

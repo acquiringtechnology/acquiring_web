@@ -18,6 +18,7 @@ export const LiveClassesCard = (props) => {
       "#DEE5DD",
       "#A4E78D",
     ];
+    if (process.browser) {
     const listItems = document.querySelectorAll("#courseTopic li");
 
     // listItems.forEach(item => {
@@ -29,6 +30,7 @@ export const LiveClassesCard = (props) => {
       const randomColor = colors[i];
       item.style.backgroundColor = randomColor; // The background will have opacity 1 by default.
     });
+  }
   }, []);
   return (
     <section>

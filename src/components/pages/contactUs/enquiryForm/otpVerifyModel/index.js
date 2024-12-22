@@ -64,6 +64,7 @@ export const OtpVerifyModel = ({
   };
 
   const handleDownloadSyllabus = () => {
+    if (process.browser) {
     console.log(liveClassDetail.syllabusUrl);
     let link = document.createElement("a");
     link.download = liveClassDetail.name;
@@ -72,6 +73,7 @@ export const OtpVerifyModel = ({
     link.click();
     document.body.removeChild(link);
     // delete link;
+    }
   };
 
   const handleResendOtp = async () => {
