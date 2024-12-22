@@ -9,7 +9,7 @@ export {
   Faq,
   StudentFeedBack
 } from "./home";
-export { OurPromis } from "./aboutUs";
+// export { OurPromis } from "./aboutUs";
 export { EnquiryForm, ContactUsHeader } from "./contactUs";
 export {
   CourseDetailBanner,
