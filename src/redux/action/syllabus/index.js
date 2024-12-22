@@ -1,23 +1,23 @@
-import { apiCall } from  '@/services/api';
+import { apiCall } from "@/services/api";
 import {
   SYLLABUS_CREATE_UPDATE_ACTIONS,
   SYLLABUS_LIST_ACTIONS,
-  SYLLABUS_DELETE_ACTIONS
-} from '@/redux/actionsType/syllabus';
-import { syllabus } from '@/services/apiVariables';
+  SYLLABUS_DELETE_ACTIONS,
+} from "@/redux/actionsType/syllabus";
+import { syllabus } from "@/services/apiVariables";
 import { Toast } from "@/services/toast";
 
 export const syllabusCreate = (body) => (dispatch) => {
   dispatch({
     type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_REQUEST,
-    isSyllabusCreateLoader: true
+    isSyllabusCreateLoader: true,
   });
   return new Promise((resolve, reject) => {
     apiCall({ ...syllabus.post, body })
       .then((data) => {
         dispatch({
           type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_RESPONSE,
-          payload: data.data
+          payload: data.data,
         });
         resolve(data);
       })
@@ -25,7 +25,7 @@ export const syllabusCreate = (body) => (dispatch) => {
         let message = error?.message || "Something went wrong";
         Toast({ message, type: "error" });
         dispatch({
-          type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_ERROR
+          type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_ERROR,
           //   payload: data.data
         });
         reject(error);
@@ -36,7 +36,7 @@ export const syllabusCreate = (body) => (dispatch) => {
 export const syllabusUpdate = (body, id) => (dispatch) => {
   dispatch({
     type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_REQUEST,
-    isSyllabusCreateLoader: true
+    isSyllabusCreateLoader: true,
   });
   return new Promise((resolve, reject) => {
     const prefixUrl = `/${id}`;
@@ -44,7 +44,7 @@ export const syllabusUpdate = (body, id) => (dispatch) => {
       .then((data) => {
         dispatch({
           type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_RESPONSE,
-          payload: data.data
+          payload: data.data,
         });
         resolve(data);
       })
@@ -52,7 +52,7 @@ export const syllabusUpdate = (body, id) => (dispatch) => {
         let message = error?.message || "Something went wrong";
         Toast({ message, type: "error" });
         dispatch({
-          type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_ERROR
+          type: SYLLABUS_CREATE_UPDATE_ACTIONS.SYLLABUS_CREATE_UPDATE_ACTIONS_ERROR,
           //   payload: data.data
         });
         reject(error);
@@ -63,7 +63,7 @@ export const syllabusUpdate = (body, id) => (dispatch) => {
 export const syllabusDeleteById = (id) => (dispatch) => {
   dispatch({
     type: SYLLABUS_DELETE_ACTIONS.SYLLABUS_DELETE_ACTIONS_REQUEST,
-    isSyllabusDeleteLoader: true
+    isSyllabusDeleteLoader: true,
   });
   return new Promise((resolve, reject) => {
     const prefixUrl = `/${id}`;
@@ -71,7 +71,7 @@ export const syllabusDeleteById = (id) => (dispatch) => {
       .then((data) => {
         dispatch({
           type: SYLLABUS_DELETE_ACTIONS.SYLLABUS_DELETE_ACTIONS_RESPONSE,
-          payload: data.data
+          payload: data.data,
         });
         resolve(data);
       })
@@ -79,7 +79,7 @@ export const syllabusDeleteById = (id) => (dispatch) => {
         let message = error?.message || "Something went wrong";
         Toast({ message, type: "error" });
         dispatch({
-          type: SYLLABUS_DELETE_ACTIONS.SYLLABUS_DELETE_ACTIONS_ERROR
+          type: SYLLABUS_DELETE_ACTIONS.SYLLABUS_DELETE_ACTIONS_ERROR,
           //   payload: data.data
         });
         reject(error);
@@ -90,14 +90,14 @@ export const syllabusDeleteById = (id) => (dispatch) => {
 export const getAllsyllabus = (body) => (dispatch) => {
   dispatch({
     type: SYLLABUS_LIST_ACTIONS.SYLLABUS_LIST_ACTIONS_REQUEST,
-    isSyllabusListLoader: true
+    isSyllabusListLoader: true,
   });
   return new Promise((resolve, reject) => {
     apiCall({ ...syllabus.get, body })
       .then((data) => {
         dispatch({
           type: SYLLABUS_LIST_ACTIONS.SYLLABUS_LIST_ACTIONS_RESPONSE,
-          payload: data.data
+          payload: data.data,
         });
         resolve(data);
       })
@@ -105,7 +105,7 @@ export const getAllsyllabus = (body) => (dispatch) => {
         let message = error?.message || "Something went wrong";
         Toast({ message, type: "error" });
         dispatch({
-          type: SYLLABUS_LIST_ACTIONS.SYLLABUS_LIST_ACTIONS_ERROR
+          type: SYLLABUS_LIST_ACTIONS.SYLLABUS_LIST_ACTIONS_ERROR,
           //   payload: data.data
         });
         reject(error);
