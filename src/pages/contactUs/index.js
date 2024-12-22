@@ -18,6 +18,7 @@ export default function Home() {
       </Head>
       {/* <main className={`${inter.className}`}> */}
       <main className={`${inter.className}`}>
+        
         <Layout>
         <div className="row">
           <div className="col-12">
