@@ -3,7 +3,7 @@ import {
   SYLLABUS_CREATE_UPDATE_ACTIONS,
   SYLLABUS_LIST_ACTIONS,
   SYLLABUS_DELETE_ACTIONS
-} from '@/redux/actionsType/course';
+} from '@/redux/actionsType/syllabus';
 import { syllabus } from '@/services/apiVariables';
 import { Toast } from "@/services/toast";
 
