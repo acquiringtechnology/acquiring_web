@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Layout } from "@/layout";
 
 // const inter = Inter({ subsets: ["latin"] });
-// import { ContactUsHeader, EnquiryForm } from "@/components/pages";
+import { Banner, ContactUsHeader, EnquiryForm } from "@/components/pages";
 export default function Home() {
   return (
     <>
@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       {/* <main className={`${inter.className}`}> */}
       <main>
-        {/* <Layout>
+        <Layout>
         <div className="row">
           <div className="col-12">
             <ContactUsHeader />
@@ -31,7 +31,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        </Layout> */}
+        </Layout>
       </main>
     </>
   );
