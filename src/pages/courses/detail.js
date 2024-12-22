@@ -76,7 +76,7 @@ export default function CourseDetail() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`vh-100 ${inter.className}`}>
+      <main >
       <Layout>
         {courseDetails?.syllabusList?.length >0?
         <div className="container">
