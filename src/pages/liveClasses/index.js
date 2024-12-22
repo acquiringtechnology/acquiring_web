@@ -1,7 +1,7 @@
 import Head from "next/head";
-// import { Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Layout } from "@/layout";
-// const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 import {
   Banner,
   Description,
@@ -29,7 +29,7 @@ export default function Home() {
         <link rel="canonical" href="https://www.acquiring.in/liveClasses/" />
         <meta name="robots" content="index, follow" />
       </Head>
-      <main >
+      <main className={`${inter.className}`}>
         <Layout>
           <div className="row">
             <div className="col-12">

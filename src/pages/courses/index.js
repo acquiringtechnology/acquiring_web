@@ -1,12 +1,12 @@
 import Head from "next/head";
-// import { Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import {
   OurCoursesCard,
 } from "@/components/pages";
 
 import { Layout } from "@/layout";
 
-// const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 function CourseDetail({ getAllCoures }) {
   return (
     <>
@@ -26,7 +26,7 @@ function CourseDetail({ getAllCoures }) {
         <meta name="robots" content="index, follow" />
       </Head>
       {/* <main className={`${inter.className}`}> */}
-      <main >
+      <main className={`${inter.className}`}>
         <Layout>
         <div className="row">
           <div className="col-12">
