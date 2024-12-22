@@ -1,15 +1,15 @@
 import Head from "next/head";
 // import { Inter } from "next/font/google";
-import {
-  CourseDetailBanner,
-  CourseDetailContent,
-  CourseVideoCard,
-} from "@/components/pages";
+// import {
+//   CourseDetailBanner,
+//   CourseDetailContent,
+//   CourseVideoCard,
+// } from "@/components/pages";
 import {NodataFound, NormalButton} from '@/components/common'
 import { useEffect, useState } from "react";
 import { EXIST_LOCAL_STORAGE } from "@/services/constants";
 import { getStorage } from "@/services/helperFunctions";
-import { Layout } from "@/layout";
+// import { Layout } from "@/layout";
 import _ from 'lodash';
 import { useRouter } from "next/router";
 
@@ -79,7 +79,7 @@ export default function CourseDetail() {
       </Head>
       {/* <main className={`vh-100 ${inter.className}`}> */}
       <main className={`vh-100`}>
-      <Layout>
+      {/* <Layout>
         {courseDetails?.syllabusList?.length >0?
         <div className="container">
           <div className="row">
@@ -99,7 +99,7 @@ export default function CourseDetail() {
             </div>
           </div>
         </div>: <NodataFound title="No syllabus yet"  subTitle="You can go to back by clicking below button"/>}
-        </Layout>
+        </Layout> */}
       </main>
     </>
   );
