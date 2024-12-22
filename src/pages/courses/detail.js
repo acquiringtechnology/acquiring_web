@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
+//import { Inter } from "next/font/google";
 import {
   CourseDetailContent,
   CourseVideoCard,
@@ -12,7 +12,7 @@ import { Layout } from "@/layout";
 import _ from 'lodash';
 import { useRouter } from "next/router";
 
-const inter = Inter({ subsets: ["latin"] });
+//const inter = Inter({ subsets: ["latin"] });
 export default function CourseDetail() {
   const router = useRouter();
   const [courseDetails, setCourseDetails] = useState({});

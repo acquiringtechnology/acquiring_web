@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
+//import { Inter } from "next/font/google";
 import { Layout } from "@/layout";
 
-const inter = Inter({ subsets: ["latin"] });
+//const inter = Inter({ subsets: ["latin"] });
 import { Banner, ContactUsHeader, EnquiryForm } from "@/components/pages";
 export default function Home() {
   return (
@@ -16,8 +16,8 @@ export default function Home() {
         <link rel="canonical" href="https://www.acquiring.in/contactUs/" />
         <meta name="robots" content="index, follow" />
       </Head>
-      {/* <main className={`${inter.className}`}> */}
-      <main className={`${inter.className}`}>
+      {/*<main> */}
+     <main>
         
         <Layout>
         <div className="row">

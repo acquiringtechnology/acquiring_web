@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+//import { Inter } from "next/font/google";
+//const inter = Inter({ subsets: ["latin"] });
 import {
   QuizeTestCard,
   QuizeComplite,
@@ -19,7 +19,7 @@ export default function Quiztest() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${inter.className}`}>
+     <main>
         <Layout>
           <div className="row">
             <div className="col-12">
