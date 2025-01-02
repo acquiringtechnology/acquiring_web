@@ -1,15 +1,30 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useRouter } from "next/router";
 import StarRatings from "react-star-ratings";
 import styles from "./courseDetailBanner.module.scss";
 import { CourseCard, EnquiryForm } from "@/components/pages";
 import { NormalButton } from "@/components/common";
-
-export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
+import Swal from "sweetalert2";
+import { useEffect } from "react";
+export const CourseDetailBanner = ({
+  fromPage = "",
+  liveClassDetail = null,
+}) => {
   const router = useRouter();
 
   const handleRedirectQuiz = () => {
     router.push("/quiztest");
   };
+
+  useEffect(() => {
+    Swal.fire({
+      title: "🎓 100% Free Live Class!",
+      html: `🗓️ <b>Don't miss out! Application Deadline: 15th January</b>
+Secure your spot and join our exciting live class, completely FREE! Limited time only!`,
+      icon: "info",
+      confirmButtonText: "Continue",
+    });
+  }, []);
 
   return (
     <div className={` mb-5  ${styles.courseDetailContiner}`}>
@@ -17,7 +32,7 @@ export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
         <div className="row mb-4">
           <div className="col-lg-8 col-md-6 col-12">
             <h4 className={`mb-lg-2 mb-3 ${styles.couseTitle}`}>
-            {liveClassDetail?.name}
+              {liveClassDetail?.name}
             </h4>
             {liveClassDetail?.dis}
             <p>
@@ -58,13 +73,13 @@ export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
                     Duration
                   </h4>
                   <label className={styles.programOverViewDetailValue}>
-                  {liveClassDetail?.prgOverView?.dur}
+                    {liveClassDetail?.prgOverView?.dur}
                   </label>
                 </div>
                 <div className="col-md-4">
                   <h4 className={styles.programOverViewDetailTitle}>Format</h4>
                   <label className={styles.programOverViewDetailValue}>
-                  {liveClassDetail?.prgOverView?.classType}
+                    {liveClassDetail?.prgOverView?.classType}
                   </label>
                 </div>
                 {/* <div className="col-md-3">
@@ -80,18 +95,46 @@ export const CourseDetailBanner = ({ fromPage = "" ,liveClassDetail=null}) => {
                     Max CTC upto
                   </h4>
                   <label className={styles.programOverViewDetailValue}>
-                  {liveClassDetail?.prgOverView?.maxCtc}
+                    {liveClassDetail?.prgOverView?.maxCtc}
                   </label>
                 </div>
               </div>
             )}
           </div>
-          <div class="col-lg-4 col-md-6 col-12 d-md-block d-none">
+          <div className="col-lg-4 col-md-6 col-12 d-md-block d-none">
             {fromPage !== "liveClass" ? (
               <CourseCard isDetailBanner={true} />
             ) : (
-              <EnquiryForm liveClassDetail={liveClassDetail} isFromSyllabus={true} liveClassId={liveClassDetail?.id} fromPage={fromPage} />
+              <EnquiryForm
+                liveClassDetail={liveClassDetail}
+                isFromSyllabus={true}
+                liveClassId={liveClassDetail?.id}
+                fromPage={fromPage}
+              />
             )}
+          </div>
+        </div>
+      </div>
+      <div className="modal" tabindex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Modal title</h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-primary">
+                Continue
+              </button>
+            </div>
           </div>
         </div>
       </div>

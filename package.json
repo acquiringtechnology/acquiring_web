@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-   "build": "next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "sitemap": "next-sitemap --config next-sitemap-config.js"
@@ -35,7 +35,7 @@
     "redux-thunk": "^2.4.2",
     "sass": "^1.62.0",
     "simple-react-validator": "^1.6.2",
-    "sweetalert2": "^11.7.29",
+    "sweetalert2": "^11.15.7",
     "swiper": "^9.2.4",
     "wowjs": "^1.1.3"
   },
