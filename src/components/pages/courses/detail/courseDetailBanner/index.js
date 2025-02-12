@@ -17,12 +17,25 @@ export const CourseDetailBanner = ({
   };
 
   useEffect(() => {
+    const deadline = new Date("2025-03-12"); // Set the application deadline
+    const today = new Date(); // Get today's date
     Swal.fire({
-      title: "🎓 100% Free Live Class!",
-      html: `🗓️ <b>Don't miss out! Application Deadline: 15th January</b>
-Secure your spot and join our exciting live class, completely FREE! Limited time only!`,
+      title: "🎓 From Zero to Hero Full Stack Web Developer",
+      html: `🗓️ <b>Don't miss out! Application Deadline: 12th March</b><br>
+      Secure your spot and join our exciting live class with lifetime support!`,
       icon: "info",
       confirmButtonText: "Continue",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        if (!(today <= deadline)) {
+          // Swal.fire({
+          //   icon: "error",
+          //   title: "⏳ Deadline Passed!",
+          //   text: "Sorry, the application deadline has expired due to the batch being full. Kindly fill out your details, and our team will reach out shortly for the next batch.",
+          // });
+          // Redirect or perform the next action here
+        }
+      }
     });
   }, []);
 
@@ -115,7 +128,6 @@ Secure your spot and join our exciting live class, completely FREE! Limited time
           </div>
         </div>
       </div>
-
     </div>
   );
 };

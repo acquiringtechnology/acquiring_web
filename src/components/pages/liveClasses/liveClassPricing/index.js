@@ -41,7 +41,7 @@ export const LiveClassPricing = ({liveClassDetail}) => {
                       </li>
                       <li className="list-group-item border-0 ps-0">
                         <i className="fa-regular text-primary fa-square-check me-2"></i>{" "}
-                         Free classes
+                         Live classes
                       </li>
                       <li className="list-group-item border-0 ps-0">
                         <i className="fa-regular text-primary fa-square-check me-2"></i>{" "}
@@ -49,7 +49,7 @@ export const LiveClassPricing = ({liveClassDetail}) => {
                       </li>
                       <li className="list-group-item border-0 ps-0">
                         <i className="fa-regular text-primary fa-square-check me-2"></i>{" "}
-                        <del>The refund option is available within seven days.</del>
+                        The refund option is available within seven days.
                       </li>
                     </ul>
                     <NormalButton
