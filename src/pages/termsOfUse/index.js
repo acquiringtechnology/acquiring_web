@@ -305,7 +305,7 @@ function TermsOfUse({ getAllCoures }) {
                 you’ll be automatically refunded on your original payment method
                 within 10 business days. Please remember it can take some time
                 for your bank or credit card company to process and post the
-                refund too. If more than 15 business days have passed since
+                refund too. If more than 7 business days have passed since
                 we’ve approved your refund, please contact us at Enter{" "}
                 <strong>acquiringtechnology@gmail.com / 9042771660</strong>
               </div>
