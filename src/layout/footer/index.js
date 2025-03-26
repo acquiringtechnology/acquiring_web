@@ -130,6 +130,9 @@ const Footer = ({ subscribeCreate }) => {
               <li>
                 <Link href="/whyUs">Why Us?</Link>
               </li>
+              <li>
+                <Link href="/termsOfUse">Terms Of Use</Link>
+              </li>
             </ul>
           </div>
           {/* <div className="col-lg-2 col-md-6">

@@ -51,7 +51,7 @@ export default function Home() {
                 description="Acquire Skills for your present (and future). Get started with us"
                 bannerImage="/img/banner-img.png"
               />
-              <UpcommingWebinarsCards />
+              {/* <UpcommingWebinarsCards /> */}
               <AboutCompany />
               <WhatOfferYou />
               <LiveClassesCard/>
