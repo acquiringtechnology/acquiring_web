@@ -39,7 +39,7 @@ const Faq = (props) => {
         title: "What is your refund policy? / I want refund for my course.",
         data: [
           {
-            name: "You can cancel any purchase you made with our courses within the first 7 days if you’re not satisfied. And the refund will be credited to your account in 3 business from the day we refund.",
+            name: "You can cancel any purchase you made with our courses within the first 7 days if you’re not satisfied. And the refund will be credited to your account in 7 business from the day we refund.",
           },
         ],
       },

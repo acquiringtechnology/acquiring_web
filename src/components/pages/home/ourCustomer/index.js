@@ -30,8 +30,10 @@ const OurCustomer = () => {
       detail: `Thanks Acquiring Team good technology for learning i learned full stack course ( front-end  I learned angular and backend i learned python )they teached every basics with multiple examples Thanks Acquiring Team`,
     },
     {
-      name: "Jaya Shree",
-      detail: `Acquiring technology la full stack padicha . Adhulaum React oda basic la erundu advance stage vera ellam methods and short cuts soli kuduthanga . Neriya task and mock interviews conduct panaga . Evlo kami fees la neriya knowledge gain pana . Thanks acquiring and team`,
+      name: "Sahina Barveen",
+      detail: `I am learning full stack development at Acquiring Technology
+Talk about teaching methods, hands-on projects, or real-world applications:
+The instructors were highly knowledgeable and approachable, ensuring that every concept was clear. The real-world projects and assignments helped me gain confidence in building complete web applications from scratch." I feel elated`,
     },
     {
       name: "aspirent ak",

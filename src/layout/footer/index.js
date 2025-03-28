@@ -121,9 +121,9 @@ const Footer = ({ subscribeCreate }) => {
               <li>
                 <Link href="/">Home</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/courses">All Courses</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/liveClasses">LIVE Classes</Link>
               </li>

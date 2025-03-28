@@ -30,7 +30,7 @@ function TermsOfUse({ getAllCoures }) {
           <div className="container mt-5">
             <div className="row">
               <div className="col-12 ">
-                <h1>Terms of Use</h1>
+                <h1>Privacy Policy</h1>
                 <p>
                   Introduction This Privacy Policy describes how and its
                   affiliates (collectively " Acquiring Technology , we, our,
@@ -206,82 +206,86 @@ function TermsOfUse({ getAllCoures }) {
                   referred to as “Platform”). The Platform is owned by Acquiring
                   Technology, a company incorporated under the Companies Act,
                   1956 with its registered office at
-                  acquiringtechnology@gmail.com (hereinafter referred to as
-                  "Platform Owner", “we”, “us”, “our”). Your use of the Platform
-                  and services and tools are governed by the following terms and
-                  conditions ("Terms of Use") as applicable to the Platform
-                  including the applicable policies which are incorporated
-                  herein by way of reference. If You transact on the Platform,
-                  You shall be subject to the policies that are applicable to
-                  the Platform for such transaction. By mere use of the
-                  Platform, You shall be contracting with the Platform Owner and
-                  these terms and conditions including the policies constitute
-                  Your binding obligations, with Platform Owner. These Terms of
-                  Use relate to your use of our website, goods (as applicable)
-                  or services (as applicable) (collectively, “Services”). Any
-                  terms and conditions proposed by You which are in addition to
-                  or which conflict with these Terms of Use are expressly
-                  rejected by the Platform Owner and shall be of no force or
-                  effect. These Terms of Use can be modified at any time without
-                  assigning any reason. It is your responsibility to
-                  periodically review these Terms of Use to stay informed of
-                  updates. For the purpose of these Terms of Use, wherever the
-                  context so requires "you", “your” or "user" shall mean any
-                  natural or legal person who has agreed to become a user/buyer
-                  on the Platform. ACCESSING, BROWSING OR OTHERWISE USING THE
-                  PLATFORM INDICATES YOUR AGREEMENT TO ALL THE TERMS AND
-                  CONDITIONS UNDER THESE TERMS OF USE, SO PLEASE READ THE TERMS
-                  OF USE CAREFULLY BEFORE PROCEEDING. The use of Platform and/or
-                  availing of our Services is subject to the following Terms of
-                  Use: To access and use the Services, you agree to provide
-                  true, accurate and complete information to us during and after
-                  registration, and you shall be responsible for all acts done
-                  through the use of your registered account on the Platform.
-                  Neither we nor any third parties provide any warranty or
-                  guarantee as to the accuracy, timeliness, performance,
-                  completeness or suitability of the information and materials
-                  offered on this website or through the Services, for any
-                  specific purpose. You acknowledge that such information and
-                  materials may contain inaccuracies or errors and we expressly
-                  exclude liability for any such inaccuracies or errors to the
-                  fullest extent permitted by law. Your use of our Services and
-                  the Platform is solely and entirely at your own risk and
-                  discretion for which we shall not be liable to you in any
-                  manner. You are required to independently assess and ensure
-                  that the Services meet your requirements. The contents of the
-                  Platform and the Services are proprietary to us and are
-                  licensed to us. You will not have any authority to claim any
-                  intellectual property rights, title, or interest in its
-                  contents. The contents includes and is not limited to the
-                  design, layout, look and graphics. You acknowledge that
-                  unauthorized use of the Platform and/or the Services may lead
-                  to action against you as per these Terms of Use and/or
-                  applicable laws. You agree to pay us the charges associated
-                  with availing the Services. You agree not to use the Platform
-                  and/ or Services for any purpose that is unlawful, illegal or
-                  4 forbidden by these Terms, or Indian or local laws that might
-                  apply to you. You agree and acknowledge that website and the
-                  Services may contain links to other third party websites. On
-                  accessing these links, you will be governed by the terms of
-                  use, privacy policy and such other policies of such third
-                  party websites. These links are provided for your convenience
-                  for provide further information. You understand that upon
-                  initiating a transaction for availing the Services you are
-                  entering into a legally binding and enforceable contract with
-                  the Platform Owner for the Services. You shall indemnify and
-                  hold harmless Platform Owner, its affiliates, group companies
-                  (as applicable) and their respective officers, directors,
-                  agents, and employees, from any claim or demand, or actions
-                  including reasonable attorneys’ fees, made by any third party
-                  or penalty imposed due to or arising out of Your breach of
-                  this Terms of Use, privacy Policy and other Policies, or Your
-                  violation of any law, rules or regulations or the rights
-                  (including infringement of intellectual property rights) of a
-                  third party. In no event will the Platform Owner be liable for
-                  any indirect, consequential, incidental, special or punitive
-                  damages, including without limitation damages for loss of
-                  profits or revenues, business interruption, loss of business
-                  opportunities, loss of data or loss of other economic
+                  <strong>
+                    {" "}
+                    PDK Nestle, 1/564, D2, 4th Street, Main Road, Krishna Nagar,
+                    Perumbakkam, Chennai, Tamil Nadu 600100
+                  </strong>{" "}
+                  (hereinafter referred to as "Platform Owner", “we”, “us”,
+                  “our”). Your use of the Platform and services and tools are
+                  governed by the following terms and conditions ("Terms of
+                  Use") as applicable to the Platform including the applicable
+                  policies which are incorporated herein by way of reference. If
+                  You transact on the Platform, You shall be subject to the
+                  policies that are applicable to the Platform for such
+                  transaction. By mere use of the Platform, You shall be
+                  contracting with the Platform Owner and these terms and
+                  conditions including the policies constitute Your binding
+                  obligations, with Platform Owner. These Terms of Use relate to
+                  your use of our website, goods (as applicable) or services (as
+                  applicable) (collectively, “Services”). Any terms and
+                  conditions proposed by You which are in addition to or which
+                  conflict with these Terms of Use are expressly rejected by the
+                  Platform Owner and shall be of no force or effect. These Terms
+                  of Use can be modified at any time without assigning any
+                  reason. It is your responsibility to periodically review these
+                  Terms of Use to stay informed of updates. For the purpose of
+                  these Terms of Use, wherever the context so requires "you",
+                  “your” or "user" shall mean any natural or legal person who
+                  has agreed to become a user/buyer on the Platform. ACCESSING,
+                  BROWSING OR OTHERWISE USING THE PLATFORM INDICATES YOUR
+                  AGREEMENT TO ALL THE TERMS AND CONDITIONS UNDER THESE TERMS OF
+                  USE, SO PLEASE READ THE TERMS OF USE CAREFULLY BEFORE
+                  PROCEEDING. The use of Platform and/or availing of our
+                  Services is subject to the following Terms of Use: To access
+                  and use the Services, you agree to provide true, accurate and
+                  complete information to us during and after registration, and
+                  you shall be responsible for all acts done through the use of
+                  your registered account on the Platform. Neither we nor any
+                  third parties provide any warranty or guarantee as to the
+                  accuracy, timeliness, performance, completeness or suitability
+                  of the information and materials offered on this website or
+                  through the Services, for any specific purpose. You
+                  acknowledge that such information and materials may contain
+                  inaccuracies or errors and we expressly exclude liability for
+                  any such inaccuracies or errors to the fullest extent
+                  permitted by law. Your use of our Services and the Platform is
+                  solely and entirely at your own risk and discretion for which
+                  we shall not be liable to you in any manner. You are required
+                  to independently assess and ensure that the Services meet your
+                  requirements. The contents of the Platform and the Services
+                  are proprietary to us and are licensed to us. You will not
+                  have any authority to claim any intellectual property rights,
+                  title, or interest in its contents. The contents includes and
+                  is not limited to the design, layout, look and graphics. You
+                  acknowledge that unauthorized use of the Platform and/or the
+                  Services may lead to action against you as per these Terms of
+                  Use and/or applicable laws. You agree to pay us the charges
+                  associated with availing the Services. You agree not to use
+                  the Platform and/ or Services for any purpose that is
+                  unlawful, illegal or 4 forbidden by these Terms, or Indian or
+                  local laws that might apply to you. You agree and acknowledge
+                  that website and the Services may contain links to other third
+                  party websites. On accessing these links, you will be governed
+                  by the terms of use, privacy policy and such other policies of
+                  such third party websites. These links are provided for your
+                  convenience for provide further information. You understand
+                  that upon initiating a transaction for availing the Services
+                  you are entering into a legally binding and enforceable
+                  contract with the Platform Owner for the Services. You shall
+                  indemnify and hold harmless Platform Owner, its affiliates,
+                  group companies (as applicable) and their respective officers,
+                  directors, agents, and employees, from any claim or demand, or
+                  actions including reasonable attorneys’ fees, made by any
+                  third party or penalty imposed due to or arising out of Your
+                  breach of this Terms of Use, privacy Policy and other
+                  Policies, or Your violation of any law, rules or regulations
+                  or the rights (including infringement of intellectual property
+                  rights) of a third party. In no event will the Platform Owner
+                  be liable for any indirect, consequential, incidental, special
+                  or punitive damages, including without limitation damages for
+                  loss of profits or revenues, business interruption, loss of
+                  business opportunities, loss of data or loss of other economic
                   interests, whether in contract, negligence, tort or otherwise,
                   arising from the use of or inability to use the Services,
                   however caused and whether arising in contract, tort,
@@ -301,14 +305,20 @@ function TermsOfUse({ getAllCoures }) {
                   contact information provided on this website.{" "}
                 </p>
                 <h1>Refund Policy</h1>
-                We will notify you once we’ve received your refund request, and
-                let you know if the refund was approved or not. If approved,
-                you’ll be automatically refunded on your original payment method
-                within 10 business days. Please remember it can take some time
-                for your bank or credit card company to process and post the
-                refund too. If more than 7 business days have passed since
-                we’ve approved your refund, please contact us at Enter{" "}
-                <strong>acquiringtechnology@gmail.com / 9042771660</strong>
+<p>
+  We will notify you once we’ve received your refund request and let you know if the refund was approved or not. If approved, you’ll be automatically refunded to your original payment method within 10 business days. Please remember, it can take some time for your bank or credit card company to process and post the refund.
+</p>
+<p>
+  If more than 7 business days have passed since we’ve approved your refund, please contact us at <strong>acquiringtechnology@gmail.com</strong>.
+</p>
+<br />
+<p>Regards,</p>
+<p><strong>Jayashree</strong><br />
+  Founder<br />
+  📧 jayashree.acquiring@gmail.com<br />
+  📞 9042771660
+</p>
+
               </div>
             </div>
           </div>
