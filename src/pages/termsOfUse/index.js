@@ -313,7 +313,7 @@ function TermsOfUse({ getAllCoures }) {
 </p>
 <br />
 <p>Regards,</p>
-<p><strong>Jayashree</strong><br />
+<p><strong>V Jayashree</strong><br />
   Founder<br />
   📧 jayashree.acquiring@gmail.com<br />
   📞 9042771660
