@@ -169,6 +169,12 @@ export const Header = () => {
               onClick={() => router.push("/contactUs")}
               title="Contact Us"
             />
+             <NormalButton
+              className="btn btn-outline-primary px-4 ms-2"
+              type="submit"
+              onClick={() => window.open("https://infinity.acquiring.in/")}
+              title="Login"
+            />
           </div>
           
         </div>

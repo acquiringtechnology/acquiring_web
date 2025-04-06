@@ -73,6 +73,9 @@ export const SideBar = () => {
         <NavLink className="list-group-item" href={"/contactUs"}>
           Contact Us
         </NavLink>
+        <a className="list-group-item" target="_blank"  href={"https://infinity.acquiring.in/"}>
+          Login
+        </a>
 
         {/* <div
           className={`py-2 contact-us-end ${
