@@ -13,7 +13,12 @@
     }
     
     .couseTitle {
-        font-size: 2.5rem;
+        font-size: 3rem;
+    }
+    .mentorFrom{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
     }
     .ratingText {
         color: #e59819;
@@ -42,7 +47,7 @@
         }
         .programOverViewDetailValue {
             font-weight: 700 !important;
-            font-size: 1.25rem !important;
+            font-size: 1rem !important;
             color: var(--primary-bg);
         }
     }

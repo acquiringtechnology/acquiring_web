@@ -1,6 +1,6 @@
 export const liveClasssList = [
   {
-    name: "MERN Fullstack",
+    name: "Kickstart Your Career in Full Stack Web Development in 90 Days – Includes Real-World Internship Experience!",
     img:"/img/mern.png",
     dis: (
       <>

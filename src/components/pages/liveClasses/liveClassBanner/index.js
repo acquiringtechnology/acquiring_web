@@ -22,7 +22,8 @@ export const LiveClassBanner = (props) => {
                                     <li>A Portfolio of Real-world Projects.</li>
                                     <li>Globally Recognized Certification.</li>
                                 </ul>
-                                <p>Live Classes available in <strong>English, தமிழ், ಕನ್ನಡ</strong> </p>
+                                <p>Work on real-world projects, learn from top tech leaders, and confidently launch your career in technology.</p>
+                                <p>Live Classes available in <strong>தமிழ்</strong> </p>
                                 {/* <NormalButton className={`btn-primary me-3 ${styles.joinCourseBtn}`} title='Join LIVE Classes' />
                                 <NormalButton className={`btn-outline-primary ${styles.joinCourseBtn}`} title='View All Courses' /> */}
                             </div>

@@ -35,7 +35,7 @@ export default function Home() {
             <div className="col-12">
               <LiveClassBanner
                 title={
-                  <span>Programmes for career advancement in technology</span>
+                  <span>Live Programmes for Future Tech Leaders</span>
                 }
                 description="Skills for your present (and your future). Get started with us."
                 bannerImage="/img/liveClasses_banner_bg.svg"

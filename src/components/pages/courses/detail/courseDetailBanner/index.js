@@ -44,13 +44,16 @@ export const CourseDetailBanner = ({
       <div className="container">
         <div className="row mb-4">
           <div className="col-lg-8 col-md-6 col-12">
-            <h4 className={`mb-lg-2 mb-3 ${styles.couseTitle}`}>
+            <h1 className={`mb-lg-2 mb-3 ${styles.couseTitle}`}>
               {liveClassDetail?.name}
-            </h4>
-            {liveClassDetail?.dis}
-            <p>
+            </h1>
+            {/* {liveClassDetail?.dis} */}
+            <p className={`${styles.mentorFrom}`}>Mentorship from Industry Experts at <img width={75} src="/Disney_logo.png"/> , <img width={75} src="/adobe-Logo.png"/> & more!</p>
+           
+           <p className={`${styles.mentorFrom}`}>Build a successful career in Full Stack Development with real-time project experience and Zen-Class placement guidance — now available in தமிழ்!</p>
+            {/* <p>
               Live Classes available in <strong>English, தமிழ், ಕನ್ನಡ</strong>{" "}
-            </p>
+            </p> */}
             {/* <div className="mb-4">
               <span className={`me-2 ${styles.ratingText}`}>4.6</span>
               <StarRatings
@@ -72,24 +75,40 @@ export const CourseDetailBanner = ({
               <NormalButton title="Start Quiz!" onClick={handleRedirectQuiz} />
             )}
 
-            {fromPage === "liveClass" && (
+          
+          </div>
+          <div className="col-lg-4 col-md-6 col-12 d-md-block d-none">
+            {fromPage !== "liveClass" ? (
+              <CourseCard isDetailBanner={true} />
+            ) : (
+              <EnquiryForm
+                liveClassDetail={liveClassDetail}
+                isFromSyllabus={true}
+                liveClassId={liveClassDetail?.id}
+                fromPage={fromPage}
+              />
+            )}
+          </div>
+        <div className="col-12">
+        {fromPage === "liveClass" && (
               <div className={`row mb-2 mt-4 ${styles.programOverViewSection}`}>
-                <div className="col-md-12">
+                {/* <div className="col-md-12">
                   <div className={`row mb-2`}>
                     <h4 className={`${styles.programOverViewTitle}`}>
                       Program Overview
                     </h4>
                   </div>
-                </div>
-                <div className="col-md-4">
+                </div> */}
+                <div className="col-md-3">
                   <h4 className={styles.programOverViewDetailTitle}>
                     Duration
                   </h4>
                   <label className={styles.programOverViewDetailValue}>
-                    {liveClassDetail?.prgOverView?.dur}
+                    {/* {liveClassDetail?.prgOverView?.dur} */}
+                    90 Days
                   </label>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-2">
                   <h4 className={styles.programOverViewDetailTitle}>Format</h4>
                   <label className={styles.programOverViewDetailValue}>
                     {liveClassDetail?.prgOverView?.classType}
@@ -105,27 +124,25 @@ export const CourseDetailBanner = ({
               </div> */}
                 <div className="col-md-4">
                   <h4 className={styles.programOverViewDetailTitle}>
-                    Max CTC upto
+                  Mentors
                   </h4>
                   <label className={styles.programOverViewDetailValue}>
-                    {liveClassDetail?.prgOverView?.maxCtc}
+                    {/* {liveClassDetail?.prgOverView?.maxCtc} */}
+                    1X1 Mentor Support
+                  </label>
+                </div>
+                <div className="col-md-3">
+                  <h4 className={styles.programOverViewDetailTitle}>
+                  Course
+                  </h4>
+                  <label className={styles.programOverViewDetailValue}>
+                    {/* {liveClassDetail?.prgOverView?.maxCtc} */}
+                    Live Online Classes + Access to Recorded Videos
                   </label>
                 </div>
               </div>
             )}
-          </div>
-          <div className="col-lg-4 col-md-6 col-12 d-md-block d-none">
-            {fromPage !== "liveClass" ? (
-              <CourseCard isDetailBanner={true} />
-            ) : (
-              <EnquiryForm
-                liveClassDetail={liveClassDetail}
-                isFromSyllabus={true}
-                liveClassId={liveClassDetail?.id}
-                fromPage={fromPage}
-              />
-            )}
-          </div>
+        </div>
         </div>
       </div>
     </div>
