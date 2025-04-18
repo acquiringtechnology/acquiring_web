@@ -41,6 +41,7 @@ export default function Home() {
         <Layout>
           <div className="row">
             <div className="col-12">
+              <div className="app-theme-bg">
               <Banner
                 title={
                   <span>
@@ -49,10 +50,11 @@ export default function Home() {
                   </span>
                 }
                 description="Acquire Skills for your present (and future). Get started with us"
-                bannerImage="/img/banner-img.png"
+                bannerImage="/img/banner_apge_right_side_world.png"
               />
               {/* <UpcommingWebinarsCards /> */}
               <AboutCompany />
+              </div>
               <WhatOfferYou />
               <LiveClassesCard/>
               {/* <OurCoursesCard isSwiper={false} /> */}

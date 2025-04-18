@@ -15,13 +15,16 @@
         font-size: fontSize(15px);
     }
     .offerCard {
-        background: #f5f5f5;
+        // background: #f5f5f5;
+        // background: linear-gradient(112.26deg, #121112 51.34%, #d32b3a 147.24%);
+        
+        background-color: #fbf9eb;
         border-radius: 5px;
         height: 100%;
         padding: 40px 6px;
         text-align: center;
         transition: 0.4s;
-
+        // color: var(--white);
         .offerCardIcon {
             color: var(--text-primary);
             display: block;
@@ -33,6 +36,7 @@
             font-weight: 700;
             margin-bottom: fontSize(15px);
             margin-top: fontSize(25px);
+            // color: var(--white);
         }
     }
 }

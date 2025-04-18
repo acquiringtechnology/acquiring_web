@@ -1,7 +1,9 @@
 
 @import "@/styles/scss/abstracts/abstracts-dir.scss";
 .aboutCompanyContiner{
-    background: #df8c90;
+    // background: #df8c90;
+    // background: linear-gradient(53.22deg, #d32b3a -92.39%, #fff 25.23%);
+    // background: radial-gradient(circle at center, #5e0e0e 0%, #000 80%);
     padding: 23px 0;
     .aboutImage{
        
@@ -11,6 +13,7 @@
     .aboutTitle{
         font-size: 2.34375rem;
         font-weight: 700;
+        color: var(--white);
         @include media-breakpoint-mobile-port {
             font-size: fontSize(30px) !important;
         }
@@ -20,10 +23,12 @@
     }
     .aboutDescription{
         font-size: fontSize(15px) !important;
+        color: var(--white);
     }
     .aboutDescriptionList{
         font-size: fontSize(15px) !important;
         border: none !important;
+        color: var(--white);
         padding: 0.425rem 0;
     }
 }

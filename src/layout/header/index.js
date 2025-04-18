@@ -42,7 +42,7 @@ export const Header = () => {
     try {
       //! Put the class name that you want to use
       // Class name that will be added to the navbar element in the "scrolled" state
-      const SCROLLED_STATE_CLASS = "fixed-top shadow";
+      const SCROLLED_STATE_CLASS = "fixed-top shadow grid-removed";
 
       //! Use your own ID or selector
       // The id of navigation bar HTML element
@@ -56,9 +56,9 @@ export const Header = () => {
 
       // If scroll value is more than 0 - means the page is scrolled, add or remove class based on that
       if (scroll > 85) {
-        navbar.classList?.add("fixed-top", "shadow", "transition4");
+        navbar.classList?.add("fixed-top", "shadow", "transition4","grid-removed");
       } else {
-        navbar.classList?.remove("fixed-top", "shadow", "transition4");
+        navbar.classList?.remove("fixed-top", "shadow", "transition4","grid-removed");
       }
     } catch (e) {}
   };
@@ -72,8 +72,9 @@ export const Header = () => {
   return (
     <nav
       id="navbar"
-      className={`navbar navbar-expand-lg pe-4 bg-body-tertiary ${styles.customNavbar}`}
+      className={`navbar navbar-expand-lg pe-4  ${styles.customNavbar}`}
     >
+        <div  className={`${styles['grid-overlay']} grid-overlay`}></div>
       <div className="container">
         <div className="d-flex mr-auto">
           <button
@@ -115,13 +116,13 @@ export const Header = () => {
         </div>
 
         <div
-          className="collapse navbar-collapse bg-white"
+          className="collapse navbar-collapse"
           id="navbarSupportedContent"
         >
           <ul className={`navbar-nav mx-auto mb-2 mb-lg-0 ${styles.navMenu}`}>
             {MENU.map(({ title, link ,exact }, i) => (
-              <li className="nav-item" key={i}>
-                <NavLink exact={exact} className="nav-link" href={link}>
+              <li className="nav-item " key={i}>
+                <NavLink exact={exact} className="nav-link text-white" href={link}>
                   {title}
                 </NavLink>
               </li>

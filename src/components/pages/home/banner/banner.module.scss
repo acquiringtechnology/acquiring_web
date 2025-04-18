@@ -1,24 +1,117 @@
-@import "@/styles/scss/abstracts/abstracts-dir.scss";
+@import "../../../../styles/abstracts/abstracts-dir.scss";
+$icon-size: 40px;
+$icon-opacity: 0.85;
+$animation-duration: 6s;
 .bannerContiner {
-    // height:400px;
-    .bannerTitleContiner {
-        .bannerTitle {
-            font-size: fontSize(45px) !important;
-            @include media-breakpoint-mobile-port{
-                font-size: fontSize(30px) !important;
-            }
-            @include  media-breakpoint-tab-port{
-                font-size: fontSize(30px) !important;
-            }
-        }
+  // height:400px;
+  .bannerTitleContiner {
+    .bannerTitle {
+      color: var(--white);
+      font-size: fontSize(56px) !important;
+      // @include media-breakpoint-mobile-port{
+      //     font-size: fontSize(30px) !important;
+      // }
+      @include media-breakpoint-from-tab {
+        font-size: fontSize(35px) !important;
+      }
     }
-    .joinCourseBtn{
-        border-radius: 4px;
-        font-weight: 600;
-        min-height: 48px;
-        font-size: 1rem;
+  }
+  .bannerSubtext {
+    font-size: 1.5rem;
+    @include media-breakpoint-from-tab {
+      font-size: 1.2rem !important;
     }
-    .bannerImage{
-        height: 100%;
-    }
+  }
+  .joinCourseBtn {
+    border-radius: 4px;
+    font-weight: 600;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+  .bannerImage {
+    // height: 100%;
+    // animation: float $animation-duration ease-in-out infinite;
+    animation: bounce 5s infinite;
+
+  }
 }
+
+.bannerSection {
+  &.banner-bg {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 76px);
+    @include media-breakpoint-from-tab {
+      height: auto;
+    }
+    // background: radial-gradient(circle at center, #5e0e0e 0%, #000 80%);
+    animation: moveBackground 10s ease-in-out infinite alternate;
+
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      background-position: 0 0;
+      pointer-events: none;
+      z-index: 1;
+      animation: moveGrid 20s linear infinite;
+
+      // 🎯 Fade out bottom 50px
+      -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    }
+
+
+
+  
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+      animation-timing-function: ease-in-out;
+    }
+    50% {
+      transform: translateY(-25px);
+      animation-timing-function: ease-in;
+    }
+  }
+  
+}
+
+// Keyframes should be defined globally, outside of any class
+@keyframes moveBackground {
+  0% {
+    background-position: center;
+    filter: brightness(1);
+  }
+  100% {
+    background-position: 40% 60%;
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
