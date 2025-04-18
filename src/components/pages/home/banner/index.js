@@ -71,7 +71,7 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
               {/* </div> */}
               {/* <img  className={`img-fluid ${styles.bannerImage}`} alt="bannerimage" src={bannerImage} /> */}
 
-              <div className="language-world">
+              <div className="language-world ms-lg-auto">
                 <div class="world">
                   <img src={bannerImage} alt="" />
                 </div>
