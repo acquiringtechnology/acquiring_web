@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import styles from './TypingEffect.module.scss'; // Import as module
+import styles from './typingEffect.module.scss'; // Import as module
 
 export const TextTypingEffect = () => {
   const texts = ['Simplifying Tech...', 'Amplifying Skills...'];
