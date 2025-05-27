@@ -5,14 +5,14 @@ const AboutCompany = () => {
 
 
     return (
-        <section className={`${styles.aboutCompanyContiner} mb-5`}>
+        <section className={`${styles.aboutCompanyContiner} pb-0 mb-5`}>
             <div className="container">
 
 
 
                 <div className="row h-100 align-items-center gx-5">
-                    <div className='col-md-6'>
-                        <img alt='' className={`img-fluid ${styles.aboutImage}`} src='/img/why-acquiring.png' />
+                    <div className='col-md-6 order-sm-1 order-md-0'>
+                        <img alt='' className={`img-fluid ${styles.aboutImage}`} src='/img/clock_why_us.png' />
 
                     </div>
                     <div className="col-md-6">

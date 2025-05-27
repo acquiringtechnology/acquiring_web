@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useRef, useState, useEffect, useCallback } from 'react';
 import styles from './enquiryForm.module.scss';
 import { NormalInput, NormalSelect, NormalButton } from '@/components/common';
@@ -73,6 +74,10 @@ const EnquiryForm = ({
       validator.current.hideMessages();
       setIsFormLoader(true);
       try {
+        const body ={
+          ...courseEnquiryFormObj,
+          email: courseEnquiryFormObj.email.toLowerCase(),
+        }
         const courseEnquiryReq = await createDocument('courseEnquiry', courseEnquiryFormObj);
 
         setIsFormLoader(false);
@@ -133,11 +138,11 @@ const EnquiryForm = ({
       <div className="card border-0 shadow">
         <div className="card-body">
           <div className="row">
-            {!isFromSyllabus && (
+            {/* {!isFromSyllabus && ( */}
               <div className="col-md-12">
-                <h4 className={`mb-3 ${styles.title}`}>Start Your Career Now</h4>
+                <h4 className={`mb-3 ${styles.title} text-center`}>I'm Interested</h4>
               </div>
-            )}
+            {/* )} */}
             <div className="col-md-12">
               <NormalInput
                 title="Name"

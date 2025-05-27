@@ -1,2 +1,2 @@
-export {CourseDetailBanner,CourseDetailContent,CourseVideoCard} from './detail'
+export {CourseDetailBanner,CourseDetailContent,CourseVideoCard ,ProgramSupport} from './detail'
 export {CourseCard} from './courseCard'

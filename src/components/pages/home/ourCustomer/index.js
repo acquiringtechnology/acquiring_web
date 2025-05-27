@@ -39,6 +39,36 @@ The instructors were highly knowledgeable and approachable, ensuring that every 
       name: "aspirent ak",
       detail: `Coaching is good..It is really helpful to reach my goal.Thankyou Acquiring technology`,
     },
+    {
+      name: "subu raaju",
+      detail: `Hi...
+I recently joined the Full Stack Web Developer course at Acquiring Technology, and I’m extremely pleased with my experience! The trainer is highly knowledgeable, making complex concepts easy to understand.
+The availability of recorded sessions is a great advantage for self-practice.
+One of the key highlights is the fee structure, which is very reasonable and offers great value for the quality of training provided.`,
+    },
+    {
+      name: "Dinesh E",
+      detail: `I studied Full Stack Development at Acquiring Technology and had a great experience. The training was well-structured, and the trainer explained concepts clearly with real-world examples. The hands-on sessions were especially helpful. Highly recommend!`,
+    },
+    {
+      name: "Mahimai Antony",
+      detail: `Im currently taking the full stack MERN course, and its been a great experience so far. The instructor (Anvesh Babu) explains concepts in a simple and clear way, making it easy to understand even for someone new to MERN. Overall, a well structured course with good support. Definitely recommend it for anyone looking to get into full-stack development.`,
+    },
+     {
+      name: "Sahina Barveen",
+      detail: `I am learning full stack development at Acquiring Technology
+Talk about teaching methods, hands-on projects, or real-world applications:
+The instructors were highly knowledgeable and approachable, ensuring that every concept was clear. The real-world projects and assignments helped me gain confidence in building complete web applications from scratch." I feel elated`,
+    },
+    {
+      name: "Manikandan R",
+      detail: `Hi This Manikandan. I am learning MERN Stack development course in Acquiring Technology. The training is very good and the tutor Anvesh explained each and every concept clearly in a simple way. With the help of this training, i learnt a lot about the real time experience.`,
+    },
+    {
+      name: "Priya K",
+      detail: `I joined Acquiring Technology, and it's been very useful. I've learned a lot of new things, and the concepts are easy to understand.
+The way of teaching and clarifying doubts is excellent`,
+    },
   ];
 
   const handleGetFirstLeater = (name) => {
@@ -52,7 +82,7 @@ The instructors were highly knowledgeable and approachable, ensuring that every 
       <div className="container mb-5">
         <div className="row">
           <div className="col-md-12 text-center mb-4">
-            <h4 className={styles.ourServicesTitle}>Our Students  Feedback</h4>
+            <h4 className={styles.ourServicesTitle}>Our Students Feedback</h4>
             {/* <p className={styles.ourServicesSubTitle}>
               ur client servicing constitutes devising and execution of a
               project however, we do not limit ourselves when it comes to
@@ -69,16 +99,15 @@ The instructors were highly knowledgeable and approachable, ensuring that every 
             0: {
               slidesPerView: 1.2,
             },
-            576:{
-              slidesPerView:1.2,
+            576: {
+              slidesPerView: 1.2,
             },
             768: {
               slidesPerView: 2,
             },
-            992:{
-              slidesPerView:3
+            992: {
+              slidesPerView: 3,
             },
-           
           }}
           loop={true}
           autoplay={{
@@ -90,12 +119,10 @@ The instructors were highly knowledgeable and approachable, ensuring that every 
           {review.map((data, i) => (
             <SwiperSlide key={i}>
               <div className="card mb-3">
-                <div
-                  className={`card-body ${styles.servicesCardBody}`}
-                >
+                <div className={`card-body ${styles.servicesCardBody}`}>
                   <div className="row">
                     <div className="col-12 mb-3">
-                    <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center">
                         <div class="flex-shrink-0">
                           <label className={styles.studentName}>
                             {handleGetFirstLeater(data.name)}

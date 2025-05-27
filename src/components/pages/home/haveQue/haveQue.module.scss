@@ -4,7 +4,8 @@
     background-attachment: fixed;
     background-size: cover;
     padding: 20px 0;
-    background-color: var(--primary-bg);
+    // background-color: var(--primary-bg);
+    background: radial-gradient(circle at center, #5e0e0e 0%, #000 80%);
 
     .haveQueTitle {
         font-weight: 700;

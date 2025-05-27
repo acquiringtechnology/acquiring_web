@@ -57,9 +57,10 @@ export const LiveClassCourseContent = ({liveClassDetail}) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-md-6 col-12">
-            <h4 className={`mb-lg-2 mb-3 ${styles.couseTitle}`}>
-              Course content
+            <h4 className={`mb-4 ${styles.couseTitle}`}>
+              Syllabus Overview
             </h4>
+            {/* <p className={`${styles.mentorFrom} text-center mb-4`}>Simplifying Tech... Amplifying Skills...</p> */}
             <div className="row">
               <div className="col-md-12">
 

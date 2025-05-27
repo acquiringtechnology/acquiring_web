@@ -14,11 +14,13 @@
     
     .couseTitle {
         font-size: 3rem;
+        color: var(--white);
     }
     .mentorFrom{
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
+         color: var(--white);
     }
     .ratingText {
         color: #e59819;
@@ -29,7 +31,7 @@
     }
     .overRatingPerCount {
         cursor: pointer;
-        color: var(--primary-bg);
+        color: var(--white);
         font-size: 0.9rem;
         text-decoration: underline;
     }
@@ -43,12 +45,13 @@
         .programOverViewDetailTitle {
             font-size: 1.1rem;
             font-weight: 400 !important;
+             color: var(--white);
             // margin-bottom: 0!important;
         }
         .programOverViewDetailValue {
             font-weight: 700 !important;
             font-size: 1rem !important;
-            color: var(--primary-bg);
+         color: var(--white);
         }
     }
 }

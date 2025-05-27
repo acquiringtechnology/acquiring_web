@@ -58,7 +58,7 @@ const WhatOfferYou = (props) => {
                         </div>
                         <div className='col-md-6 col-sm-12 text-md-end'>
 
-                        <img alt='' className={`img-fluid ${styles.aboutImage}`} src='/img/offers-img.svg' />
+                        <img alt='' className={`img-fluid ${styles.aboutImage}`} src='/img/what_we_offer.png' />
                         </div>
 
 

@@ -40,7 +40,10 @@ export const CourseDetailBanner = ({
   }, []);
 
   return (
-    <div className={` mb-5  ${styles.courseDetailContiner}`}>
+    <div
+      className={` mb-5  app-theme-bg primary-banner-bg ${styles.courseDetailContiner}`}
+    >
+      <div className={`grid-overlay`}></div>
       <div className="container">
         <div className="row mb-4">
           <div className="col-lg-8 col-md-6 col-12">
@@ -48,9 +51,17 @@ export const CourseDetailBanner = ({
               {liveClassDetail?.name}
             </h1>
             {/* {liveClassDetail?.dis} */}
-            <p className={`${styles.mentorFrom}`}>Mentorship from Industry Experts at <img width={75} src="/Disney_logo.png"/> , <img width={75} src="/adobe-Logo.png"/> & more!</p>
-           
-           <p className={`${styles.mentorFrom}`}>Build a successful career in Full Stack Development with real-time project experience and Zen-Class placement guidance — now available in தமிழ்!</p>
+            <p className={`${styles.mentorFrom}`}>
+              Mentorship from Industry Experts at{" "}
+              <img width={75} src="/Disney_logo.png" /> ,{" "}
+              <img width={75} src="/adobe-Logo.png" /> & more!
+            </p>
+
+            <p className={`${styles.mentorFrom}`}>
+              Build a successful career in Full Stack Development with real-time
+              project experience and Zen-Class placement guidance — now
+              available in தமிழ்!
+            </p>
             {/* <p>
               Live Classes available in <strong>English, தமிழ், ಕನ್ನಡ</strong>{" "}
             </p> */}
@@ -74,8 +85,6 @@ export const CourseDetailBanner = ({
             {fromPage !== "liveClass" && (
               <NormalButton title="Start Quiz!" onClick={handleRedirectQuiz} />
             )}
-
-          
           </div>
           <div className="col-lg-4 col-md-6 col-12 d-md-block d-none">
             {fromPage !== "liveClass" ? (
@@ -89,22 +98,14 @@ export const CourseDetailBanner = ({
               />
             )}
           </div>
-        <div className="col-12">
-        {fromPage === "liveClass" && (
+          {/* <div className="col-12">
+            {fromPage === "liveClass" && (
               <div className={`row mb-2 mt-4 ${styles.programOverViewSection}`}>
-                {/* <div className="col-md-12">
-                  <div className={`row mb-2`}>
-                    <h4 className={`${styles.programOverViewTitle}`}>
-                      Program Overview
-                    </h4>
-                  </div>
-                </div> */}
                 <div className="col-md-3">
                   <h4 className={styles.programOverViewDetailTitle}>
                     Duration
                   </h4>
                   <label className={styles.programOverViewDetailValue}>
-                    {/* {liveClassDetail?.prgOverView?.dur} */}
                     90 Days
                   </label>
                 </div>
@@ -114,35 +115,21 @@ export const CourseDetailBanner = ({
                     {liveClassDetail?.prgOverView?.classType}
                   </label>
                 </div>
-                {/* <div className="col-md-3">
-                <h4 className={styles.programOverViewDetailTitle}>
-                  Hiring Partners
-                </h4>
-                <label className={styles.programOverViewDetailValue}>
-                  100+ companies
-                </label>
-              </div> */}
                 <div className="col-md-4">
-                  <h4 className={styles.programOverViewDetailTitle}>
-                  Mentors
-                  </h4>
+                  <h4 className={styles.programOverViewDetailTitle}>Mentors</h4>
                   <label className={styles.programOverViewDetailValue}>
-                    {/* {liveClassDetail?.prgOverView?.maxCtc} */}
                     1X1 Mentor Support
                   </label>
                 </div>
                 <div className="col-md-3">
-                  <h4 className={styles.programOverViewDetailTitle}>
-                  Course
-                  </h4>
+                  <h4 className={styles.programOverViewDetailTitle}>Course</h4>
                   <label className={styles.programOverViewDetailValue}>
-                    {/* {liveClassDetail?.prgOverView?.maxCtc} */}
                     Live Online Classes + Access to Recorded Videos
                   </label>
                 </div>
               </div>
             )}
-        </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -26,6 +26,8 @@ export {
   TechnologiesCovered,
   LiveClassPricing,
   SyllabusAction,
+  ProgramSupport,
+  AboutBootcamp
 } from "./liveClasses";
 export { RegisterForm, EmailVerification } from "./register";
 export {

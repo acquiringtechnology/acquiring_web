@@ -1,10 +1,14 @@
 @import "bootstrap/scss/bootstrap";
+// @import "./css/style.scss";
 @import "./scss/vendors/animate/animate.min.css";
 @import "swiper/css";
 @import "./scss/index.scss";
 @import "sweetalert2/src/sweetalert2.scss";
 @import "~plyr/dist/plyr.css";
 // @import "animate.css/animate.css";
+// @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap');
+// @import url('https://fonts.gstatic.com');
+// @import url('https://fonts.googleapis.com');
 :root {
   --black-bg: #2d2f4e;
   --primary-bg: #d32b3a;
@@ -26,6 +30,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  // font-family: "Heebo", sans-serif;
 }
 
 html,
@@ -292,4 +297,102 @@ input[type="number"] {
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+.primary-banner-bg {
+    position: relative;
+    width: 100%;
+    // height: calc(100vh - 76px);
+    @include media-breakpoint-from-tab {
+      height: auto;
+    }
+    // background: radial-gradient(circle at center, #5e0e0e 0%, #000 80%);
+    animation: moveBackground 10s ease-in-out infinite alternate;
+
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      background-position: 0 0;
+      pointer-events: none;
+      z-index: 1;
+      animation: moveGrid 20s linear infinite;
+
+      // 🎯 Fade out bottom 50px
+      -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    }
+  }
+
+
+  
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+    }
+  
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+      animation-timing-function: ease-in-out;
+    }
+    50% {
+      transform: translateY(-25px);
+      animation-timing-function: ease-in;
+    }
+  }
+  
+
+
+// Keyframes should be defined globally, outside of any class
+@keyframes moveBackground {
+  0% {
+    background-position: center;
+    filter: brightness(1);
+  }
+  100% {
+    background-position: 40% 60%;
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+.fill-white {
+    fill: var(--white) !important;
+}
+.translate-middle-y {
+    transform: translateY(-50%) !important;
+}
+.opacity-1 {
+    opacity: 0.1 !important;
+}
+
+.opacity-4 {
+    opacity: 0.4 !important;
+}
+
+.bg-info--blue {
+    --bs-bg-opacity: 1;
+    background-color: #17a2b8 !important;
+        background: radial-gradient(circle at center, #5e0e0e 0%, #000 80%);
 }

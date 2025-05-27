@@ -11,20 +11,20 @@ export const SyllabusAction = ({liveClassDetail}) => {
   }
   
   return (
-    <div className={`${styles.syllabusActionCard} mb-5`}>
+    <div className={`${styles.syllabusActionCard} app-theme-bg  mb-5`}>
       <div className="container">
         <div className="row">
           <div className="col-md-9 col-sm-7 py-4">
-            <h4>Syllabus</h4>
-            <p>
+            <h4 className="text-white mt-4">Contact a Program Consultant</h4>
+            {/* <p>
               Get a peek through on the entire curriculum designed that ensures
               Job Placement Support
-            </p>
+            </p> */}
           </div>
-          <div className="col-md-3 col-sm-5 py-4">
+          <div className="col-md-3 col-sm-5 py-4 text-end">
             <NormalButton
               className="btn-primary mt-4"
-              title="Download syllabus"
+              title="Speak with Us"
               onClick={()=>setIsSyllabusDownloadModal(true)}
             />
           </div>
@@ -32,7 +32,7 @@ export const SyllabusAction = ({liveClassDetail}) => {
       </div>
 
       <Modal isOpen={isSyllabusDownloadModal} toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)} className="modal-dialog-centered">
-        <ModalHeader toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)}>Fill the below form to download the syllabus</ModalHeader>
+        {/* <ModalHeader toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)}>Fill the below form to download the syllabus</ModalHeader> */}
         {/* <ModalBody> */}
         <EnquiryForm liveClassDetail={liveClassDetail} isSyllabusModal={true} fromPage={"liveClass"} liveClassId={liveClassDetail?.id} isFromSyllabus={true} oncloseSyllabusEnquiryFrom={()=>handleCloseModel()}/>
         {/* </ModalBody> */}
