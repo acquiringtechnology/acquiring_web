@@ -1,6 +1,14 @@
 import styles from "./bootcampOverView.module.scss";
 import {NormalButton} from "@/components/common";
-export function ProgramSupport() {
+import { useState } from "react";
+import { EnquiryForm } from "@/components/pages";
+import { Modal } from "reactstrap"
+export function ProgramSupport({ liveClassDetail }) {
+    const [isSyllabusDownloadModal, setIsSyllabusDownloadModal] = useState(false);
+
+  const handleCloseModel = () => {
+    setIsSyllabusDownloadModal(false);
+  };
   const bootcampOverViewLis = [
     {
       img: "/icons/interview.png",
@@ -78,13 +86,28 @@ export function ProgramSupport() {
                   </span>
                 </li>
                  <li class="list-group-item px-0  border-0 d-flex justify-content-between">
-                 <NormalButton className='w-100 btn-outline-primary ' title='Download Syllabus' />
+                 <NormalButton className='w-100 btn-outline-primary ' onClick={()=>setIsSyllabusDownloadModal(true)} title='Download Syllabus' />
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+
+       <Modal
+        isOpen={isSyllabusDownloadModal}
+        toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)}
+        className="modal-dialog-centered"
+      >
+        <EnquiryForm
+          liveClassDetail={liveClassDetail}
+          isSyllabusModal={true}
+          fromPage={"liveClass"}
+          liveClassId={liveClassDetail?.id}
+          isFromSyllabus={true}
+          oncloseSyllabusEnquiryFrom={() => handleCloseModel()}
+        />
+      </Modal>
     </div>
   );
 }

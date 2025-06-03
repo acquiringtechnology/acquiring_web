@@ -15,7 +15,7 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
             <div className="col-lg-7 mb-3 mt-lg-0 mb-lg-0 mt-5 h-100 d-flex align-items-center justify-content-center">
               <div className={styles.bannerTitleContiner}>
                 <h4 className={styles.bannerTitle}>{title}</h4>
-                <TextTypingEffect />
+              {isBannerBtn &&  <TextTypingEffect />}
                 <p className={`text-white ${styles.bannerSubtext}`}>
                   {description}
                 </p>
@@ -71,11 +71,11 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
               {/* </div> */}
               {/* <img  className={`img-fluid ${styles.bannerImage}`} alt="bannerimage" src={bannerImage} /> */}
 
-              <div className="language-world ms-lg-auto">
+          <div className="language-world ms-lg-auto">
                 <div class="world">
                   <img src={bannerImage} alt="" />
                 </div>
-                <div class="flages">
+                 {isBannerBtn &&   <div class="flages">
                   <div class="flag" tabindex="0">
                     <img
                       src="/img/html.png"
@@ -142,7 +142,7 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
                       alt=""
                     />
                   </div>
-                </div>
+                </div>}
               </div>
             </div>
           </div>

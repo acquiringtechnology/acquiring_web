@@ -81,8 +81,6 @@ const EnquiryForm = ({
         const courseEnquiryReq = await createDocument('courseEnquiry', courseEnquiryFormObj);
 
         setIsFormLoader(false);
-        console.log('courseEnquiryReq----',courseEnquiryReq)
-
         if (courseEnquiryReq.status) {
           Toast({ message: 'Thank you. Our team will contact you soon.' });
           setCourseEnquiryData(courseEnquiryReq); // Save response data if needed

@@ -111,7 +111,7 @@ export const liveClasssList = [
         name: "Git",
       },
     ],
-    fees: "1999",
+    fees: "5000",
   },
   {
     name: "MEAN Fullstack",

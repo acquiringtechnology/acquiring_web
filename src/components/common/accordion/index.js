@@ -32,7 +32,7 @@ const NormalAccordion = (props) => {
         <div className={`accordion-item ${className}`} key={i}>
           <div className="accordion-header">
             <button
-              className={`accordion-button border-bottom  ${
+              className={`accordion-button border-top  ${
                 isShow && isShowIndex === i && "collapsed"
               }`}
               onClick={() => handleCollaps(i)}

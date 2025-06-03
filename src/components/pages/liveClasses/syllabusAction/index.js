@@ -2,7 +2,7 @@ import styles from "./syllabusAction.module.scss";
 import { NormalButton } from "@/components/common";
 import { EnquiryForm } from "@/components/pages";
 import { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import {Modal} from "reactstrap";
 export const SyllabusAction = ({liveClassDetail}) => {
   const [isSyllabusDownloadModal,setIsSyllabusDownloadModal] =useState(false);
 
