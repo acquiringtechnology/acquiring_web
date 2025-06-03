@@ -12,7 +12,9 @@ import {
   CourseDetailBanner,
   SyllabusAction,
   ProgramSupport,
-  AboutBootcamp
+  AboutBootcamp,
+  SampleCertification,
+  HowtheJourney
 } from "@/components/pages";
 import { useEffect } from "react";
 import { liveClasssList } from "@/services/data/liveClasses";
@@ -52,8 +54,11 @@ export default function LiveClassDetail() {
             <ProgramSupport/>
             <AboutBootcamp/>
             <LiveClassCourseContent liveClassDetail={liveClassDetail} />
+                  <HowtheJourney/>
             <SyllabusAction  liveClassDetail={liveClassDetail}/>
+      
             <TechnologiesCovered liveClassDetail={liveClassDetail} />
+            <SampleCertification/>
             <LiveClassPricing liveClassDetail={liveClassDetail}/>
           </div>
         </div>

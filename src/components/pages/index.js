@@ -27,7 +27,9 @@ export {
   LiveClassPricing,
   SyllabusAction,
   ProgramSupport,
-  AboutBootcamp
+  AboutBootcamp,
+  SampleCertification,
+  HowtheJourney
 } from "./liveClasses";
 export { RegisterForm, EmailVerification } from "./register";
 export {

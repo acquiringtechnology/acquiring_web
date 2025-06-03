@@ -1,0 +1,114 @@
+.title-content{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    text-align: center
+}
+.timeline {
+    position: relative;
+    //   padding: 2rem 0;
+    margin-top: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        // bottom: 0;
+        // left: 20px;
+        width: 2px;
+        background: linear-gradient(to bottom, #4285f4, #fbbc05);
+        left: 33px;
+        bottom: 0;
+        // width: 2px;
+    }
+}
+
+.timelineStep {
+    position: relative;
+    margin-bottom: 4rem;
+    // padding-left: 60px;
+    padding-left: 90px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        // left: 10px;
+        // top: 0;
+        // width: 20px;
+        // height: 20px;
+        // background-color: #fff;
+        // border: 3px solid #ccc;
+        // border-radius: 50%;
+        // z-index: 1;
+        // background-image: url("https://www.errormakesclever.com/_next/static/media/consultation.db51a28e.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100px;
+        height: 100px;
+        left: -16px;
+        top: -27px;
+    }
+    &.step--consultation::before {
+        background-image: url("/icons/advisory-call.svg");
+    }
+
+    &.step--slot::before {
+        background-image: url("/icons/bookYour.svg");
+    }
+
+    &.step--kit::before {
+      background-image: url("/icons/reciving-kit.svg");
+    }
+
+    &.step--learn::before {
+      background-image: url("/icons/start-learning.svg");
+    }
+
+    &.step--certificate::before {
+      background-image: url("/icons/certicate.svg");
+    }
+
+    &.step--hr::before {
+      background-image: url("/icons/hr-session.svg");
+    }
+
+    &.step--success::before {
+       background-image: url("/icons/advisory-call.svg");
+    }
+
+    &.step--internship::before {
+       background-image: url("/icons/intern-ship.svg");
+    }
+    &.step--help::before {
+      background-image: url("/icons/lifetime-support.svg");
+    }
+    &.step--weeklyRecognition::before {
+        background-image: url("/icons/weekly-reward.svg");
+    }
+      &.step--live-class::before {
+        background-image: url("/icons/mentor-live.svg");
+    }
+
+}
+
+.stepTitle {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.stepDescription {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.stepIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
