@@ -7,7 +7,8 @@ export {
   WhatOfferYou,
   UpcommingWebinarsCards,
   Faq,
-  StudentFeedBack
+  StudentFeedBack,
+  StudentVideoReview
 } from "./home";
 // export { OurPromis } from "./aboutUs";
 export { EnquiryForm, ContactUsHeader } from "./contactUs";

@@ -7,7 +7,7 @@ import { Layout } from "@/layout";
 import {
   Banner,
   AboutCompany,
-  OurCoursesCard,
+  StudentVideoReview,
   HaveQue,
   UpcommingWebinarsCards,
   WhatOfferYou,
@@ -58,6 +58,7 @@ export default function Home() {
               <WhatOfferYou />
               <LiveClassesCard/>
               {/* <OurCoursesCard isSwiper={false} /> */}
+              <StudentVideoReview/>
               <OurCustomer />
               <Faq />
               <HaveQue />
