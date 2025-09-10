@@ -1,6 +1,14 @@
 import styles from "./aboutBootcamp.module.scss";
 import {NormalButton} from "@/components/common";
-export function AboutBootcamp() {
+import { EnquiryForm } from "@/components/pages";
+import { useState } from "react";
+import {Modal} from "reactstrap";
+export function AboutBootcamp({liveClassDetail={}}) {
+   const [isSyllabusDownloadModal,setIsSyllabusDownloadModal] =useState(false);
+  
+    const handleCloseModel=()=>{
+      setIsSyllabusDownloadModal(false)
+    }
   return (
     <div
       className={`container position-relative mb-5 ${styles.aboutBootcampContainer}`}
@@ -64,10 +72,11 @@ export function AboutBootcamp() {
                     </p>
                   </div>
 
+
                   <div className="col-lg-3 text-lg-end">
                   
                     <NormalButton 
-                    
+                    onClick={()=>setIsSyllabusDownloadModal(true)}
                     title={<span>Enroll Now <i className="fa-solid fa-arrow-right"></i></span>} className="btn btn-outline-primary mb-0" />
                 
                   </div>
@@ -77,6 +86,12 @@ export function AboutBootcamp() {
           </div>
         </div>
       </div>
+       <Modal isOpen={isSyllabusDownloadModal} toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)} className="modal-dialog-centered">
+        {/* <ModalHeader toggle={() => setIsSyllabusDownloadModal(!isSyllabusDownloadModal)}>Fill the below form to download the syllabus</ModalHeader> */}
+        {/* <ModalBody> */}
+        <EnquiryForm liveClassDetail={liveClassDetail} isSyllabusModal={true} fromPage={"liveClass"} liveClassId={liveClassDetail?.id} isFromSyllabus={true} oncloseSyllabusEnquiryFrom={()=>handleCloseModel()}/>
+        {/* </ModalBody> */}
+      </Modal>
     </div>
   );
 }

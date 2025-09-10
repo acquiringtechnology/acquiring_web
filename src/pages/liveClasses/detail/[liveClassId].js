@@ -52,7 +52,7 @@ export default function LiveClassDetail() {
               fromPage={"liveClass"}
             />
             <ProgramSupport liveClassDetail={liveClassDetail}/>
-            <AboutBootcamp/>
+            <AboutBootcamp liveClassDetail={liveClassDetail}/>
             <LiveClassCourseContent liveClassDetail={liveClassDetail} />
                   <HowtheJourney/>
             <SyllabusAction  liveClassDetail={liveClassDetail}/>
