@@ -13,7 +13,7 @@ export const MeetCEO = () => {
             <header className="mt-3 mt-md-5">
               <h1 className={`mb-3 ${styles.ceoTitle}`}>Meet your Mentor</h1>
               <h4 className={styles.subTitle}>Hello</h4>
-              <h4 className={styles.nameTitle}>I’m Anveesh</h4>
+              <h4 className={styles.nameTitle}>I’m Anvesh Babu</h4>
             </header>
 
             <article>
