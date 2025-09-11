@@ -23,7 +23,7 @@ const UpcommingWebinarsCards = ({
   const router = useRouter();
 
   useEffect(() => {
-    getAllWebinear();
+    // getAllWebinear();
   }, []);
 
   const handleGetDiffMid = (fromD, toDat) => {

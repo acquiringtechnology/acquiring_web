@@ -30,13 +30,13 @@ export const MENU = [
     isShow: false,
     exact:false
   },
-  // {
-  //   title: "Webinars",
-  //   // icon: <PersonIcon />,
-  //   link: "/webinars",
-  //   isShow: false,
-  //   exact:false
-  // },
+  {
+    title: "Webinars",
+    // icon: <PersonIcon />,
+    link: "/webinars",
+    isShow: false,
+    exact:false
+  },
   {
     title: "Why Us?",
     // icon: <PersonIcon />,
