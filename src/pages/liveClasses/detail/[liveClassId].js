@@ -23,8 +23,9 @@ import { Layout } from "@/layout";
 
 export default function LiveClassDetail() {
   const router = useRouter();
-  const { liveClassId } = router.query;
+
   const [liveClassDetail, setIiveClassDetail] = useState(null);
+  const liveClassId = 'd5eb2822-507c-11ee-be56-0242ac120002'
 
   useEffect(() => {
     try {

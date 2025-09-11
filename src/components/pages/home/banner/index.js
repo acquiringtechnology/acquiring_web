@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./banner.module.scss";
 import PropTypes from "prop-types";
-import { TextTypingEffect ,NormalButton } from "@/components/common";
+import { TextTypingEffect, NormalButton } from "@/components/common";
 import { useRouter } from "next/router";
 const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
   const router = useRouter();
@@ -15,7 +15,7 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
             <div className="col-lg-7 mb-3 mt-lg-0 mb-lg-0 mt-5 h-100 d-flex align-items-center justify-content-center">
               <div className={styles.bannerTitleContiner}>
                 <h4 className={styles.bannerTitle}>{title}</h4>
-              {isBannerBtn &&  <TextTypingEffect />}
+                {isBannerBtn && <TextTypingEffect />}
                 <p className={`text-white ${styles.bannerSubtext}`}>
                   {description}
                 </p>
@@ -25,7 +25,7 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
                     <NormalButton
                       className={`btn me-3 btn-primary btn-lg ${styles.joinCourseBtn}`}
                       title={<span>Join  Now</span>}
-                      onClick={()=>router.push('/liveClasses/detail/d5eb2822-507c-11ee-be56-0242ac120002')}
+                      onClick={() => router.push('/liveClasses/detail/d5eb2822-507c-11ee-be56-0242ac120002')}
                     />
                     {/* <button className="btn-banner btn-active ">
 Join Class Now 
@@ -74,11 +74,11 @@ Join Class Now
               {/* </div> */}
               {/* <img  className={`img-fluid ${styles.bannerImage}`} alt="bannerimage" src={bannerImage} /> */}
 
-          <div className="language-world ms-lg-auto">
+              <div className="language-world ms-lg-auto">
                 <div class="world">
                   <img src={bannerImage} alt="" />
                 </div>
-                 {isBannerBtn &&   <div class="flages">
+                {isBannerBtn && <div class="flages">
                   <div class="flag" tabindex="0">
                     <img
                       src="/img/html.png"
@@ -93,13 +93,13 @@ Join Class Now
                   </div>
                   <div class="flag" tabindex="0">
                     <img
-                     src="/img/js.png"
+                      src="/img/js.png"
                       alt=""
                     />
                   </div>
                   <div class="flag" tabindex="0">
                     <img
-                    src="/img/angular.png"
+                      src="/img/angular.png"
                       alt=""
                     />
                   </div>
@@ -111,19 +111,19 @@ Join Class Now
                   </div>
                   <div class="flag" tabindex="0">
                     <img
-                     src="/img/redux.png"
+                      src="/img/redux.png"
                       alt=""
                     />
                   </div>
                   <div class="flag" tabindex="0">
                     <img
-                     src="/img/nodejs_js.png"
+                      src="/img/nodejs_js.png"
                       alt=""
                     />
                   </div>
                   <div class="flag" tabindex="0">
                     <img
-                       src="/img/express-js.png"
+                      src="/img/express-js.png"
                       alt=""
                     />
                   </div>
@@ -135,7 +135,7 @@ Join Class Now
                   </div>
                   <div class="flag" tabindex="0">
                     <img
-                    src="/img/git.png"
+                      src="/img/git.png"
                       alt=""
                     />
                   </div>

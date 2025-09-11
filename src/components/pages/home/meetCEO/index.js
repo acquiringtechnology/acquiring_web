@@ -19,8 +19,8 @@ export const MeetCEO = () => {
             <article>
               <p>
                 With over a decade of experience in the IT industry, I’ve had the
-                opportunity to work with world-renowned companies like Disney and
-                Adobe. These experiences allowed me to gain deep expertise in
+                opportunity to work with world-renowned companies like <img width={75} src="/Disney_logo_white.png" alt="Disney Logo" />,{" "}
+              <img width={75} src="/adobe-Logo.png" alt="Adobe Logo" /> & more!. These experiences allowed me to gain deep expertise in
                 software development, problem-solving, and working with large-scale
                 systems. Over the past 3+ years, I’ve brought this knowledge into
                 training, helping students bridge the gap between academic learning
@@ -32,13 +32,17 @@ export const MeetCEO = () => {
 
             {/* Stats */}
             <div className="row text-center text-md-start mt-4">
-              <div className="col-6">
+              <div className="col-4">
                 <h1 className={styles.countTitle}>10+ years</h1>
                 <label>Professional experience</label>
               </div>
-              <div className="col-6">
+              <div className="col-4">
                 <h1 className={styles.countTitle}>500+</h1>
                 <label>Students Tutored</label>
+              </div>
+               <div className="col-4">
+                <h1 className={styles.countTitle}>10+</h1>
+                <label>Projects Covered</label>
               </div>
             </div>
           </div>

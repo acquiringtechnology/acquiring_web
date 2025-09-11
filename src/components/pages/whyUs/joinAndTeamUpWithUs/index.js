@@ -7,15 +7,15 @@ export const JoinAndTeamUpWithUs = () => {
         <div className="row">
           <div className="col-md-12">
             <h4 className={styles.joinAndTeamUpWithUsTitle}>Join & Team Up with Us</h4>
-            <p>Want to be a part of dedicated team that aims to upskill everyone across the globe?</p>
+            <p className="text-dark" >Want to be a part of dedicated team that aims to upskill everyone across the globe?</p>
           </div>
 
           <div className="col-md-6">
-            <h4 >Join us to make an impact! </h4>
+            <h4 className="text-dark" >Join us to make an impact! </h4>
             <p>Welcoming to hire professionals for Technical Development, Graphic Design, Digital Marketing, Sales, & Industry experts across various domains.</p>
           </div>
           <div className="col-md-12">
-            <h4 >Send your updated CV & resume to acquiringtechnology@gmail.com </h4>
+            <h4 className="text-dark"  >Send your updated CV & resume to acquiringtechnology@gmail.com </h4>
             {/* <p>Welcoming to hire professionals for Technical Development, Graphic Design, Digital Marketing, Sales, & Industry experts across various domains.</p> */}
           </div>
         </div>

@@ -100,8 +100,6 @@ const EnquiryForm = ({
   const handleCloseOtpModel = () => setIsOtpModelOpen(prev => !prev);
 
   const handleOtpVerifySuccess = () => {
-    // handleCloseOtpModel();
-    debugger
     setCourseEnquiryData({});
     setCourseEnquiryFormObj({
       name: '',

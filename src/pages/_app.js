@@ -43,6 +43,10 @@ export default function App({ Component, pageProps }) {
       <Provider store={store}>
         <ToastContainer />
         <Component {...pageProps} />
+        <a href="https://wa.me/919042771660" target="_blank" class="whatsapp-float">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        </a>
+
       </Provider>
     </>
   );
