@@ -1,0 +1,76 @@
+@import "@/styles/scss/abstracts/abstracts-dir.scss";
+
+.meetCEOcontainer {
+  .ceoTitle {
+    color: #e5a800;
+    font-size: fontSize(30px);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .subTitle {
+    font-size: fontSize(24px);
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .nameTitle {
+    font-size: fontSize(36px);
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .countTitle {
+    background: linear-gradient(90deg, #a80303 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: fontSize(28px);
+  }
+
+  /* ✅ Use your mixins for responsiveness */
+  @include media-breakpoint-from-tab {
+    .ceoTitle {
+      font-size: fontSize(26px);
+    }
+    .subTitle {
+      font-size: fontSize(20px);
+    }
+    .nameTitle {
+      font-size: fontSize(30px);
+    }
+    .countTitle {
+      font-size: fontSize(22px);
+    }
+  }
+
+  @include media-breakpoint-mobile-land {
+    .ceoTitle {
+      font-size: fontSize(22px);
+    }
+    .subTitle {
+      font-size: fontSize(18px);
+    }
+    .nameTitle {
+      font-size: fontSize(26px);
+    }
+    .countTitle {
+      font-size: fontSize(20px);
+    }
+  }
+
+  @include media-breakpoint-mobile-port {
+    .ceoTitle {
+      font-size: fontSize(20px);
+    }
+    .subTitle {
+      font-size: fontSize(16px);
+    }
+    .nameTitle {
+      font-size: fontSize(22px);
+    }
+    .countTitle {
+      font-size: fontSize(18px);
+    }
+  }
+}

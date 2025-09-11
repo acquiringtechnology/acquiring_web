@@ -1,20 +1,58 @@
-.accordion-button:not(.collapsed) {
-    color: var(--bs-accordion-active-color);
-    background-color: transparent;
-    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
-}
-.accordion-button.collapsed {
-    color: var(--bs-accordion-active-color);
-    background-color: var( --primary-bg-light);
-    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
-}
-.accordion-button {
-    display: unset;
+.accordion-item {
+  color: var(--text-white);
+  background-color: #282828; // main dark background
+  border: 1px solid #333; // subtle dark border
+  border-radius: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  .accordion-body {
+    background-color: #1f1f1f; // slightly darker inner panel
+    color: #ddd;
+    padding: 1rem;
+    border-top: 1px solid #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
 
-.accordion-button::after{
+.accordion-button {
+  display: unset;
+  color: var(--text-white);
+  background-color: #282828; // match dark theme
+  border: none;
+  padding: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: background-color 0.3s ease;
+
+  &::after {
     float: right;
     position: absolute;
     right: 10px;
     top: 36%;
+    filter: invert(1); // arrow becomes white
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #383838; // slightly lighter on hover
+  }
+
+  &.collapsed {
+    background-color: #282828;
+    color: #e5e5e5;
+    border: 0 !important;
+  }
+
+  &:not(.collapsed) {
+    background-color: #282828; // slightly darker when expanded
+    color: #ffffff;
+    box-shadow: inset 0 -1px 0 #444;
+    border: 0 !important;
+  }
 }

@@ -14,6 +14,7 @@ import {
   Faq,
   LiveClassesCard,
   OurCustomer,
+  MeetCEO
 } from "@/components/pages";
 export default function Home() {
   return (
@@ -54,6 +55,9 @@ export default function Home() {
               />
               <LiveClassesCard/>
                <AboutCompany />
+               <MeetCEO/>
+                <OurCustomer />
+                    <Faq />
               </div>
                
               {/* <UpcommingWebinarsCards /> */}
@@ -62,8 +66,8 @@ export default function Home() {
              
               {/* <OurCoursesCard isSwiper={false} /> */}
               {/* <StudentVideoReview/> */}
-              <OurCustomer />
-              <Faq />
+             
+          
               <HaveQue />
               
             </div>

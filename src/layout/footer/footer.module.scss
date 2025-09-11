@@ -1,7 +1,54 @@
-
-
-.footer{
-    .brandImage{
+@import "@/styles/scss/abstracts/abstracts-dir.scss";
+.footer {
+    .brandImage {
         width: 175px;
     }
+
+        .newsletter {
+            .input-group {
+                border: 1px solid #a80303;
+                border-radius: 50px;
+                overflow: hidden;
+
+                .form-control {
+                    background: transparent;
+                    border: none;
+                    color: #fff;
+                    padding-left: 20px;
+                    font-size: 14px;
+
+                    &::placeholder {
+                        color: #aaa;
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+
+                .btn-red {
+                    background: #d00000;
+                    border: none;
+                    border-radius: fontSize(23.22px) !important;
+                    width: 61px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    margin: 10px;
+
+                    i {
+                        color: #fff;
+                        font-size: 16px;
+                    }
+
+                    &:hover {
+                        background: #a80303;
+                    }
+                }
+            }
+        }
+    
+
 }

@@ -62,7 +62,7 @@ const Footer = ({ subscribeCreate }) => {
   };
 
   return (
-    <footer className={`w-100 py-4 flex-shrink-0 ${styles.footer}`}>
+    <footer className={`w-100 sessectionsion-dark py-4 flex-shrink-0 ${styles.footer}`}>
       {/* <section
         className="d-flex justify-content-between p-4 bg-primary"
       >
@@ -97,18 +97,18 @@ const Footer = ({ subscribeCreate }) => {
         </div>
         <div className="row gy- gx-5">
           <div className="col-lg-4 col-md-6">
-            <Link href="/" className="h1 text-muted">
+            <Link href="/" className="h1 ">
               <img
                 width={50}
-                                height={50}
+                height={50}
                 className={`${styles.brandImage} mb-3`}
                 src={"/logo.svg"}
               />
             </Link>
-            <p className="small text-muted">
+            <p className="small ">
               Skills for your present (and your future). Get started with us.
             </p>
-            <p className="small text-muted mb-0">
+            <p className="small  mb-0">
               &copy; Copyrights. All rights reserved.{" "}
               <a className="text-primary" href="#">
                 Acquiring
@@ -116,8 +116,8 @@ const Footer = ({ subscribeCreate }) => {
             </p>
           </div>
           <div className="col-lg-3 col-md-6">
-            <h5 className="text-muted mb-3">Quick links</h5>
-            <ul className="list-unstyled text-muted">
+            <h5 className=" mb-3">Quick links</h5>
+            <ul className="list-unstyled ">
               <li>
                 <Link href="/">Home</Link>
               </li>
@@ -136,8 +136,8 @@ const Footer = ({ subscribeCreate }) => {
             </ul>
           </div>
           {/* <div className="col-lg-2 col-md-6">
-                    <h5 className="text-muted mb-3">Mail us</h5>
-                    <ul className="list-unstyled text-muted">
+                    <h5 className=" mb-3">Mail us</h5>
+                    <ul className="list-unstyled ">
                         <li><a href="#">acquiringtechnology@gmail.com</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Get started</a></li>
@@ -145,32 +145,28 @@ const Footer = ({ subscribeCreate }) => {
                     </ul>
                 </div> */}
           <div className="col-lg-5 col-md-6">
-            <h5 className="text-muted mb-3">
+            <h5 className=" mb-3">
               Stay in Touch for Awesome Updates & Offers!
             </h5>
-            <p className="small text-muted">
+            <p className="small ">
               Subscribe to our newsletter for alerts on New Courses, Free
               Workshops, & Masterclasses
             </p>
             {/* <form action="#"> */}
-            <div className="input-group mb-3">
-              <input
-                className="form-control"
-                value={subscribeObj.email}
-                type="text"
-                name="email"
-                placeholder="Enter your mail id"
-                aria-label="Enter your mail id"
-                aria-describedby="button-addon2"
-                onChange={handleInputChange}
-              />
-              <button
-                className="btn btn-primary"
-                onClick={handleSubmitSubscribe}
-                type="button"
-              >
-                <i className="fas fa-paper-plane"></i>
-              </button>
+            <div className={`newsletter ${styles.newsletter}`}>
+              <div className={`input-group ${styles['input-group']}`}>
+                <input
+                  className={`form-control ${styles['form-control']}` }
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={subscribeObj.email}
+                  name="email"
+                  onChange={handleInputChange}
+                />
+                <button className={`btn ${styles['btn-red']}`} onClick={handleSubmitSubscribe} type="button">
+                  <i className="fas fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
             {validator.current.message(
               "Subscribe Email",

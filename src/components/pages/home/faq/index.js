@@ -46,7 +46,8 @@ const Faq = (props) => {
   ];
 
   return (
-    <div className={`container mt-5 mb-5`}>
+    <section className="sessectionsion-dark">
+    <div className={`container   px-5`}>
       <div className={styles.faqContiner}>
         <div className="row">
           <div className="col-md-12 text-center mb-4">
@@ -65,7 +66,7 @@ const Faq = (props) => {
               renderItem={(item = []) => (
                 <ul className="list-group list-group-flush">
                   {item?.data?.map((data, i) => (
-                    <li key={i} className="list-group-item border-0">
+                    <li key={i} className="list-group-item border-0 text-white bg-transparent">
                       {data.name}
                     </li>
                   ))}
@@ -76,6 +77,7 @@ const Faq = (props) => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

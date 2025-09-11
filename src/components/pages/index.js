@@ -8,7 +8,8 @@ export {
   UpcommingWebinarsCards,
   Faq,
   StudentFeedBack,
-  StudentVideoReview
+  StudentVideoReview,
+  MeetCEO
 } from "./home";
 // export { OurPromis } from "./aboutUs";
 export { EnquiryForm, ContactUsHeader } from "./contactUs";
