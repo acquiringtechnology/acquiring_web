@@ -83,7 +83,7 @@ const Footer = ({ subscribeCreate }) => {
                 <Link href="/whyUs">Why Us?</Link>
               </li>
               <li>
-                <Link href="/termsOfUse">Terms Of Use</Link>
+                <Link href="/termsOfUse">Terms of Use</Link>
               </li>
             </ul>
           </div>
@@ -127,19 +127,19 @@ const Footer = ({ subscribeCreate }) => {
         {/* Social Icons */}
         <div className="row mt-4">
           <div className="col text-center">
-            <a href="https://facebook.com" className="text-white mx-2 fs-5">
+            <a href="https://www.facebook.com/people/Acquiring-technology/61571493899774/" className="text-white mx-2 fs-5">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="https://twitter.com" className="text-white mx-2 fs-5">
+            {/* <a href="https://twitter.com" className="text-white mx-2 fs-5">
               <i className="fab fa-twitter"></i>
-            </a>
+            </a> */}
             <a href="https://www.instagram.com/acquiring.in/" className="text-white mx-2 fs-5">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://linkedin.com" className="text-white mx-2 fs-5">
+            <a href="https://www.linkedin.com/company/acquiring-technology" className="text-white mx-2 fs-5">
               <i className="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://youtube.com" className="text-white mx-2 fs-5">
+            <a href="https://www.youtube.com/@acquiringtechnology" className="text-white mx-2 fs-5">
               <i className="fab fa-youtube"></i>
             </a>
           </div>

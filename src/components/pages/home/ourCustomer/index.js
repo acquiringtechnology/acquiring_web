@@ -79,7 +79,7 @@ const OurCustomer = () => {
         <div className="row">
           <div className="col-md-12 mb-4 text-center">
             <h4 className={styles.ourServicesTitleYellow}>Student Review</h4>
-            <h4 className={styles.ourServicesTitle}>Our Students Feedback</h4>
+            <h4 className={styles.ourServicesTitle}>Our Student Feedback</h4>
           </div>
         </div>
 
