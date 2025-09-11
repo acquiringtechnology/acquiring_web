@@ -5,7 +5,7 @@ const AboutCompany = () => {
 
 
     return (
-        <section className={`${styles.aboutCompanyContiner} pb-0 mb-5`}>
+        <section className={`${styles.aboutCompanyContiner} pb-0 `}>
             <div className="container">
 
 

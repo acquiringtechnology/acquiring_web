@@ -11,5 +11,12 @@ html {
 }
 
 .app-theme-bg{
-  background: radial-gradient(circle at center, #5e0e0e 0%, #000 80%);
+  // background: radial-gradient(circle at center, #5e0e0e 0%, #000 80%);
+  background: linear-gradient(110.61deg, #000000 83.19%, #A80303 110.9%);
+
+}
+
+.sessectionsion-dark {
+    background-color: #181212;
+    color: var(--text-white);
 }

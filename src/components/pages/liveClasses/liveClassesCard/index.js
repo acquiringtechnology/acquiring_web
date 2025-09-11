@@ -25,28 +25,28 @@ export const LiveClassesCard = (props) => {
     //   const randomColor = colors[Math.floor(Math.random() * colors.length)];
     //   item.style.backgroundColor = randomColor;
     // });
-    listItems.forEach((item, i) => {
-      // const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      const randomColor = colors[i];
-      item.style.backgroundColor = randomColor; // The background will have opacity 1 by default.
-    });
+    // listItems.forEach((item, i) => {
+    //   // const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    //   const randomColor = colors[i];
+    //   item.style.backgroundColor = randomColor; // The background will have opacity 1 by default.
+    // });
   }
   }, []);
   return (
-    <section>
+    <section className={`pt-4 ${styles.liveClassesCardContiner}`}>
       <div className="container mb-5">
-        <div className={styles.liveClassesCardContiner}>
-          <h4 className={`text-center ${styles.liveClassTitle}`}>
+        <div >
+          <h4 className={` ${styles.liveClassTitle}`}>
             OUR PROGRAM
           </h4>
-          <h4 className={`text-center`}>
+          <h4 >
             Discover Our Premier, Top-Rated Learning Program
           </h4>
 
           {/*  */}
           <div className="row mt-5 justify-content-center">
             <div className="col-12 mb-4">
-              <div className="card">
+              <div className={`card ${styles.liveClassCard}`}>
                 <div className="card-body">
                   <div className="d-flex align-items-center">
                     <div className="flex-shrink-0">
@@ -64,7 +64,7 @@ export const LiveClassesCard = (props) => {
                       </h5>
                     </div>
                   </div>
-                  <div className="d-flex  align-items-center">
+                  <div className="d-flex  align-items-center mt-3">
                     <p className={`${styles.liveClassCardSubTitle}`}>
                       Industry-led Full Stack Training designed to help you
                       transition to the next phase of your career with a proven
@@ -73,7 +73,7 @@ export const LiveClassesCard = (props) => {
                   </div>
                   <hr />
                   <ul
-                    className="mt-4 d-flex flex-wrap gap-2 nav mb-4"
+                    className={`mt-4 d-flex flex-wrap gap-2 nav mb-4 ${styles.courseTopic}`}
                     id="courseTopic"
                   >
                     <li className="p-2 fw-semibold px-4 rounded bg-opacity-50">
@@ -102,20 +102,20 @@ export const LiveClassesCard = (props) => {
                     </li>
                   </ul>
 
-                  <ul className="nav gap-4 mb-4 d-flex align-items-center">
-                    <li className="nav-item text-muted">
-                      <i className="fa-solid fa-chalkboard-user"></i> Online
+                  <ul className={`nav gap-4 mb-4 d-flex align-items-center text-white ${styles.courseSpec}`}>
+                    <li className="nav-item  text-white">
+                      <i className="fa-solid fa-chalkboard-user text-white"></i> Online
                     </li>
-                    <li className="nav-item text-muted">
-                    <i className="fa-regular fa-clock"></i> 3 Months
+                    <li className="nav-item ">
+                    <i className="fa-regular fa-clock me-2"></i> 3 Months
                     </li>
-                    <li className="nav-item text-muted">
+                    <li className="nav-item ">
                     <i className="fa-solid fa-briefcase"></i> Placement Assistance
                     </li>
-                    <li className="nav-item text-muted">
+                    <li className="nav-item ">
                     <i className="fa-regular fa-address-card"></i> Live Mentor Support
                     </li>
-                    <li className="nav-item text-muted ms-auto">
+                    <li className="nav-item  ms-auto">
                     <NormalButton
                       title="KNOW MORE"
                       onClick={() => router.push(`/liveClasses/detail/d5eb2822-507c-11ee-be56-0242ac120002`)}

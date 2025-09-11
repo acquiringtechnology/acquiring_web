@@ -26,15 +26,15 @@ export const Header = () => {
     try {
       window.addEventListener("scroll", handleverticalScroll);
       const curentUserData =
-      getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)):{};
+        getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER) ? JSON.parse(getStorage(EXIST_LOCAL_STORAGE.CURRENT_USER)) : {};
       setUserDetails(curentUserData);
-    } catch (e) {}
+    } catch (e) { }
   }, []);
 
   const handleMenuShow = () => {
     if (process.browser) {
-    let menu = document.getElementById("mobileSidenav");
-    menu.classList.toggle("show");
+      let menu = document.getElementById("mobileSidenav");
+      menu.classList.toggle("show");
     }
   };
 
@@ -56,11 +56,11 @@ export const Header = () => {
 
       // If scroll value is more than 0 - means the page is scrolled, add or remove class based on that
       if (scroll > 85) {
-        navbar.classList?.add("fixed-top", "shadow", "transition4","grid-removed");
+        navbar.classList?.add("fixed-top", "shadow", "transition4", "grid-removed");
       } else {
-        navbar.classList?.remove("fixed-top", "shadow", "transition4","grid-removed");
+        navbar.classList?.remove("fixed-top", "shadow", "transition4", "grid-removed");
       }
-    } catch (e) {}
+    } catch (e) { }
   };
 
   const handleSiginOut = () => {
@@ -74,7 +74,7 @@ export const Header = () => {
       id="navbar"
       className={`navbar navbar-expand-lg pe-4  ${styles.customNavbar}`}
     >
-        <div  className={`${styles['grid-overlay']} grid-overlay`}></div>
+      {/* <div className={`${styles['grid-overlay']} grid-overlay`}></div> */}
       <div className="container">
         <div className="d-flex mr-auto">
           <button
@@ -116,11 +116,11 @@ export const Header = () => {
         </div>
 
         <div
-          className="collapse navbar-collapse"
+          className={`collapse navbar-collapse ${styles.navbarMenu}`}
           id="navbarSupportedContent"
         >
-          <ul className={`navbar-nav mx-auto mb-2 mb-lg-0 ${styles.navMenu}`}>
-            {MENU.map(({ title, link ,exact }, i) => (
+          <ul className={`navbar-nav ms-auto mb-2 mb-lg-0 ${styles.navMenu}`}>
+            {MENU.map(({ title, link, exact }, i) => (
               <li className="nav-item " key={i}>
                 <NavLink exact={exact} className="nav-link text-white" href={link}>
                   {title}
@@ -128,21 +128,28 @@ export const Header = () => {
               </li>
             ))}
 
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <NavLink className="nav-link" href="/courses">
                 All Courses
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" href="/liveClasses">
-                Live Classes
-              </NavLink>
+              <NormalButton
+                // className="btn btn-primary px-4"
+                 className={`btn ${styles['btn-header']} ms-2`}
+                type="submit"
+                onClick={() => router.push("/contactUs")}
+                title="Contact Us"
+              />
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" href="/whyUs">
-                Why Us?
-              </NavLink>
-            </li> */}
+              <NormalButton
+                className={`btn ${styles['btn-header']}  ${styles.btnLogin} ms-2`}
+                type="submit"
+                onClick={() => window.open("https://infinity.acquiring.in/")}
+                title="Login"
+              />
+            </li>
 
             <li className="nav-item d-block d-lg-none">
               <span className="nav-link">
@@ -161,10 +168,9 @@ export const Header = () => {
               </span>
             </li>
           </ul>
-          <div class="d-flex">
-            {/* <a  title="Contact Us"className={`btn ${styles.contactUs}`}  onClick={() => router.push("/contactUs")}><i class="fa-solid fa-phone"></i></a>
-            <a  title="Contact Us"className={`btn ${styles.contactUs}`}  onClick={() => router.push("/contactUs")}><i class="fas fa-sign-in"></i></a> */}
-            <NormalButton
+          {/* <div class="d-flex"> */}
+
+          {/* <NormalButton
               className="btn btn-primary px-4"
               type="submit"
               onClick={() => router.push("/contactUs")}
@@ -175,11 +181,11 @@ export const Header = () => {
               type="submit"
               onClick={() => window.open("https://infinity.acquiring.in/")}
               title="Login"
-            />
-          </div>
-          
+            /> */}
+          {/* </div> */}
+
         </div>
-     
+
         {/* {!_.isEmpty(userDetails) && (
           <Dropdown
             isOpen={mobileDropdownOpen}

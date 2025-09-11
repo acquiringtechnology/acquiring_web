@@ -54,7 +54,7 @@ One of the key highlights is the fee structure, which is very reasonable and off
       name: "Mahimai Antony",
       detail: `Im currently taking the full stack MERN course, and its been a great experience so far. The instructor (Anvesh Babu) explains concepts in a simple and clear way, making it easy to understand even for someone new to MERN. Overall, a well structured course with good support. Definitely recommend it for anyone looking to get into full-stack development.`,
     },
-     {
+    {
       name: "Sahina Barveen",
       detail: `I am learning full stack development at Acquiring Technology
 Talk about teaching methods, hands-on projects, or real-world applications:
@@ -75,10 +75,10 @@ The way of teaching and clarifying doubts is excellent`,
     try {
       var initials = name?.charAt(0);
       return initials;
-    } catch (e) {}
+    } catch (e) { }
   };
   return (
-    <div className={styles.OurCoursesCardContiner}>
+    <div className={`${styles.OurCoursesCardContiner} sessectionsion-dark`}>
       <div className="container mb-5">
         <div className="row">
           <div className="col-md-12 text-center mb-4">

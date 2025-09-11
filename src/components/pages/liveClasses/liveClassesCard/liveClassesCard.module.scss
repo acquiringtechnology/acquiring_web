@@ -2,22 +2,26 @@
 @import "../../home/banner/banner.module.scss";
 
 .liveClassesCardContiner {
+    background-color: #181212;
+    color: var(--text-white);
     .liveClassTitle {
-        font-size: 2.34375rem;
+          color:  #E5A800;
+        font-size: 1.34375rem;
         font-weight: 700;
     }
     .fullstackIconImg{
-        width: 4rem;
+        width: 2.5rem;
     }
     .liveClassCardTitle{
+
         @media (min-width: 1024px) {
-                font-size: 1.8rem;
+                font-size: fontSize(24px);
                 line-height: 2.25rem;
         }
       
         font-weight: 600;
         line-height: 1.75rem;
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
     .liveClassCardSubTitle{
         max-width: 42rem;
@@ -30,6 +34,27 @@
             overflow: hidden;
             height: 112.5px;
         }
+    }
+    .courseTopic{
+        li{
+            background-color: #3C3C3C;
+            color: var(--text-white);
+            border-radius: 12px !important;
+        }
+    }
+
+    .courseSpec{
+        li{
+             color: var(--text-white);
+             font-weight: 400;
+             i{
+                margin-right: .5rem;
+             }
+        }
+    }
+
+    .liveClassCard{
+        border-radius: 28px;
     }
    
 }

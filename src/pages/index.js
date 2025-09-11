@@ -52,13 +52,16 @@ export default function Home() {
                 description="Acquire Skills for your present (and future). Get started with us"
                 bannerImage="/img/banner_apge_right_side_world.png"
               />
-              {/* <UpcommingWebinarsCards /> */}
-              <AboutCompany />
-              </div>
-              <WhatOfferYou />
               <LiveClassesCard/>
+               <AboutCompany />
+              </div>
+               
+              {/* <UpcommingWebinarsCards /> */}
+             
+              {/* <WhatOfferYou /> */}
+             
               {/* <OurCoursesCard isSwiper={false} /> */}
-              <StudentVideoReview/>
+              {/* <StudentVideoReview/> */}
               <OurCustomer />
               <Faq />
               <HaveQue />
