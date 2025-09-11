@@ -3,48 +3,30 @@ import styles from "./footer.module.scss";
 import { useState, useRef } from "react";
 import SimpleReactValidator from "simple-react-validator";
 import { connect } from "react-redux";
-
 import { bindActionCreators } from "redux";
 import * as subscribeAction from "@/redux/action/subscribe";
 
-// import profilePic from '../../../public/logo.svg';
 const Footer = ({ subscribeCreate }) => {
   const validator = useRef(
     new SimpleReactValidator({
-      className: "text-danger",
+      className: "text-danger small mt-1 d-block",
     })
   );
   const [, forceUpdate] = useState(0);
   const [isFormLoder, setIsFormLoder] = useState(false);
-  const [subscribeObj, setSubscribeObj] = useState({
-    email: "",
-  });
+  const [subscribeObj, setSubscribeObj] = useState({ email: "" });
 
   const handleSubmitSubscribe = async () => {
     try {
       const formValid = validator.current.allValid();
       if (formValid) {
-        // setIsFormLoder(true);
-        // const subscribeReq = await subscribeCreate(subscribeObj);
-        // setIsFormLoder(false);
-        // const { status } = subscribeReq;
-        // if (status) {
-          setSubscribeObj({
-            email: "",
-          });
-        //   // router.push({
-        //   //   pathname: "/register",
-        //   //   query: { emailVerification: "true" },
-        //   // });
-        // }
+        setSubscribeObj({ email: "" });
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
     } catch (e) {
-      setSubscribeObj({
-        email: "",
-      });
+      setSubscribeObj({ email: "" });
       setIsFormLoder(false);
       console.log(e);
     }
@@ -62,68 +44,38 @@ const Footer = ({ subscribeCreate }) => {
   };
 
   return (
-    <footer className={`w-100 sessectionsion-dark py-4 flex-shrink-0 ${styles.footer}`}>
-      {/* <section
-        className="d-flex justify-content-between p-4 bg-primary"
-      >
-        <div className="me-5">
-          <span>Get connected with us on social networks:</span>
-        </div>
-
-        <div>
-          <a href="" className="text-white me-4">
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="" className="text-white me-4">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="" className="text-white me-4">
-            <i className="fab fa-google"></i>
-          </a>
-          <a href="" className="text-white me-4">
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a href="" className="text-white me-4">
-            <i className="fab fa-linkedin"></i>
-          </a>
-          <a href="" className="text-white me-4">
-            <i className="fab fa-github"></i>
-          </a>
-        </div>
-      </section> */}
-      <div className="container py-4">
-        <div className="row gy-4 gx-5">
-          <div className="col-lg-4 col-md-6"></div>
-        </div>
-        <div className="row gy- gx-5">
-          <div className="col-lg-4 col-md-6">
-            <Link href="/" className="h1 ">
+    <footer
+      className={`w-100 sessectionsion-dark py-5 flex-shrink-0 ${styles.footer}`}
+    >
+      <div className="container">
+        <div className="row gy-5 gx-4 align-items-start">
+          
+          {/* Logo & About */}
+          <div className="col-lg-4 col-md-6 text-center text-md-start">
+            <Link href="/" className="h1 d-inline-block">
               <img
-                width={50}
-                height={50}
+                width={60}
+                height={60}
                 className={`${styles.brandImage} mb-3`}
                 src={"/logo.svg"}
+                alt="Acquiring Logo"
               />
             </Link>
-            <p className="small ">
+            <p className="small text-light">
               Skills for your present (and your future). Get started with us.
             </p>
-            <p className="small  mb-0">
-              &copy; Copyrights. All rights reserved.{" "}
-              <a className="text-primary" href="#">
-                Acquiring
-              </a>
+            <p className="small text-light mb-0">
+              &copy; {new Date().getFullYear()} <strong>Acquiring</strong>. All rights reserved.
             </p>
           </div>
-          <div className="col-lg-3 col-md-6">
-            <h5 className=" mb-3">Quick links</h5>
-            <ul className="list-unstyled ">
+
+          {/* Quick Links */}
+          <div className="col-lg-3 col-md-6 text-center text-md-start">
+            <h5 className="mb-3 text-white">Quick Links</h5>
+            <ul className="list-unstyled text-light small">
               <li>
                 <Link href="/">Home</Link>
               </li>
-              {/* <li>
-                <Link href="/courses">All Courses</Link>
-              </li> */}
               <li>
                 <Link href="/liveClasses">LIVE Classes</Link>
               </li>
@@ -135,35 +87,31 @@ const Footer = ({ subscribeCreate }) => {
               </li>
             </ul>
           </div>
-          {/* <div className="col-lg-2 col-md-6">
-                    <h5 className=" mb-3">Mail us</h5>
-                    <ul className="list-unstyled ">
-                        <li><a href="#">acquiringtechnology@gmail.com</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Get started</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div> */}
-          <div className="col-lg-5 col-md-6">
-            <h5 className=" mb-3">
+
+          {/* Newsletter */}
+          <div className="col-lg-5 col-md-6 text-center text-md-start">
+            <h5 className="mb-3 text-white">
               Stay in Touch for Awesome Updates & Offers!
             </h5>
-            <p className="small ">
+            <p className="small text-light">
               Subscribe to our newsletter for alerts on New Courses, Free
               Workshops, & Masterclasses
             </p>
-            {/* <form action="#"> */}
             <div className={`newsletter ${styles.newsletter}`}>
-              <div className={`input-group ${styles['input-group']}`}>
+              <div className={`input-group ${styles["input-group"]}`}>
                 <input
-                  className={`form-control ${styles['form-control']}` }
+                  className={`form-control ${styles["form-control"]}`}
                   type="email"
                   placeholder="Enter your email address"
                   value={subscribeObj.email}
                   name="email"
                   onChange={handleInputChange}
                 />
-                <button className={`btn ${styles['btn-red']}`} onClick={handleSubmitSubscribe} type="button">
+                <button
+                  className={`btn ${styles["btn-red"]}`}
+                  onClick={handleSubmitSubscribe}
+                  type="button"
+                >
                   <i className="fas fa-arrow-right"></i>
                 </button>
               </div>
@@ -171,9 +119,29 @@ const Footer = ({ subscribeCreate }) => {
             {validator.current.message(
               "Subscribe Email",
               subscribeObj.email,
-              "required"
+              "required|email"
             )}
-            {/* </form> */}
+          </div>
+        </div>
+
+        {/* Social Icons */}
+        <div className="row mt-4">
+          <div className="col text-center">
+            <a href="https://facebook.com" className="text-white mx-2 fs-5">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" className="text-white mx-2 fs-5">
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/acquiring.in/" className="text-white mx-2 fs-5">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" className="text-white mx-2 fs-5">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://youtube.com" className="text-white mx-2 fs-5">
+              <i className="fab fa-youtube"></i>
+            </a>
           </div>
         </div>
       </div>
