@@ -24,19 +24,19 @@ const Footer = ({ subscribeCreate }) => {
     try {
       const formValid = validator.current.allValid();
       if (formValid) {
-        setIsFormLoder(true);
-        const subscribeReq = await subscribeCreate(subscribeObj);
-        setIsFormLoder(false);
-        const { status } = subscribeReq;
-        if (status) {
+        // setIsFormLoder(true);
+        // const subscribeReq = await subscribeCreate(subscribeObj);
+        // setIsFormLoder(false);
+        // const { status } = subscribeReq;
+        // if (status) {
           setSubscribeObj({
             email: "",
           });
-          // router.push({
-          //   pathname: "/register",
-          //   query: { emailVerification: "true" },
-          // });
-        }
+        //   // router.push({
+        //   //   pathname: "/register",
+        //   //   query: { emailVerification: "true" },
+        //   // });
+        // }
       } else {
         validator.current.showMessages();
         forceUpdate(1);

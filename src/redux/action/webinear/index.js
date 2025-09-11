@@ -24,6 +24,7 @@ export const getAllWebinear = (body) => (dispatch) => {
         resolve(data);
       })
       .catch((error) => {
+        // console.log(error);
         let message = error?.message || "Something went wrong";
         Toast({ message, type: "error" });
         dispatch({
