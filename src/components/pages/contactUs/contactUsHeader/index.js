@@ -5,7 +5,7 @@ export const ContactUsHeader = () => {
 
 
     return (
-        <section className={`${styles.contactUsHeaderContiner} my-5`}>
+        <section className={`${styles.contactUsHeaderContiner} py-5`}>
             <div className="container">
 
                 <div className='row justify-content-center'>

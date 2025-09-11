@@ -14,7 +14,7 @@ export const LiveClassPricing = ({liveClassDetail}) => {
   
   return (
     <section>
-      <div className="container mb-5">
+      <div className="container pb-5">
         <div className={styles.liveClassPricingContiner}>
           {/* <h4 className={`text-center ${styles.liveClassTitle}`}>Pricing</h4> */}
 

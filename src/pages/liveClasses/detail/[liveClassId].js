@@ -45,8 +45,10 @@ export default function LiveClassDetail() {
       </Head>
      <main>
         <Layout>
+          {/* app-theme-bg primary-banner-bg  */}
         <div className="row">
           <div className="col-12">
+                  <div className="app-theme-bg">
             <CourseDetailBanner
               liveClassDetail={liveClassDetail}
               fromPage={"liveClass"}
@@ -60,6 +62,7 @@ export default function LiveClassDetail() {
             <TechnologiesCovered liveClassDetail={liveClassDetail} />
             <SampleCertification/>
             <LiveClassPricing liveClassDetail={liveClassDetail}/>
+          </div>
           </div>
         </div>
         </Layout>

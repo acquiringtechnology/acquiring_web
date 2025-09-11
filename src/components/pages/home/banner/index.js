@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./banner.module.scss";
 import PropTypes from "prop-types";
-import { TextTypingEffect } from "@/components/common";
+import { TextTypingEffect ,NormalButton } from "@/components/common";
 import { useRouter } from "next/router";
 const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
   const router = useRouter();
@@ -20,20 +20,23 @@ const Banner = ({ title, description, bannerImage, isBannerBtn = true }) => {
                   {description}
                 </p>
 
-                {/* {isBannerBtn && (
+                {isBannerBtn && (
                   <>
                     <NormalButton
-                      className={`btn-primary me-3 ${styles.joinCourseBtn}`}
-                      title="Join LIVE Classes"
-                      onClick={()=>router.push('/liveClasses')}
+                      className={`btn me-3 btn-primary btn-lg ${styles.joinCourseBtn}`}
+                      title={<span>Join  Now</span>}
+                      onClick={()=>router.push('/liveClasses/detail/d5eb2822-507c-11ee-be56-0242ac120002')}
                     />
-                    <NormalButton
+                    {/* <button className="btn-banner btn-active ">
+Join Class Now 
+                    </button> */}
+                    {/* <NormalButton
                       className={`btn-outline-primary ${styles.joinCourseBtn}`}
                       title="View All Courses"
                       onClick={()=>router.push('/courses')}
-                    />
+                    /> */}
                   </>
-                )} */}
+                )}
               </div>
             </div>
             <div className="col-lg-5  h-100 d-flex align-items-center justify-content-center">

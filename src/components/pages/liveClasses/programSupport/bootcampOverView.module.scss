@@ -1,16 +1,18 @@
 .bootcampOverViewContainer {
-    .bootcampOverTitle{
-         font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-    text-align: center;
+    .bootcampOverTitle {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 700;
+        text-align: center;
     }
+
     .bootcampOverViewCard {
         .bootcampOverViewCardImg {
             width: 40px;
             height: 100%;
             object-fit: cover;
         }
+
         .bootcampOverViewCardTitle {
             font-size: 1rem;
             margin-top: 0;

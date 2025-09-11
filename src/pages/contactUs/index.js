@@ -22,6 +22,7 @@ export default function Home() {
         <Layout>
         <div className="row">
           <div className="col-12">
+              <div className="app-theme-bg">
             <ContactUsHeader />
             <div className="container">
               <div className="row justify-content-center">
@@ -31,6 +32,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
         </div>
         </Layout>
       </main>

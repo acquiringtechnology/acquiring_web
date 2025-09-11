@@ -1,11 +1,58 @@
 @import "@/styles/scss/abstracts/abstracts-dir.scss";
-.formInput{
-        border: 2px solid #cbd2e0;
-        box-sizing: border-box;
-        border-radius: 0.375rem;
-        font-size: 1rem;
-        padding: 0.4375rem 0.9375rem;
-        height: 3rem;
-        color: #000;
-        letter-spacing: -0.01em;
+
+.formInput {
+    border: 2px solid #cbd2e0;
+    box-sizing: border-box;
+    border-radius: fontSize(23.22px);
+    font-size: 1rem;
+    padding: 0.4375rem 0.9375rem;
+    height: 3rem;
+    color: var(--text-white);
+    letter-spacing: -0.01em;
+    background-color: transparent;
+
+    &::placeholder {
+        color: #ccc; // light gray placeholder
+        opacity: 1; // ensures consistent placeholder visibility
+        font-weight: 400;
     }
+      &:focus {
+    outline: none;
+      color: var(--text-white);
+    border-color: #A80303; // bright red on focus
+    box-shadow: 0 0 0 3px rgba(0, 3, 3, 0.1); // subtle glow effect
+    background-color: rgba(0, 0, 0, 0.5); // slightly more visible background
+  }
+}
+
+
+// .formInput {
+//   border: 2px solid #A80303;
+//   box-sizing: border-box;
+//   border-radius:23.22px;
+//   font-size: 1rem;
+//   padding: 0.4375rem 0.9375rem;
+//   height: 3rem;
+//   color: var(--text-white);
+//   letter-spacing: -0.01em;
+//   background-color: transparent;
+//   transition: all 0.3s ease;
+
+//   &::placeholder {
+//     color: #ccc; // light gray placeholder
+//     opacity: 1; // ensures consistent placeholder visibility
+//     font-weight: 400;
+//   }
+
+//   &:hover {
+//     border-color: #e53838; // slightly brighter red on hover
+//     background-color: rgba(255, 0, 0, 0.05); // subtle background highlight
+//   }
+
+//   &:focus {
+//     outline: none;
+//     border-color: #ff3b3b; // bright red on focus
+//     box-shadow: 0 0 0 3px rgba(168, 3, 3, 0.3); // subtle glow effect
+//     background-color: rgba(255, 0, 0, 0.1); // slightly more visible background
+//   }
+// }

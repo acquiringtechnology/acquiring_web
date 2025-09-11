@@ -26,7 +26,7 @@ export const MENU = [
   {
     title: "Live Classes",
     // icon: <PersonIcon />,
-    link: "/liveClasses",
+    link: "/liveClasses/detail/d5eb2822-507c-11ee-be56-0242ac120002",
     isShow: false,
     exact:false
   },
@@ -41,6 +41,13 @@ export const MENU = [
     title: "Why Us?",
     // icon: <PersonIcon />,
     link: "/whyUs",
+    isShow: false,
+    exact:false
+  },
+   {
+    title: "Contact Us",
+    // icon: <PersonIcon />,
+    link: "/contactUs",
     isShow: false,
     exact:false
   },

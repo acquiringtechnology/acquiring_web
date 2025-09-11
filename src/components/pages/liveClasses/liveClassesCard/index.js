@@ -48,6 +48,7 @@ export const LiveClassesCard = (props) => {
             <div className="col-12 mb-4">
               <div className={`card ${styles.liveClassCard}`}>
                 <div className="card-body">
+                   
                   <div className="d-flex align-items-center">
                     <div className="flex-shrink-0">
                       <img
@@ -57,6 +58,7 @@ export const LiveClassesCard = (props) => {
                       />
                     </div>
                     <div className="flex-grow-1 ms-3">
+                     
                       <h5
                         className={`card-title w-100 text-truncate ${styles.liveClassCardTitle}`}
                       >
@@ -116,8 +118,9 @@ export const LiveClassesCard = (props) => {
                     <i className="fa-regular fa-address-card"></i> Live Mentor Support
                     </li>
                     <li className="nav-item  ms-auto">
-                    <NormalButton
-                      title="KNOW MORE"
+                   
+                     <NormalButton
+                      title="Know More"
                       onClick={() => router.push(`/liveClasses/detail/d5eb2822-507c-11ee-be56-0242ac120002`)}
                     />
                     </li>

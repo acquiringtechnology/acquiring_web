@@ -2,7 +2,7 @@ import styles from "./input.module.scss";
 
 const NormalInput = (props) => {
   let {
-    className = "btn-primary",
+    className = "",
     title = "",
     type = "text",
     placeholder = `Enter ${title}`,

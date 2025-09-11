@@ -1,57 +1,100 @@
 @import "@/styles/scss/abstracts/abstracts-dir.scss";
 
 .courseDetailContiner {
-    padding-top: 100px;
-    padding-bottom: 130px;
-    background-color: var(--primary-bg-light);
+  padding-top: 100px;
+  padding-bottom: 60px;
+  position: relative;
 
-    @include media-breakpoint-mobile-port{
-        padding-bottom: .5rem
+  @include media-breakpoint-mobile-port {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  @include media-breakpoint-tab-port {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .couseTitle {
+    font-size: 3rem;
+    color: var(--white);
+    @include media-breakpoint-tab-port {
+      font-size: 2.2rem;
     }
-    @include  media-breakpoint-tab-port{
-        padding-bottom: .5rem
+    @include media-breakpoint-mobile-port {
+      font-size: 1.8rem;
     }
-    
-    .couseTitle {
-        font-size: 3rem;
-        color: var(--white);
+  }
+
+  .mentorFrom {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--white);
+
+    @include media-breakpoint-tab-port {
+      font-size: 1.3rem;
     }
-    .mentorFrom{
+    @include media-breakpoint-mobile-port {
+      font-size: 1rem;
+    }
+
+    img {
+      width: 60px;
+      margin: 0 0.3rem;
+      @include media-breakpoint-mobile-port {
+        width: 40px;
+      }
+    }
+  }
+
+  .ratingText {
+    color: #e59819;
+    font-size: 0.9rem;
+  }
+
+  .starRating {
+    top: -4px;
+  }
+
+  .overRatingPerCount {
+    cursor: pointer;
+    color: var(--white);
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+
+  .programOverViewSection {
+    margin-top: 2rem;
+
+    .programOverViewTitle {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+
+      @include media-breakpoint-mobile-port {
         font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-         color: var(--white);
-    }
-    .ratingText {
-        color: #e59819;
-        font-size: 0.9rem;
-    }
-    .starRating {
-        top: -4px;
-    }
-    .overRatingPerCount {
-        cursor: pointer;
-        color: var(--white);
-        font-size: 0.9rem;
-        text-decoration: underline;
+      }
     }
 
-    .programOverViewSection {
-        .programOverViewTitle {
-            font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-        }
-        .programOverViewDetailTitle {
-            font-size: 1.1rem;
-            font-weight: 400 !important;
-             color: var(--white);
-            // margin-bottom: 0!important;
-        }
-        .programOverViewDetailValue {
-            font-weight: 700 !important;
-            font-size: 1rem !important;
-         color: var(--white);
-        }
+    .programOverViewDetailTitle {
+      font-size: 1.1rem;
+      font-weight: 400 !important;
+      color: var(--white);
+
+      @include media-breakpoint-mobile-port {
+        font-size: 0.9rem;
+      }
     }
+
+    .programOverViewDetailValue {
+      font-weight: 700 !important;
+      font-size: 1rem !important;
+      color: var(--white);
+
+      @include media-breakpoint-mobile-port {
+        font-size: 0.85rem !important;
+      }
+    }
+  }
 }

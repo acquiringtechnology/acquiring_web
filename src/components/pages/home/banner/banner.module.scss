@@ -2,12 +2,15 @@
 $icon-size: 40px;
 $icon-opacity: 0.85;
 $animation-duration: 6s;
+
 .bannerContiner {
+
   // height:400px;
   .bannerTitleContiner {
     .bannerTitle {
       color: var(--white);
       font-size: fontSize(56px) !important;
+
       // @include media-breakpoint-mobile-port{
       //     font-size: fontSize(30px) !important;
       // }
@@ -16,18 +19,37 @@ $animation-duration: 6s;
       }
     }
   }
+
   .bannerSubtext {
     font-size: 1.5rem;
+
     @include media-breakpoint-from-tab {
       font-size: 1.2rem !important;
     }
   }
+
   .joinCourseBtn {
     border-radius: 4px;
     font-weight: 600;
     min-height: 48px;
     font-size: 1rem;
+    width: fontSize(157.25px);
+    // background: linear-gradient(90deg, #A80303 0%, rgba(208, 0, 0, 0) 100%);
+    // box-shadow: 3.26px 0px 2.44px -1.63px #A80303;
+    // border-radius: 23.22px;
+    // font-weight: 400;
+    // font-size: 16px;
+    // line-height: 100%;
+    // letter-spacing: 0%;
+    // text-align: center;
+    // color: #FFFFFF;
+
+
+
+
+
   }
+
   .bannerImage {
     // height: 100%;
     // animation: float $animation-duration ease-in-out infinite;
@@ -41,9 +63,11 @@ $animation-duration: 6s;
     position: relative;
     width: 100%;
     height: calc(100vh - 76px);
+
     @include media-breakpoint-from-tab {
       height: auto;
     }
+
     // background: radial-gradient(circle at center, #5e0e0e 0%, #000 80%);
     animation: moveBackground 10s ease-in-out infinite alternate;
 
@@ -68,13 +92,15 @@ $animation-duration: 6s;
 
 
 
-  
+
 
     @keyframes float {
+
       0%,
       100% {
         transform: translateY(0) rotate(0deg);
       }
+
       50% {
         transform: translateY(-15px) rotate(5deg);
       }
@@ -82,16 +108,19 @@ $animation-duration: 6s;
   }
 
   @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0);
       animation-timing-function: ease-in-out;
     }
+
     50% {
       transform: translateY(-25px);
       animation-timing-function: ease-in;
     }
   }
-  
+
 }
 
 // Keyframes should be defined globally, outside of any class
@@ -100,6 +129,7 @@ $animation-duration: 6s;
     background-position: center;
     filter: brightness(1);
   }
+
   100% {
     background-position: 40% 60%;
     filter: brightness(1.1);
@@ -110,8 +140,8 @@ $animation-duration: 6s;
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 100px 100px;
   }
 }
-

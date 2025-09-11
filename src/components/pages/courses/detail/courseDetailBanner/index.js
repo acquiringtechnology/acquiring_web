@@ -1,15 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useRouter } from "next/router";
-import StarRatings from "react-star-ratings";
 import styles from "./courseDetailBanner.module.scss";
 import { CourseCard, EnquiryForm } from "@/components/pages";
 import { NormalButton } from "@/components/common";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-export const CourseDetailBanner = ({
-  fromPage = "",
-  liveClassDetail = null,
-}) => {
+
+export const CourseDetailBanner = ({ fromPage = "", liveClassDetail = null }) => {
   const router = useRouter();
 
   const handleRedirectQuiz = () => {
@@ -17,119 +14,62 @@ export const CourseDetailBanner = ({
   };
 
   useEffect(() => {
-    const deadline = new Date("2025-04-28"); // Set the application deadline
-    const today = new Date(); // Get today's date
-    Swal.fire({
-      title: "🎓 From Zero to Hero Full Stack Web Developer",
-      html: `🗓️ <b>Don't miss out! Application Deadline: 28th April</b><br>
-      Secure your spot and join our exciting live class with lifetime support!`,
-      icon: "info",
-      confirmButtonText: "Continue",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        if (!(today <= deadline)) {
-          // Swal.fire({
-          //   icon: "error",
-          //   title: "⏳ Deadline Passed!",
-          //   text: "Sorry, the application deadline has expired due to the batch being full. Kindly fill out your details, and our team will reach out shortly for the next batch.",
-          // });
-          // Redirect or perform the next action here
-        }
-      }
-    });
+    const deadline = new Date("2025-04-28");
+    const today = new Date();
+
+    if (today <= deadline) {
+      Swal.fire({
+        title: "🎓 From Zero to Hero Full Stack Web Developer",
+        html: `
+          🗓️ <b>Don't miss out! Application Deadline: 28th April</b><br>
+          Secure your spot and join our exciting live class with lifetime support!
+        `,
+        icon: "info",
+        confirmButtonText: "Continue",
+      });
+    }
   }, []);
 
   return (
-    <div
-      className={` mb-5  app-theme-bg primary-banner-bg ${styles.courseDetailContiner}`}
-    >
-      <div className={`grid-overlay`}></div>
+    <div className={` ${styles.courseDetailContiner}`}>
+      <div className="grid-overlay"></div>
       <div className="container">
         <div className="row mb-4">
+          {/* Left Column */}
           <div className="col-lg-8 col-md-6 col-12">
             <h1 className={`mb-lg-2 mb-3 ${styles.couseTitle}`}>
               {liveClassDetail?.name}
             </h1>
-            {/* {liveClassDetail?.dis} */}
-            <p className={`${styles.mentorFrom}`}>
+
+            <p className={styles.mentorFrom}>
               Mentorship from Industry Experts at{" "}
-              <img width={75} src="/Disney_logo.png" /> ,{" "}
-              <img width={75} src="/adobe-Logo.png" /> & more!
+              <img width={75} src="/Disney_logo_white.png" alt="Disney Logo" />,{" "}
+              <img width={75} src="/adobe-Logo.png" alt="Adobe Logo" /> & more!
             </p>
 
-            <p className={`${styles.mentorFrom}`}>
+            <p className={styles.mentorFrom}>
               Build a successful career in Full Stack Development with real-time
-              project experience and Zen-Class placement guidance — now
-              available in தமிழ்!
+              project experience and Zen-Class placement guidance — now available in தமிழ்!
             </p>
-            {/* <p>
-              Live Classes available in <strong>English, தமிழ், ಕನ್ನಡ</strong>{" "}
-            </p> */}
-            {/* <div className="mb-4">
-              <span className={`me-2 ${styles.ratingText}`}>4.6</span>
-              <StarRatings
-                rating={4}
-                starRatedColor="#e59819"
-                // changeRating={()}
-                numberOfStars={5}
-                name="rating"
-                starWidthAndHeight={15}
-                starDimension={15}
-                starSpacing={1}
-                className={styles.starRating}
-              />
-              <span className={`ms-2 ${styles.overRatingPerCount}`}>
-                (12.5 rating)
-              </span>
-            </div> */}
+
             {fromPage !== "liveClass" && (
               <NormalButton title="Start Quiz!" onClick={handleRedirectQuiz} />
             )}
           </div>
+
+          {/* Right Column */}
           <div className="col-lg-4 col-md-6 col-12 d-md-block d-none">
             {fromPage !== "liveClass" ? (
-              <CourseCard isDetailBanner={true} />
+              <CourseCard isDetailBanner />
             ) : (
               <EnquiryForm
                 liveClassDetail={liveClassDetail}
-                isFromSyllabus={true}
+                isFromSyllabus
                 liveClassId={liveClassDetail?.id}
                 fromPage={fromPage}
               />
             )}
           </div>
-          {/* <div className="col-12">
-            {fromPage === "liveClass" && (
-              <div className={`row mb-2 mt-4 ${styles.programOverViewSection}`}>
-                <div className="col-md-3">
-                  <h4 className={styles.programOverViewDetailTitle}>
-                    Duration
-                  </h4>
-                  <label className={styles.programOverViewDetailValue}>
-                    90 Days
-                  </label>
-                </div>
-                <div className="col-md-2">
-                  <h4 className={styles.programOverViewDetailTitle}>Format</h4>
-                  <label className={styles.programOverViewDetailValue}>
-                    {liveClassDetail?.prgOverView?.classType}
-                  </label>
-                </div>
-                <div className="col-md-4">
-                  <h4 className={styles.programOverViewDetailTitle}>Mentors</h4>
-                  <label className={styles.programOverViewDetailValue}>
-                    1X1 Mentor Support
-                  </label>
-                </div>
-                <div className="col-md-3">
-                  <h4 className={styles.programOverViewDetailTitle}>Course</h4>
-                  <label className={styles.programOverViewDetailValue}>
-                    Live Online Classes + Access to Recorded Videos
-                  </label>
-                </div>
-              </div>
-            )}
-          </div> */}
         </div>
       </div>
     </div>
