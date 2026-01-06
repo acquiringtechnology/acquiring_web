@@ -43,10 +43,10 @@ function WebinarsDetails({ createWebinearEnrolled ,webinearEnrolledOtpVerify,web
     
   }
 
-  useEffect(() => {
+  // useEffect(() => {
  
-  handleGetWebinearDetailById()
-  }, [handleGetWebinearDetailById, router.query.webinarId]);
+  // handleGetWebinearDetailById()
+  // }, [handleGetWebinearDetailById, router.query.webinarId]);
 
   return (
     <>
@@ -66,6 +66,7 @@ function WebinarsDetails({ createWebinearEnrolled ,webinearEnrolledOtpVerify,web
         <Layout>
           <div className="row">
             <div className="col-12">
+              <div className="app-theme-bg">
               <WebinarsBanners bannerImage={webinarDetails?.banerImg || ""} />
               <AboutWebinar
                 webinarDetails={webinarDetails}
@@ -73,7 +74,9 @@ function WebinarsDetails({ createWebinearEnrolled ,webinearEnrolledOtpVerify,web
                 webinearEnrolledOtpVerify={webinearEnrolledOtpVerify}
                 webinearEnrolledOtpResend={webinearEnrolledOtpResend}
               />
+              
               <UpcommingWebinarsCards />
+              </div>
             </div>
           </div>
         </Layout>

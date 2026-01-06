@@ -33,6 +33,9 @@ export default function Home() {
           name="keywords"
           content="online full stack developer course,React JS, Angular, Angular Js, full stack web developer,chennai software training institute, mern stack developer course, full stack web developer training,  mern stack training full stack  web with placements, web development training, Javascript"
         />
+        
+        <meta name="facebook-domain-verification" content="os1n81d80rjonzb3sadun1d75oz24t" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="canonical" href="https://www.acquiring.in/" />

@@ -1,10 +1,10 @@
 import styles from "./courseVideoCard.module.scss";
 import { useEffect } from "react";
-import Plyr from "plyr";
+// import Plyr from "plyr";
 export const CourseVideoCard = ({courseDetails,sendSelectedTopic={}}) => {
-  useEffect(() => {
-    const player = new Plyr("#player");
-  }, [sendSelectedTopic]);
+  // useEffect(() => {
+  //   const player = new Plyr("#player");
+  // }, [sendSelectedTopic]);
 
   return (
     <div className={`${styles.courseVideoCardContiner}`}>

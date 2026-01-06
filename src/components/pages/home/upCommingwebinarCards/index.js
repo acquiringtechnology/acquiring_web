@@ -33,8 +33,9 @@ const UpcommingWebinarsCards = ({
   };
 
   const handleRouteDetailPage = (data) => {
-    setStorage(EXIST_LOCAL_STORAGE.WEBINAR_DETAIL, JSON.stringify(data));
-    router.push(`/webinars/details/${data.id}`);
+    // setStorage(EXIST_LOCAL_STORAGE.WEBINAR_DETAIL, JSON.stringify(data));
+    // router.push(`/webinars/details/${data.id}`);
+    router.push(`/webinars/details/1`);
   };
 
   const handleShowUpCommingWebinarList = (data) => {
@@ -44,17 +45,60 @@ const UpcommingWebinarsCards = ({
 
   return (
     <section>
-      {  handleShowUpCommingWebinarList(webinarList).length>0 && !isWebinarListLoader &&<div className={`container mb-5`}>
+      {/* {  handleShowUpCommingWebinarList(webinarList).length>0 && !isWebinarListLoader &&<div className={`container mb-5`}> */}
+      {<div className={`container`}>
     <div className={styles.upCommingWebinarsContiner}>
           <div className="row mb-4">
             <div className="col-md-12 text-center mb-4">
               <h4 className={styles.upCommingWebinarsTitle}>
-                Upcoming Webinar{handleShowUpCommingWebinarList(webinarList)?.length>0 &&'s'}
+                {/* Upcoming Webinar{handleShowUpCommingWebinarList(webinarList)?.length>0 &&'s'} */}
+                Upcoming Webinar 1
               </h4>
             </div>
           </div>
 
           <div className="row justify-content-center">
+             <div className="col-md-3" >
+                <div className="card border-0 shadow mb-5">
+                  <img
+                    src={'https://media.istockphoto.com/id/1332475767/photo/black-doctor-at-laptop-having-video-conference-with-colleagues-indoor.jpg?s=612x612&w=0&k=20&c=rNJ7lv4LAH3GGdjOFwU1pt2t61UDkkVtMzb9ys-UrrY='}
+                    className="card-img-top"
+                    alt={'React Webinar'}
+                  />
+                 <div className="card-body">
+  <h5 className="card-title">{'React Webinar'}</h5>
+
+  <div className="mb-2 w-100">
+    <span className="d-inline-flex align-items-center text-muted">
+      <i className="fa-regular fa-clock"></i>
+      <p className="d-inline mx-2 mb-0" style={{color:'#fff'}}>
+       {"->"} Duration - 80 Mins
+      </p>
+    </span>
+
+     <hr className="my-3" />
+
+      <div className="d-grid">
+          <a
+          
+            href="#"
+            className="btn btn-primary"
+            // onClick={() => handleRouteDetailPage(data)}
+            onClick={(e) => {
+              e.preventDefault();
+              handleRouteDetailPage('1');
+            }}
+          >
+            Register Now
+          </a>
+        </div>
+  </div>
+
+  {/* </p> */}
+</div>
+
+                </div>
+              </div>
             {handleShowUpCommingWebinarList(webinarList)?.map((data, i) => (
               <div className="col-md-3" key={i}>
                 <div className="card border-0 shadow mb-5">
@@ -107,7 +151,7 @@ const UpcommingWebinarsCards = ({
       
       </div>}
 
-      { webinarList.length===0 && !isWebinarListLoader &&  isViewAll && <NodataFound title="Keep a lookout for our webinars, they're coming soon"  subTitle="You can go to back by clicking below button"/>}
+      {/* { webinarList.length===0 && !isWebinarListLoader &&  isViewAll && <NodataFound title="Keep a lookout for our webinars, they're coming soon"  subTitle="You can go to back by clicking below button"/>} */}
       
 
       
