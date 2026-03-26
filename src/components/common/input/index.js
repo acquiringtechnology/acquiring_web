@@ -8,16 +8,19 @@ const NormalInput = (props) => {
     placeholder = `Enter ${title}`,
     errorMessage = "",
     inputGroup = false,
-    inputGroupRightText='',
-    readOnly=false
+    inputGroupRightText = "",
+    readOnly = false,
   } = props;
 
   return (
     <div className="mb-3">
       <label className="form-label">{title}</label>
       {inputGroup ? (
-        <div class="input-group mb-3">
-          <span className="input-group-text bg-transparent border-end-0" id="basic-addon1">
+        <div className={`${styles.phoneGroup} input-group mb-3`}>
+          <span
+            className={`input-group-text ${styles.countryCode}`}
+            id="basic-addon1"
+          >
             {inputGroupRightText}
           </span>
 

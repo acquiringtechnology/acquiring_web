@@ -1,4 +1,4 @@
-import { flatMap } from "lodash";
+import styles from "./accordion.module.scss";
 import { useState } from "react";
 
 const NormalAccordion = (props) => {
@@ -26,38 +26,48 @@ const NormalAccordion = (props) => {
    
   };
 
-  return (
-    <div className="accordion">
-      {data?.map((data, i) => (
-        <div className={`accordion-item ${className}`} key={i}>
-          <div className="accordion-header">
-            <button
-              className={`accordion-button border-top  ${
-                isShow && isShowIndex === i && "collapsed"
-              }`}
-              onClick={() => handleCollaps(i)}
-              type="button"
-            >
-              <span className={titleClassName}> {data?.title}</span>
-              {data?.subTitle && (
-                <div className="row">
-                  <div className="col-md-11">
-                    <p className={`mb-0 ${subTitleClassName}`}>{data?.subTitle} </p>
-                  </div>
-                </div>
-              )}
-            </button>
+ return (
+  <div className={styles.accordionWrapper}>
+    {data?.map((item, i) => (
+      <div className={styles.item} key={i}>
+        
+        {/* HEADER */}
+        <div
+          className={styles.header}
+          onClick={() => handleCollaps(i)}
+        >
+          {/* LEFT */}
+          <div className={styles.left}>
+            <span className={styles.index}>
+              {String(i + 1).padStart(2, "0")}
+            </span>
+
+            <span className={styles.title}>
+              {item.title}
+            </span>
           </div>
+
+          {/* RIGHT ICON */}
           <div
-            className={`accordion-collapse collapse  ${
-              isShow && isShowIndex === i && "show"
+            className={`${styles.icon} ${
+              isShow && isShowIndex === i ? styles.open : ""
             }`}
           >
-            <div className="accordion-body">{renderItem(data)}</div>
+            +
           </div>
         </div>
-      ))}
-    </div>
-  );
+
+        {/* BODY */}
+        <div
+          className={`${styles.body} ${
+            isShow && isShowIndex === i ? styles.show : ""
+          }`}
+        >
+          {renderItem(item, i)}
+        </div>
+      </div>
+    ))}
+  </div>
+);
 };
 export default NormalAccordion;

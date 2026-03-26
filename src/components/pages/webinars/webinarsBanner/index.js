@@ -3,7 +3,7 @@ export const WebinarsBanners = ({ bannerImage = "" }) => {
     <div className="row mb-5" >
       <div className="col-md-12">
         <div className="">
-          <img  style={{maxHeight:'400px'}} src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNDtJsO2OYbC0T8zcDO-5ykJaTX-L_Sw1GJw&s'} className="img-fluid w-100" />
+          <img  style={{maxHeight:'400px'}} src={'https://3ca51ebc.delivery.rocketcdn.me/wp-content/uploads/2021/09/Austin-Banner-Image-Mer-n-stack.jpg'} className="img-fluid w-100" />
         </div>
       </div>
     </div>

@@ -1,6 +1,236 @@
-.upCommingWebinarsContiner{
-    .upCommingWebinarsTitle{
-        font-size: 2.34375rem;
-        font-weight: 700;
+.upCommingWebinarsContiner {
+  padding: 40px 0px;
+  .upCommingWebinarsTitle {
+    font-size: 2.34375rem;
+    font-weight: 700;
+  }
+  .subTitle {
+    color: #ff3b3b;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .mainTitle {
+    font-size: 42px;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.3;
+  }
+
+  .highlight {
+    color: #ff3b3b;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .description {
+    margin-top: 15px;
+    color: #cfcfcf;
+    font-size: 14px;
+    max-width: 700px;
+  }
+
+  /* Card */
+  .figmaCard {
+    position: relative;
+    padding: 24px;
+    border-radius: 14px;
+    color: #fff;
+    overflow: hidden;
+
+    background: radial-gradient(
+      circle at top right,
+      #5a0000,
+      #1a0000 60%,
+      #0f0f0f
+    );
+    border: 1px solid rgba(255, 0, 0, 0.4);
+
+    transition: all 0.3s ease;
+  }
+
+  .figmaCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.25);
+  }
+
+  /* Grid overlay */
+  .gridOverlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-block;
+    background: #22c55e;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  /* Title */
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+
+  .title span {
+    color: #ff2d2d;
+  }
+
+  /* Speaker floating card */
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 20px 0;
+  }
+
+  /* Date row */
+  .dateRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #ddd;
+  }
+
+  /* Description */
+  .description {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.6;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .users {
+    display: flex;
+    align-items: center; /* vertical center */
+  }
+
+  /* avatar spacing */
+  .users span {
+    width: 28px;
+    height: 28px;
+    background: #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff2d2d;
+    font-size: 12px;
+  }
+
+  /* FIX alignment */
+  .users p {
+    margin: 0; /* remove default margin */
+    margin-left: 10px;
+    font-size: 12px;
+    color: #bbb;
+    display: flex;
+    align-items: center; /* center with avatars */
+    height: 28px; /* match avatar height */
+  }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(90deg, #ff2d2d, #b30000);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .cta:hover {
+    opacity: 0.9;
+  }
+  .headerSection {
+    position: relative;
+    padding-bottom: 0px; /* space for speaker */
+  }
+
+  .headerSection {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 16px;
+  }
+
+  /* Left side */
+  .headerLeft {
+    flex: 1;
+  }
+
+  /* Title spacing fix */
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+  }
+
+  /* Speaker (RIGHT SIDE) */
+  .speakerCard {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 8px 10px;
+    border-radius: 8px;
+    min-width: 140px;
+    max-width: 160px;
+    text-align: left;
+  }
+
+  /* Smaller font (as you asked) */
+  .speakerCard strong {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .speakerCard p {
+    font-size: 11px;
+    color: #ccc;
+    margin: 2px 0 0;
+    line-height: 1.3;
+  }
+  @media (max-width: 768px) {
+    .headerSection {
+      flex-direction: column;
+      align-items: flex-start;
     }
+
+    .speakerCard {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 8px;
+    }
+
+    .title {
+      font-size: 18px;
+    }
+  }
 }

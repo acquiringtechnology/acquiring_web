@@ -106,13 +106,72 @@ export const WebinarsRegisterForm = ({
       isExistUser: 0,
     });
   };
+
+  const targetDate = new Date("2026-04-04T18:00:00"); // Saturday 6 PM
+
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
+
+      if (distance <= 0) {
+        clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0 });
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+      setTimeLeft({ days, hours, minutes });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className={styles.webinarsRegisterFormContiner}>
       <div className="card border-0 shadow">
         <div className="card-body">
           <div className="row">
-            <div className="col-md-12">
+            {/* <div className="col-md-12">
               <h4 className={`mb-3 ${styles.title}`}>Register NOW!</h4>
+            </div> */}
+
+            <div className="col-md-12">
+              <h4 className={`mb-3 ${styles.title}`}>Register Now!</h4>
+
+              {/* NEW: countdown UI (UI only) */}
+              <div className={styles.countdownWrapper}>
+                <span className={styles.startsIn}>STARTS IN</span>
+
+                <div className={styles.timeBox}>
+                  <strong>{String(timeLeft.days).padStart(2, "0")}</strong>
+                  <small>Days</small>
+                </div>
+
+                <span className={styles.colon}>:</span>
+
+                <div className={styles.timeBox}>
+                  <strong>{String(timeLeft.hours).padStart(2, "0")}</strong>
+                  <small>Hrs</small>
+                </div>
+
+                <span className={styles.colon}>:</span>
+
+                <div className={styles.timeBox}>
+                  <strong>{String(timeLeft.minutes).padStart(2, "0")}</strong>
+                  <small>Min</small>
+                </div>
+              </div>
             </div>
 
             <div className="col-md-12">
@@ -124,7 +183,7 @@ export const WebinarsRegisterForm = ({
                 errorMessage={validator.current.message(
                   "Name",
                   webinarEnrolledFormObj.name,
-                  "required"
+                  "required",
                 )}
                 readOnly={!_.isEmpty(userDetail)}
               />
@@ -138,7 +197,7 @@ export const WebinarsRegisterForm = ({
                 errorMessage={validator.current.message(
                   "Email",
                   webinarEnrolledFormObj.email,
-                  "required|email"
+                  "required|email",
                 )}
                 readOnly={!_.isEmpty(userDetail)}
               />
@@ -155,7 +214,7 @@ export const WebinarsRegisterForm = ({
                 errorMessage={validator.current.message(
                   "Phone",
                   webinarEnrolledFormObj.phone,
-                  "required|phone"
+                  "required|phone",
                 )}
                 readOnly={!_.isEmpty(userDetail)}
               />

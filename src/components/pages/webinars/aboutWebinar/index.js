@@ -1,61 +1,102 @@
 import { WebinarsRegisterForm } from "@/components/pages/webinars";
 import styles from "./aboutWebinar.module.scss";
-export const AboutWebinar = ({ webinarDetails = {}  ,createWebinearEnrolled ,webinearEnrolledOtpResend,webinearEnrolledOtpVerify}) => {
+export const AboutWebinar = ({
+  webinarDetails = {},
+  createWebinearEnrolled,
+  webinearEnrolledOtpResend,
+  webinearEnrolledOtpVerify,
+}) => {
   return (
     <div className={`container ${styles.aboutWebinarContiner}`}>
       <div className="row">
         <div className="col-md-8">
-          <div className="row mb-5">
-            <div className="col-md-12">
-              {/* <h4>{webinarDetails?.title || "-"}</h4> */}
-              <h4>{"React Webinar"}</h4>
-              <p className={styles.detailWeb}>
-                <span className="me-2">
-                  <strong>STARTS ON: </strong>
-                   {/* {webinarDetails?.sDate || "-"} */}
-                   17 jan 2026 : 7.30 PM IST
-                </span>
-                <span className="me-2">
-                  <strong>ENDS ON: </strong> 
-                  {/* {webinarDetails?.eDate || "-"} */}
-                  17 jan 2026 : 8.50 PM IST
-                </span>
-                <span className="me-2">
-                  <strong>MODE: </strong> Online
-                </span>
-              </p>
-              <hr />
-            </div>
-          </div>
-          <div className="row mb-5">
-            <div className="col-md-12">
-              <h4>About this Webinar</h4>
-              {/* <div dangerouslySetInnerHTML={{ __html: webinarDetails?.about}}/> */}
-              <div>
-                lorem100
-                ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </div>
-              {/* {convertStringToHTML(webinarDetails?.about || "-") } */}
-              <hr />
-            </div>
-          </div>
-          <div className="row mb-5">
-            <div className="col-md-12">
-              <h4>
-                KB Anvesh Babu (<a href="#">LinkedIn</a>)
+          <div className={styles.leftSection}>
+            {/* ABOUT */}
+            <div className={styles.section}>
+              <div className={styles.sectionTitle}>ABOUT THIS MASTERCLASS</div>
+
+              <h4 className={styles.mainHeading}>
+                MASTER THE MERN STACK: BUILD SCALABLE FULL-STACK APPLICATIONS
               </h4>
-              <ul>
-                <li>Senior Software Engineer  & Front-End Tech architect</li>
-                <li>Ex-Software Developer at Dishny</li>
-                <li>Founder, Acquiring Technology</li>
-              </ul>
-              <hr />
+
+              <p className={styles.detailText}>
+                Learn how to build modern, scalable web applications using the
+                MERN stack — MongoDB, Express, React, and Node.js. This session
+                will give you a practical understanding of how real-world
+                full-stack systems are designed, developed, and deployed in
+                today’s tech industry.
+              </p>
+            </div>
+
+            {/* WHAT YOU’LL LEARN */}
+            <div className={styles.section}>
+              <div className={styles.sectionTitle}>WHAT YOU’LL LEARN</div>
+
+              <div className={styles.listItem}>
+                <span className={styles.check}>✔</span>
+                <p>
+                  How to structure and build full-stack applications using MERN
+                </p>
+              </div>
+
+              <div className={styles.listItem}>
+                <span className={styles.check}>✔</span>
+                <p>Designing REST APIs with Node.js and Express</p>
+              </div>
+
+              <div className={styles.listItem}>
+                <span className={styles.check}>✔</span>
+                <p>State management and component architecture in React</p>
+              </div>
+
+              <div className={styles.listItem}>
+                <span className={styles.check}>✔</span>
+                <p>
+                  Working with MongoDB for efficient data storage and queries
+                </p>
+              </div>
+
+              <div className={styles.listItem}>
+                <span className={styles.check}>✔</span>
+                <p>
+                  Authentication, deployment, and best practices in real-world
+                  projects
+                </p>
+              </div>
+            </div>
+
+            {/* SPEAKER */}
+            <div className={styles.section}>
+              <div className={styles.sectionTitle}>ABOUT THE SPEAKER</div>
+
+              <div className={styles.speakerCard}>
+                <div className={styles.speakerHeader}>
+                  <div className={styles.avatar}>A</div>
+                  <div>
+                    <strong>Anvesh Babu</strong>
+                    <p>Senior MERN Stack Developer</p>
+                  </div>
+                </div>
+
+                <p className={styles.speakerDesc}>
+                  Harish is a full-stack engineer with extensive experience in
+                  building scalable web applications using the MERN stack. He
+                  has worked on production-grade systems, helping startups and
+                  enterprises design robust architectures, optimize performance,
+                  and deliver high-quality user experiences.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="col-md-4">
-          <WebinarsRegisterForm webinarId={webinarDetails?.id} webinearEnrolledOtpResend={webinearEnrolledOtpResend} createWebinearEnrolled={createWebinearEnrolled} webinearEnrolledOtpVerify={webinearEnrolledOtpVerify}/>
+          <WebinarsRegisterForm
+            webinarId={webinarDetails?.id}
+            webinearEnrolledOtpResend={webinearEnrolledOtpResend}
+            createWebinearEnrolled={createWebinearEnrolled}
+            webinearEnrolledOtpVerify={webinearEnrolledOtpVerify}
+          />
         </div>
       </div>
     </div>

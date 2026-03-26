@@ -95,7 +95,7 @@ const Footer = ({ subscribeCreate }) => {
             </h5>
             <p className="small text-light">
               Subscribe to our newsletter for alerts on New Courses, Free
-              Workshops, & Masterclasses
+              Workshops, & Upskill with
             </p>
             <div className={`newsletter ${styles.newsletter}`}>
               <div className={`input-group ${styles["input-group"]}`}>

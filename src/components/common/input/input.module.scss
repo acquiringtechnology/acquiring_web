@@ -23,6 +23,35 @@
     box-shadow: 0 0 0 3px rgba(0, 3, 3, 0.1); // subtle glow effect
     background-color: rgba(0, 0, 0, 0.5); // slightly more visible background
   }
+
+
+}
+/* wrapper */
+.phoneGroup {
+  background: #111;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  overflow: hidden;
+
+  .form-control {
+    background: transparent !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 12px !important;
+  }
+}
+
+/* +91 part */
+.countryCode {
+  background: #111111 !important;
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  border: #111111 !important;
+  border-right: 1px solid rgba(255,255,255,0.15) !important;
 }
 
 

@@ -1,6 +1,7 @@
 import styles from "./ourCustomer.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
+import { useRef } from "react";
 
 // ✅ keep static data outside component (better perf)
 const reviews = [
@@ -73,47 +74,58 @@ The way of teaching and clarifying doubts is excellent`,
 const getFirstLetter = (name = "") => name.charAt(0).toUpperCase();
 
 const OurCustomer = () => {
+
+  const swiperRef = useRef(null);
   return (
     <div className={styles.OurCoursesCardContiner}>
-      <div className="container mb-5">
+      <div className="container py-1">
+        {/* Title */}
         <div className="row">
-          <div className="col-md-12 mb-4 text-center">
-            <h4 className={styles.ourServicesTitleYellow}>Student Review</h4>
-            <h4 className={styles.ourServicesTitle}>Our Student Feedback</h4>
+          <div className="col-md-12 mb-5 text-start">
+            <div className={styles.titleWrapper}>
+              <span className={styles.line}></span>
+              <p className={styles.topTitle}>WHAT OUR STUDENTS SAY</p>
+            </div>
           </div>
         </div>
 
         <Swiper
-          spaceBetween={20}
-          loop
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          modules={[Autoplay]}
-          breakpoints={{
-            0: { slidesPerView: 1 },
-            576: { slidesPerView: 1.2 },
-            768: { slidesPerView: 2 },
-            992: { slidesPerView: 3 },
-          }}
-        >
+  spaceBetween={20}
+  loop
+  autoplay={{ delay: 2500, disableOnInteraction: false }}
+  modules={[Autoplay]}
+  onSwiper={(swiper) => (swiperRef.current = swiper)}
+  onMouseEnter={() => swiperRef.current?.autoplay.stop()}
+  onMouseLeave={() => swiperRef.current?.autoplay.start()}
+  breakpoints={{
+    0: { slidesPerView: 1 },
+    576: { slidesPerView: 1.2 },
+    768: { slidesPerView: 2 },
+    992: { slidesPerView: 3 },
+    1200: { slidesPerView: 4 },
+  }}
+>
           {reviews.map(({ name, detail }, i) => (
-            <SwiperSlide key={i}>
-              <div className="card mb-3">
-                <div className={`card-body ${styles.servicesCardBody}`}>
-                  <div className="d-flex  mb-3">
-                    <label className={styles.studentName}>
-                      {getFirstLetter(name)}
-                    </label>
+            <SwiperSlide key={i} className="h-auto d-flex">
+              <div className={`w-100 ${styles.card}`}>
+                <div className={styles.cardBody}>
+                  {/* Header */}
+                  <div className="d-flex align-items-center mb-3">
+                    <div className={styles.avatar}>{getFirstLetter(name)}</div>
+
                     <div className="ms-3">
-                      <h4 className={`${styles.OurCoursesCardTitle} mb-0`}>
-                        {name}
-                      </h4>
-                      <img src="/img/Stars.png" alt="rating stars" />
+                      <h6 className={styles.name}>{name}</h6>
+                      <p className={styles.role}>FULL STACK WEB DEV</p>
                     </div>
                   </div>
 
-                  <p className={styles.OurCoursesCardSubText}>
-                    <i className="fas fa-quote-left"></i> {detail}{" "}
-                    <i className="fas fa-quote-right"></i>
+                  {/* Stars */}
+                  <div className={`${styles.stars} mb-3`}>★★★★★</div>
+
+                  {/* Content */}
+                  <p className={styles.text}>
+                    <span className={styles.quote}>“</span>
+                    {detail}
                   </p>
                 </div>
               </div>

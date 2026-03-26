@@ -1,0 +1,84 @@
+.accordionWrapper {
+  background: #2a2a2a;
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* each row */
+  .item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .header:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  /* left side */
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* number */
+  .index {
+    color: #ff2d2d;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* question text */
+  .title {
+    color: #fff;
+    font-size: 14px;
+  }
+
+  /* plus icon */
+  .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    transition: all 0.3s ease;
+  }
+
+  /* rotate when open */
+  .open {
+    transform: rotate(45deg);
+    color: #fff;
+    border-color: #ff2d2d;
+  }
+
+  /* body */
+  .body {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0 20px;
+  }
+
+  .show {
+    max-height: 200px;
+    padding: 10px 20px 20px;
+  }
+
+  /* answer */
+  .body p {
+    color: #aaa;
+    font-size: 13px;
+    margin: 0;
+  }
+}

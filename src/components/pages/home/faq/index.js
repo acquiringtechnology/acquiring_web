@@ -1,6 +1,12 @@
 import { NormalAccordion } from "@/components/common";
 import styles from "./faq.module.scss";
+import { useState } from "react";
 const Faq = (props) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+  // ✅ MUST be inside component
+  const toggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
   const couseContent = [
     {
       title: "Do I get a certificate?",
@@ -46,31 +52,52 @@ const Faq = (props) => {
   ];
 
   return (
-    <section className="sessectionsion-dark">
-      <div className={`container   px-5`}>
-        <div className={styles.faqContiner}>
-          <div className="row">
-            <div className="col-md-12 text-center mb-4">
-              <h4 className={styles.faqTitle}>Frequently Asked Questions</h4>
+    <section className={styles.faq_wrapper}>
+      <div className="container py-5">
+        {/* ✅ TOP TITLE ROW */}
+
+        <div className="row">
+          <div className="col-md-12 mb-5 text-start">
+            <div className={styles.titleWrapper}>
+              <span className={styles.line}></span>
+              <p className={styles.topTitle}>GOT QUESTIONS?</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ✅ MAIN CONTENT ROW */}
+        <div className="row align-items-start">
+          {/* LEFT SIDE */}
+          <div className="col-lg-4 mb-4">
+            <div className={styles.left}>
+              <h2 className={styles.heading}>
+                Asked & <br />
+                <span>Answered</span>
+              </h2>
+
+              <p className={styles.desc}>
+                Everything you need to know before enrolling. Can't find your
+                answer? Reach out directly.
+              </p>
+
+              <button className={styles.primaryBtn}>✉ Ask Us Directly</button>
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-md-12 mb-4">
+          {/* RIGHT SIDE */}
+          <div className="col-lg-8">
+            <div className={styles.faqBox}>
               <NormalAccordion
                 data={couseContent}
-
-                className={styles.liveClassAccordion}
-                titleClassName={styles.faqAccordionTitle}
-                subTitleClassName={styles.liveClassAccordionSubTitle}
-                renderItem={(item = []) => (
-                  <ul className="list-group list-group-flush">
-                    {item?.data?.map((data, i) => (
-                      <li key={i} className="list-group-item border-0 text-white bg-transparent">
-                        {data.name}
-                      </li>
+                className={styles.faqItem}
+                titleClassName={styles.faqTitleRow}
+                subTitleClassName={styles.subTitle}
+                renderItem={(item, index) => (
+                  <div className={styles.answer}>
+                    {item.data?.map((d, i) => (
+                      <p key={i}>{d.name}</p>
                     ))}
-                  </ul>
+                  </div>
                 )}
               />
             </div>
