@@ -1,8 +1,0 @@
-export {default as NormalButton} from './button'
-export {default as NormalInput} from './input'
-export {default as NormalAccordion} from './accordion'
-export {default as NormalSelect} from './select'
-export {NavLink} from './navLink'
-export {Normaltabs} from './tabs'
-export {NodataFound} from './noDataFound'
-export {TextTypingEffect} from './typingEffect'
