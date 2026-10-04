@@ -546,7 +546,9 @@ export default function Hero() {
                 <span style={lineStyle(4)}>WE ENGINEER</span>
               </span>
               <span className="rv-mask" style={{ display: 'block' }}>
-                <span style={lineStyle(5)}>INTELLIGENCE.</span>
+                <span style={lineStyle(5)}>
+                  <span className="cap-serif-i">I</span>NTELL<span className="cap-serif-i">I</span>GENCE.
+                </span>
               </span>
             </h1>
 

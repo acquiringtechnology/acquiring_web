@@ -79,7 +79,7 @@ export default function AISolutions() {
               margin: '0 0 28px',
             }}
           >
-            FROM DATA TO INTELLIGENCE.
+            FROM DATA TO <span className="cap-serif-i">I</span>NTELL<span className="cap-serif-i">I</span>GENCE.
           </h2>
           <p
             className={`rv ${headVis ? 'in' : ''} d2`}
