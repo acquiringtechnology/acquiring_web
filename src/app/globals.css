@@ -422,3 +422,12 @@ a, button {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Capital 'I' with clear top & bottom serifs/crossbars to eliminate ambiguity with 'L' */
+.cap-serif-i {
+  font-family: Georgia, 'Times New Roman', Cambria, serif;
+  font-weight: 700;
+  display: inline-block;
+  letter-spacing: -0.01em;
+}
+
